@@ -1,0 +1,3 @@
+Linhas para tratamento de erros
+100 - 990: frmOrc.frm : Private Sub Gravar()
+1000 - 1990: Tarefas.bas : Public Function GravaTarefas(Orcam As Long) As Boolean

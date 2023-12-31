@@ -1,0 +1,5 @@
+%	Integer
+&	Long
+!	Simple
+#	Double
+@	Currency
