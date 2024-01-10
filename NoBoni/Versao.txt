@@ -1,0 +1,489 @@
+	5.2.9 Alteração do lugar onde fica o foco inicial na tela de orçamento, para prevenir um erro (RGB4158)
+	5.2.8 Exclusão lógica de carros
+	5.2.8 Conserto da situação que depois de um carro deletado não dava pra operar um carro
+	5.2.8 Não estava permitindo adicionar carros num cliente sem carros
+	5.2.7 Conserto da previsão para falta de placa ou carro
+	5.2.6 Previsão pra falta de informação do modelo e de placa do carro na listagem dos orçamentos
+	5.2.5 Adaptação a mais de 32768 orçamentos, no pagamento
+	5.2.4 Adaptação a mais de 32768 orçamentos
+	5.2.4 Adaptação da conferência de duplicações
+	5.2.3 Permitir eletricista nas comissões
+	5.2.2 Tratamento para impedir inserções duplicadas nos vales
+	5.2.2 Mostrar o orçamento pelo numero
+	5.2.1 Mostrar todos perfis de usuários na seleção das tarefas
+	5.2.0 Ajuste no tamanho do cliente para a operação de troca de cliente do carro
+	5.1.9 Troca da tela frmOrc pela da versão 5.1.4 e adicionado os ajustes para resolver o problema da grid de tarefas
+	5.1.8 Agrupamento a mais para impedir duplicidades nas informaçoes da pesquisa de orçamentos
+	5.1.8 Conserto do pagamento, que tava dando valor inválido
+	5.1.7 Nova função para cálculo do total do orçamento
+	5.1.6 Tratamento para erro no cálculo da soma dos itens com as tarefas
+	5.1.5 Retorno do eletricista no cadastro de usuários
+5.1.4 Log para a parte do cálculo do Orçamento na função Total
+5.1.3 Log forçado para estar sempre ativo
+5.1.2 Tratamento do erro em que não estava gravando as peças
+5.1.1 Pesquisa por CPF e CNPj
+5.1.0 Acréscimo de opções em caso do programa concluir o descancelamento da tarefa
+5.0.9 Conserto da situação que não dava pra colocar o mecânico nas tarefas
+5.0.9 Impedir a adição de um carro com uma placa de outro carro
+5.0.8 Ordenação da pesquisa de orçamentos por cliente, pela data
+5.0.7 Gravação do Ini em C:\OrCarro
+5.0.6 Troca do SQL de seleção da pesquisa de orçamentos para resolver problema de duplicidade
+5.0.5 Alteração do nome da Revisão
+5.0.4 Cadastro de Revisões
+5.0.4 Correções de bugs
+5.0.3 Retirada da previsão para orçamento duplicado
+5.0.3 Impressão para matricial e usb do boleto
+5.0.2 Utilizar a escolha da impressão somente se a impressora for definida como USB
+5.0.1 Escolha da impressoda na impressão do Orçamento, pela tela
+5.0.1 Ajuste na impressão USB
+5.0.1 Aumento da previsão de impressoras instaladas de 5 para 10
+5.0.0 Conserto da visualização dos valores dos itens quando tem mais que a quantidade visivel
+5.0.0 Apagar o restante da linha ao deletar a ultima linha dos itens
+5.0.0 Aumento de itens do orçamento de 200 para 300
+4.9.9 Ajustes na escolha da impressora
+4.9.8 Selecionar a impressora ao imprimir
+4.9.7 Tela para gravar se a impressora é tipo fita ou não
+4.9.6 Previsão para data em branco no boleto
+4.9.5 Definir o nr do tamanho da fonte na impressão USB
+4.9.4 Alteração da fonte da impressão USB de 10 para 12
+4.9.3 Ajuste na impressão USB
+4.9.1 OrCarro.ini fixado em C:\OrCarro
+4.9.0 Previsão para impressora em Fita via Usb
+4.8.9 Ajustes para base zerada
+4.8.8 Mostrar as observação da impressão dos vales
+4.8.7 Mostrar os vales pagos na impressão do pagamento
+4.8.6 Edição de recibos
+4.8.5 ReImpressão dos vales com todos os campos
+4.8.4 Retorno da impressão geral dos vales
+4.8.3 Conserto da situação em que um registro dos vales não estava aparecendo
+4.8.2 Mostrar o termo vale transporte no recibo em folha cheia
+4.8.1 ..
+4.8.0 Compensação dos vales na operação de pagamento
+4.7.9 Previsão para o registro duplicado [deve ser feita uma previsão na tela que grava também]
+4.7.8 Troca do componente da Observação do recibo de Text para RichTextBox
+4.7.7 Troca do componente da Observação do recibo Avulso de Text para RichTextBox
+4.7.6 Pesquisar por cliente ou funcionário no recibo avulso
+4.7.5 Alteração da posição da observação no recibo de pagamento
+4.7.4 Correção da visualização dos preços errada só na primeira operação
+4.7.3 Ajuste da retirada da visualização de valores para o modo mecânico
+4.7.2 Retirar a visualização de valores para o modo mecânico
+4.7.1 Retorno da permissão do mecânico ver o orçamento
+4.7.0 Retorno do menu para orçamentos mas sem acionar o orçamento
+4.6.9 Retirada de permissões de menus no perfil de mecânico
+4.6.8 Impressão da observação do cliente na impressão do orçamento
+4.6.7 Bloquear a edição dos itens do orçamento para cliente em atraso, agora também para o perfil de escritório
+4.6.6 Permitir excluir vales
+4.6.5 Retirada da configuração do modo de impressão a nivel de banco de dados 
+4.6.4 Impressão da observação no Recibo Avulso em folha inteira
+4.6.3 Conserto do boleto em branco
+4.6.3 Tratamento para estouro de divisão em VeValor
+4.6.2 Envio de Email no Boleto [parte 1]
+4.6.1 Correção da situação em que a observação não era impressa no pagamento
+4.6.0 Impressão da observação do recibo avulso
+4.5.9 Impressão da observação no Recibo em folha inteira
+4.5.9 Gravar o recibo de adiantamento também na impressão em folha inteira
+4.5.8 Mostrar a gravação automática
+4.5.7 Não permitir novo orçamento para cliente em atraso em modo balcão
+4.5.5 Em modo Escritório pode editar cliente em atraso
+4.5.3 Grid no Relatório Boleto
+4.5.2 Relatório de Boletos com mais de uma parcela
+4.5.0 Relatório Boleto apartir dos fornecedores
+4.4.9 Relatório Boleto
+4.4.1 Cadastro de fornecedores - inicial
+4.4.0 No Windows Seven o modo passa a ser definido pelo INI
+4.3.9 Previsão do erro EsseCont = 1
+4.3.9 Ajuste no número do orçamento na impressão em folha inteira
+4.3.8 Correção da chamada do menu dos recibos
+4.3.7 Tela para recibo avulso
+4.3.6 Total na impressão do vales
+4.3.6 Pesquisa de vale por data
+4.3.5 Campos de Identificação e Endereço no recibo avulso
+4.3.5 Tipo de impressora e Impressora passa a ser configurado pelo INI
+4.3.4 Recibo gráfico para recibo avulso
+4.3.3 Previsão para o Windows Seven
+4.3.2 Permitir concluir as tarefas no pagamento
+4.3.1 Gravação da observação so recibo avulso
+4.3.0 Recibo para outros
+4.2.9 Ajuste na gravação da operadora do celular
+4.2.8 CEP
+4.2.7 Inscrição Estatual
+4.2.6 Acabamento da Produtividade
+4.2.5 Chamar o gerente caso não tenha CPNj ou CPF
+4.2.5 Recolocação da validação do CPNj
+4.2.4 Imprimir também o balconísta que criou o orçamento na impressão da observação
+4.2.3 Mais informação na impressão da observação
+4.2.2 Ajuste na Impressão da observação
+4.2.1 Impressão da observação
+4.2.0 Tela de produtividade traz agora só os mecânicos
+4.1.9 Detecção para Sistema Operacional Windows Oito
+4.1.8 Log para local do acionamento da impressora
+4.1.7 Logar troca de modo de operação
+4.1.6 Ajuste na gravação da impressora para o Windows 8
+4.1.5 Troca da funçao de verificação de CPF
+4.1.4 Campo para CGC e CPF no cadastro de clientes
+4.1.3 Gravação da configuração da impressora no hd alternativamente
+4.1.2 Conferência adicional para ver se não há itens duplicados
+4.1.1 Conserto da alteração dos itens
+4.1.0 Correção da deleção de peças quando tem mais de 7 itens
+4.0.9 Correção da deleção de peças[2]
+4.0.8 Correção da impressão da comissão, depois da versão 4.0.5
+4.0.6 Acabamento da alteração da identificação do operador que lança a peça, no tocante a deleção de peças
+4.0.5 Formatação de ano com dois caracteres na visualização da data do item no orçamento
+4.0.5 Impedir duplicações de itens no novo orçamento
+4.0.5 Impedir gravação automática sem a identificação do balconista primeiro
+4.0.5 ReImpressão individual dos vales
+4.0.4 Previsão para orçamento duplicado ao gravar
+4.0.3 Impedir gravação automática com total zerado
+4.0.2 Identificar quem editou o item do orçamento
+4.0.1 Conserto da adição do cliente, apos a implantação do email
+4.0.0 Conserto do pagamento parcial
+3.9.9 Email para os clientes
+3.9.8 Impressão das parcelas
+3.9.7 Edição da observação das parcelas
+3.9.6 Edição das parcelas
+3.9.6 Troca da mensagem de pago em minúsculo para orc.parc.
+3.9.5 Exclusão de pagamentos
+3.9.4 Ajustar para não calcular errado o somatório das parcelas
+3.9.4 Ao cancelar o pagamento não deve gravar
+3.9.4 Substituir a virgula por ponto na digitação das parcelas
+3.9.3 Permitir pagamentos em pedaços
+3.9.3 Conserto da visualização do orçamento quando não ta pago (problema originado na 3.9.2)
+3.9.2 Gravar os itens ao acrescentar itens depois de pago
+3.9.2 Segundo pagamento deve ser o valor restante
+3.9.2 Conserto do erro do pagamento a vista
+3.9.2 Conserto da situação em que ao aumentar um valor passava para pago
+3.9.1 Pagamento com parcelas
+3.9.0 Mostrar o valor pago parcial
+3.8.9 Conserto da gravação com campo VlrPago
+3.8.8 Data dos itens de orçamento
+3.8.8 Tentativa de solução do erro do orçamento da placa igd5389
+3.8.7 Permitir lançamentos em orçamentos pagos
+3.8.6 Operação de adaptação de orçamentos
+3.8.5 Previsão para o objeto PictureBox e TDBGrid na adaptação da resolução
+3.8.5 Retorno do botão de tarefas no modo mecânico
+3.8.5 Previsão pra quando não há orçamentos na listagem de orçamentos
+3.8.5 Previsão para quando se clica nas ferramentas e ainda não tem o nr de mecânico
+3.8.4 Guardar as opções do relatório de pagamentos	
+3.8.3 Relatório de pagamentos	
+3.8.2 Diminuição da margem esquerda da impressão do vale possibilitando maior espaço para as observações
+3.8.1 Conserto do sumiço do cliente 09/07/2014 na troca
+3.8.1 Fecha a tela de clientes depois de trocar o carro
+3.8.1 Mostra quando o carro ta com um orçamento pendente
+3.8.0 Impressão da observação na impressão dos vales no pagamento
+3.7.9 Permitir a troca pelo balcao
+3.7.8 Troca de carros entre os clientes
+3.7.7 Aumento do limite de ferramentas cadastradas de 50 para 200
+3.7.7 Quando cadastra novo mecânico já permite adicionar ferramentas
+3.7.6 Mecânico com recebimento semanal
+3.7.5 Ao imprimir o orçamento gravar primeiro se tiver mudado o valor
+3.7.4 Ferramentas de mecânicos permite conjunto de ferramentas para cada mecânico
+3.7.2 Mostrar os valores das peças dos orçamentos dos mecânicos
+3.7.1 Mostrar a quantidade das ferramentas
+3.7.0 Ferramentas
+3.7.0 Ajuste quanto a orçamentos com pagamento desfeito na visualização das tarefas livres
+3.7.0 Retirar preparação para tarefas dinâmicas
+3.6.9 Permitir mecânicos verem os orçamentos, mas sem os valores
+3.6.9 Filtro pagos ou nao pagos na pesquisa de orçamentos
+3.6.8 Mostrar observação do recibo usando o clique direito
+3.6.7 Deixar de imprimir duas vezes o recibo
+3.6.6 tratamento para pc da impressora desligado
+3.6.5 Mais log para a operação de criar recibo
+3.6.5 Identificação do modo no log
+3.6.4 Não permitir gravar um cadastro com o nome de outro cliente
+3.6.3 Gravar o operador como ativo ao cadastrar novo operador
+3.6.3 Impedir de gravar operador sem informar o tipo
+3.6.2 Permitir atualizar o histórico pela pesquisa de orçamentos
+3.6.1 Permitir o mecânico concluir a tarefa caso seja uma tarefa duplicada da placa
+3.6.0 Conserto da impressão da comissão, em que estava imprimindo duas vezes
+3.6.0 Otimização da programação relativa a impressão dos carros no recibo
+3.6.0 Impressão da observação no recibo mensal
+3.5.9 Tarefas em modo sem comissão são sempre concluídas
+3.5.8 Observação para o recibo de adiantamento
+3.5.8 Troca de posição do Título do recibo do vale transporte pelo nome da empresa
+3.5.7 Impedir que mecânicos vejam orçamentos pela pesquisa de tarefas
+3.5.6 Conserto da impressão dos vales no pagamento mensal
+3.5.5 Troca do tipo de senha na gravação do orçamento do funcionário
+3.5.4 Conserto da informação do mecãnico no recibo
+3.5.3 Conserto do SQL das comissões (3.5.1)
+3.5.2 Correção da seleção dos operadores no recibo (3.5.1)
+3.5.1 Não excluir fisicamente Mecânico
+3.5.1 Listagem dos vales dos funcionario
+3.5.0 Mostrar o valor a receber no recibo mensal
+3.4.9 Gravar as observações do vale
+3.4.8 Adiantamento não deve zerar as comissões
+3.4.8 Mecanicos não devem imprimir tarefas
+3.4.7 Gravação dos recibos
+3.4.7 Recibo de pagamento mensal
+3.4.7 RG em todos os recibos
+3.4.7 Impressão das tarefas
+3.4.6 Informação do mes do vale transporte
+3.4.4 Cliente Funcionario
+3.4.4 Vale Transporte
+3.4.3 Conserto da data das tarefas quando é editado o orçamento
+3.4.2 Não colocar o foco na impressão em caso de gravaçao automática
+3.4.1 Conferência interna na operação de gravação das tarefas pelos mecânicos
+3.4.0 Ajuste na gravação das tarefas pelos mecanicos
+3.3.9 Nova forma de desconcluir e des-assumir as tarefas
+3.3.8 Data que assumiu a assumiu as tarefas
+3.3.7 Impressão do Vale não deve abater imprimir carros nem abater tarefas a receber
+3.3.7 Ajustes na adição de operadores
+3.3.6 Senha para troca de modo pelo modo balcão
+3.3.5 Alteração da senha geral
+3.3.4 Nr de linhas apos a impressao passa a ser informação local
+3.3.3 Só permitir recebimentos de balconistas com permissão
+3.3.2 Impedir a possibilidade de continuar valores de comissão após a impressão do recibo
+3.3.1 Conserto da edição do carro
+3.3.0 Critério de quantidade de carros para liberar as comissões
+3.3.0 Impedir de ir para outro mecânico quanto já ter mostrado um na tela de tarefas
+3.3.0 Atualiza valor total do orçamento caso o recalculo mostre que estava errado
+3.2.9 Nova tela de tabela de preços
+3.2.8 Conserto da edição do segundo carro
+3.2.8 Deixar pagar automaticamente a tarefa auto-completavel
+3.2.7 Gravação do valor da mão de obra
+3.2.6 Dar mensagem de alerta em caso de comando de apagar orçamento
+3.2.6 Apagar as tarefas quando for apagado o orçamento
+3.2.5 Loga os valores mostrados na tarefa
+3.2.4 Combo para selecionar o mecânico na tela de tarefas
+3.2.3 Gravação automática dos itens
+3.2.2 Mostrar o orçamento ao dar duplo clique na pesquisa de tarefas
+3.2.1 Pesquisa de tarefas realizadas
+3.2.0 Tela de orçamento alinhado para cima
+3.2.0 Diminuição do tamanho da altura da tela de orçamento [3]
+3.1.9 Conserto do Bug que impedia um balconista informar uma observação
+3.1.9 Diminuição do tamanho da altura da tela de orçamento [2]
+3.1.8 Diminuição do tamanho da altura da tela de orçamento
+3.1.7 Melhorar a mensagem quando a pesquisa não da resultado, na pesquisa de orçamentos
+3.1.7 Impedir de dar erro caso a pesquisa de orçamentos não de resultado
+3.1.7 Inversão da ordenação na pesquisa de orçamentos, para pesquisa por placa também
+3.1.6 Ajuste da visualização das tarefas livres
+3.1.6 Melhoria no tratamento da gravação das tarefas quanto as tarefas auto-concluíveis
+3.1.6 Permitir teclar ENTER para separar linhas no orçamento, obs do mecânico
+3.1.6 Alterado o posicionamento da tela de orçamento de centro da janela anterior para centro da tela
+3.1.6 Inversão da ordenação na pesquisa de orçamentos
+3.1.5 Previsao para alteracao do nome indevidamente depois de ter localizado o cliente no combo
+3.1.4 Retorno da visualização do valor bruto das taréfas para o modo escritório
+3.1.4 Senhas com ** para a identificação do balconista
+3.1.4 Deixar passar só mecânicos na tela de taréfas
+3.1.3 Itens do Orçamento acabamento
+3.1.2 Ajuste na conversão das taréfas
+3.1.2 Gravar o operador que fizer um cadastro novo de cliente
+3.1.2 Ajuste na gravação da senha do operador
+3.1.2 Permitir só receber pagamento de balconistas ou escritório
+3.1.2 Impedir que os mecânicos alterem os estado das tarefas pela tela de tarefas
+3.1.1 Nao mostrar a pesquisa pela placa na pesquisa de orcamentos quando esta filtrado pelo nome
+3.1.1 Previsao para placa nao encontrada na pesquisa da placa na lista de orcamentos
+3.1.0 Modo Balcão
+3.1.0 Cadastro de operadores
+3.0.9 Conserto do pagamento (com comissão) depois de ter ajustado a opção de pagamento sem comissão
+3.0.8 Impedir que seja recebido um pagamento com tarefas pendentes
+3.0.8 Aceitar ponto na kilometragem
+3.0.7 Adaptação do pagamento para quando não identifica o recebedor
+3.0.7 Adaptação da tela de taréfas pra quando não usa comissões
+3.0.7 Adaptação da impressão em folha para taréfs dinâmicas
+3.0.7 Ajuste na adaptação do programa para versão 3.0.7 pela base da versão 2.7.2.7
+3.0.6 Aumento de log para operaçao de colocar os carros no combo do orçamento
+3.0.5 No gráfico de totais passar a considerar como período curto intervalo de menos de 60 dias
+3.0.5 Transações na gravação das tarefas
+3.0.2 Backup da pasta Log
+3.0.2 Log em Rede
+3.0.0 Mostrar o valor de comissão também para as tarefas livres, para os mecânicos
+3.0.0 Alteração na obtenção dos dados de telefone e endereço do cliente
+3.0.0 Informacao do operador no pagamento
+3.0.0 Gravacao do pagamento ao clicar no botao
+2.9.9 Gravar o Log já na pasta Log
+2.9.8 Previsão de erro no gráfico
+2.9.8 Opção para visualização mensal do gráfico
+2.9.7 Relatório de Totais Resumido
+2.9.6 Informação da verão do aplicativo no log
+2.9.6 Melhoria no log das tarefas
+2.9.6 Retirar o orçamento novo do log de tempo do carregamento do orçamento
+2.9.6 Impedir mensagem de erro que já passou do limite de itens, indevidamente
+2.9.5 Carro na tela de tarefas
+2.9.4 Ajuste nas Tarefas auto-concluíveis
+2.9.3 Tarefas auto-concluíveis
+2.9.3 Tratamento de erro na gravação das tarefas
+2.9.3 Mostrar as tarefas livres filtradas das tarefas se estiver no modo mecânico
+2.9.2 Em modo mecânico não mostras as tarefas livres
+2.9.2 Permitir que o modo escritório faça manutenção nas tarefas
+2.9.2 Retornar a mostrar a tela de tarefas para os mecânicos
+2.9.1 Permitir mecânicos assumirem tarefas com orçamentos já pagos
+2.9.1 Mostrar as tarefas sempre filtradas por placa quando for modo mecanico
+2.9.1 Deixar de mostrar a tela de tarefas, pelo menu, no modo mecanico
+2.9.0 Ajuste dos valores pagos e a pagar quanto as tarefas dinamicas
+2.9.0 Adaptação do relatório de totais as tarefas dinamicas
+2.9.0 Show in TaskBar true para tela de clientes
+2.9.0 Impedir que orçamentos pagos apareçam na grid de livres
+2.9.0 Mostrar o valor total das tarefas do mecânico, em modo escritório
+2.9.0 Mostrar os carros das tarefas dos mecânicos, previamente no recibo
+2.8.9 Ajuste da impressão em fita depois da alteração da data de conclusão da tarefa
+2.8.8 Mudança da crítica da liberação da comissão
+2.8.8 Filtro para as placas na pesquisa dos orçamentos
+2.8.7 Conserto do erro da pesquisa pelo orçamento pela placa
+2.8.7 Retorno do cálculo das tarefas
+2.8.7 Conserto do orçamento novo, depois das "Data de Conclusão das tarefas"
+2.8.7 Mostrar direto a obs do mecânico na pesquisa de orçamentos, quando em modo restrito
+2.8.7 Não mostrar a obs do cliente no modo restrito
+2.8.6 Data da conclusão da tarefa
+2.8.6 Scrolls para as observações na tela de tarefas
+2.8.6 Prever impressão para orçamento sem Tarefa
+2.8.5 Conserto da situação em que tarefas de orçamentos antigos não podiam ser concluídas
+2.8.4 Gravar no log o tempo de carregamento da tela de orçamento
+2.8.4 Otimizar a Obtenção do Nr do Cliente
+2.8.3 Recalcular ao alterar o valor de uma tarefa
+2.8.3 Impedir de dar mensagem se teclar ENTER no botão
+2.8.3 Retornar o botão de salvar que estava desaparecendo indevidamente
+2.8.2 Retorno das funcionalidades do orçamento pago
+2.8.1 Impedir a alteração de tarefas se já estiver sido pago
+2.8.1 Ajuste na impressão quanto às tarefas dinâmicas
+2.8.1 Permitir adicionar tarefas pelo orçamento em dois PCs ao mesmo tempo
+2.8.1 Conserto da atualização de tarefas de um orcamento com alguma tarefa paga
+2.8.1 Recalculo do total ao entrar na tela de tarefas
+2.8.1 Conserto do calculo do valor disponivel na tela de tarefas
+2.8.1 Em modo escritorio nao deve permitir a alteracao da situacao na tela de tarefas
+2.8.1 Avisar para salvar, caso saia da tela de tarefas com uma alteracao pendente
+2.8.1 Sair da tela de tarefas com ESC
+2.8.1 Melhorar a operacao de assumir a tarefa pela tela de tarefas
+2.8.0 Melhorar o log quanto as tarefas
+2.7.9 Conserto da conclusão da tarefa pelo botão
+2.7.9 Conserto do erro ao concluir taréfa pela tela de taréfas
+2.7.8 Nova solução para visualização da observação na tela de taréfas
+2.7.8 Retirada dos botoes de movimentacao dos orcamentos
+2.7.8 Mostrar a versão no log
+2.7.8 Diferenciação para comandos de alteração no log
+2.7.7 Ajuste no critério de primeira taréfa dinâmica
+2.7.6 Conserto do cálculo do total quando se inclue uma peça e já havia lançamento de taréfas
+2.7.5 Taréfas Dinâmicas
+2.7.5 Retirada dos campos de taréfas da tabela de orçamentos
+2.7.5 Funcionamento do Log pro Seven
+2.7.5 Mostrar corretamente o carro do cliente no orçamento
+2.7.4-5 Campo de CGC na configuracao
+2.7.4-5 Linha para impressão no recibo em fita
+2.7.4 Impressão do Recibo em Matricial
+2.7.4 Calculo de Comissões no Recibo
+2.7.4 Opção para utilizar ou não as comissões
+2.7.4 Registro facilitado das taréfas dos mecânicos
+2.7.4 Taréfas dos mecânicos
+2.7.4 Campo de senha para o mecânico
+2.7.4 Mecânicos dos Orçamentos
+2.7.3 Campo de comissões para Mecânicos
+2.7.3 Configuração para valor de gatilho para comissão
+2.7.3 Histórico do Orçamento
+2.7.2 Impedir duplicações na pesquisa de orçamentos
+2.7.2 Conserto da busca na relação de orçamentos
+2.7.2 Deixar de imprimir valores em zero, para impressão A4
+2.7.2 Colocar o telefone no orçamento [A4]
+2.7.2 Logar todas mensagens
+2.7.2 Conserto da exclusão do Carro
+2.7.1 Permitir informar só o vale no recibo
+2.7.0 Conserto da impressão do recibo (erro originado na 2.6.9)
+2.6.9 Passa a não ser necessário informar valor para o recibo
+2.6.8 Log para verificar o endereço na impressão do orçamento
+2.6.7 Ajuste a primeira operação com cadastro de mecânicos
+2.6.6 Campos Folga e Vale no recibo do mecânico
+2.6.5 Conserto do Recibo [campo endereço]
+2.6.4 Impressão do recibo do mecânico
+2.6.4 Atualizar o cadastro do mecânico sem precisar fechar a tela
+2.6.3 Cadastro de Mecânicos
+2.6.2 Impedir de mostrar o orçamento caso desse duplo-click na lista de orçamentos
+2.6.1 Permitir escritório escrever na observação do cliente
+2.6.1 Mecânicos não devem ver valores
+2.6.0 Troca do título do modo restrito para 'modo Mecânico'
+2.6.0 Observação do mecânico
+2.6.0 Impedir de que no modo restrito poder desfazer pagamento
+2.6.0 Mostrar a tela de lista de orçamentos mesmo quando não tem orçamentos no mes
+2.5.9 Impressao dos modelo de itens em novo formato
+2.5.8 Ampliação do nr de itens de orçamento para 200
+2.5.8 Visualizaçao dos itens de orçamento em ordem alfabética
+2.5.3 Aumento dos itens de orçamento de 100 para 200
+2.5.2 Modo Restrito
+2.5.1 Ajuste na localização da base de dados na tela do modelo de itens de orçamento
+2.5.0 Configuração do modelo de itens
+2.4.8 Impressão da consulta de valores pagos e a pagar
+2.4.8 Mostrar valores não pagos no intervalo
+2.4.8 Data final de intervalo no relatório "valores não pagos no intervalo"
+2.4.7 Ajuste nos campos dos totais de valores
+2.4.7 Ajuste da alteração das observações quanto as pesquisas de placas
+2.4.6 Conserto da impressão da cor na impressão da ficha em modo fita
+2.4.6 Impedir que saia a ultima impressão feita, quando se faz a impressão da ficha do cliente em modo fita
+2.4.6 Observações dos clientes na listagem de orçamentos
+2.4.6 Relação de totais de valores de Orçamentos
+2.4.5 Ajuste do relatório de totais em que não mostrava pagamentos se pedir um só dia de relatório
+2.4.4 Ajuste no relatório de totais para o caso de datas do mesmo dia[2]
+2.4.3 Concerto da situação em que as vezes não aparecia o endereço
+2.4.3 Concerto da mostragem do nome do cliente no orçamento, em alguns casos
+2.4.2 Impedir alterar o orçamento se estiver pago
+2.4.2 Observação do orçamento na relação mensal
+2.4.2 Ajuste no relatório de totais para o caso de datas do mesmo dia
+2.4.2 Prevenção para nulos no orçamento
+2.4.1 Impressão da ficha do cliente no formato fita
+2.4.0 Desfazer o pagamento
+2.4.0 Campo para observação do cliente
+2.3.3 Possibilitar retornar o carro ao cliente
+2.3.2 Ajuste na solução da versão 2.3.1 para colocar o carro certo no orçamento
+2.3.1 Aprimoramento da pesquisa de orçamento por placa, agora ao digitar uma placa e encontrar só um orçamento com esta placa vai direto para o orçamento
+2.3.1 Previsão para o bug que não aparecia o carro certo quando se acionava um novo orçamento via cadastro de clientes
+2.3.1 Previsão para mostrar o endereço quando ele não aparece
+2.3.0 Mostrar mais orçamentos além dos do último mes na listagem mensal
+2.2.9 Busca por aproximação na busca pelo nome do cliente
+2.2.8 Ajuste na seleção da data final no relatório de totais
+2.2.8 Acréscimo do campo da Data da criação do Orçamento, na relação de totais
+2.2.7 Permitir editar o modelo do carro ao pesquisar pelo cliente
+2.2.6 Relatório de totais
+2.2.6 Aumento de campos de Nome e Endereço de Clientes e Modelo do Carro
+2.2.6 Adaptação para base de dados sem AutoCreata (Trojan)
+2.2.5 Não imprimir campos sem conteudo [2]
+2.2.5 Conserto da leitura do orçamento (Erro originado na versão 2.2.4)
+2.2.4 Conserto do erro em que uma segunda gravação, depois de adicionado, criava um novo orçamento
+2.2.4 Ajuste no procedimento de forçar a digitação das mãos de obras [2]
+2.2.3 Ajuste no procedimento de forçar a digitação das mãos de obras
+2.2.2 Forçar a gravação da Mecânica e Eletricidade na impressão
+2.2.2 Impedir o erro que impedia de alterar um cadastro de um cliente recem cadastrado
+2.2.1 Permitir gravar itens de orçamento mesmo que o primeiro item não tenha valor
+2.2.0 Impedir a troca do cliente, quando orçamento é chamado pelo cliente
+2.1.9 Aumento do Log na gravação do orçamento
+2.1.8 Melhoria no tratamento de erro da gravação
+2.1.8 Alteração do fluxo da gravação para prefenir erros
+2.1.7 Mais segurança na gravação dos itens
+2.1.6 Ajuste da gravação de quando não tem observação
+2.1.5 Aumento do log na gravacao do Orcamento
+2.1.5 Prever orçamento sem valor
+2.1.4 Habilitar o Scroll dos itens na edição do orçamento
+2.1.4 Otimização na gravação dos itens do orçamento
+2.1.3 Permitir gravar itens de orçamento sem valor
+2.1.3 Permitir gravar orçamento com observação em branco
+2.1.2 Ajuste na visualização do cliente no orçamento
+2.1.1 Conserto da mostragem da lista de orçamentos
+2.1.1 Conserto da gravação dos itens do orçamento
+2.1.1 Conserto da alteração do nome do cliente
+2.1.1 Mostrar o carro escolhido já na tela do cliente
+2.1.0 Garantia no Orçamento
+2.1.0 Pagamento do Orçamento
+2.1.0 Mostrar o pagamento na listagem
+2.0.9 Troca do nome do banco de dados de Trojan.mdb para OrCarro.mdb
+2.0.9 Troca de Versão do Access de 97 para 2000
+2,0.8 Previsão para troca de placa e outros ajustes
+2.0.7 Ajuste nas permissões
+2.0.7 Garantia na configuração
+2.0.6 Ajuste na largura da impressão em fita (Compactação de caracteres)
+2.0.6 Alteração do funcionamento interno das variáveis de configuração
+2.0.5 Implantação do Log
+2.0.5 Impedir a duplicidade de clientes
+2.0.4 Fazer desaparecer UpDown quando alterar algum item do orçamento
+2.0.3 Exclusão de itens do orçamento
+2.0.3 Exclusão de orçamentos
+2.0.3 Ajuste da impressão da observação
+2.0.3 Cálculo algébrico para a entrada de valores dos itens do orçamento
+2.0.3 Ajuste no funcionamento das permissões
+2.0.3 Conserto da gravação da informação da localização da impressora
+2.0.2 Aumentar os campos automaticamente
+2.0.2 Configuração para linhas após na impressão em fita
+2.0.2 Ajuste no alinhamento dos valores
+2.0.2 Retirar os acentos da impressão
+2.0.2 Não imprimir campos sem conteudo
+2.0.1 Impressão em fita
+2.0.1 Tela de configuração
+2.0.0 Troca do engine de DAO 3.5 para DAO 3.6
+2.0.0 Alteração da indicação do diretório dos dados
+2.0.0 Operação de Registro
+2.0.0 Implantação do funcionamento da Demonstração
+2.0.0 Implantação da proteção

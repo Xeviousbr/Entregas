@@ -1,0 +1,170 @@
+20:46:41|1|DBG: 
+20:46:41|2|CMD: MbCarros acionado em 25/06/2020 20:46:41
+20:46:41|3|CMD: Usuário Registrado
+20:46:41|4|DBG: VersãoEXE: 1.1.5
+20:46:41|5|CMD: Modo Escritório
+20:46:41|6|SQL: Select UtComissoes From Config
+20:46:41|7|SQL: Config
+20:46:41|8|SQL: Select Versao From Config
+20:46:41|9|DBG: PC = 3
+20:46:41|10|CMD: Entrou em AdapForm
+20:46:41|11|CMD: GetSystemMetrics
+20:46:41|12|CMD: Saiu do AdapForm
+20:46:47|13|CMD: Pesquisa de Cliente pelo Nome: MC LUCAS
+20:46:47|14|SQL: SELECT NrCli From Clientes WHERE ((Nome Like '*MC LUCAS*')); 
+20:46:47|15|CMD: Entrou em AdapForm
+20:46:47|16|CMD: GetSystemMetrics
+20:46:47|17|CMD: Saiu do AdapForm
+20:46:47|18|SQL: SELECT DISTINCTROW NrCli, Nome, Ender, Telefone, Vend, Funcionario, email, CgcCpf, InscrEst, CEP, Operadora , EmAtraso , foto , apelido from Clientes ORDER BY Nome
+20:46:47|19|SQL: Select DISTINCTROW Nome From Clientes WHERE ((Nome>"")) ORDER BY Nome; 
+20:46:47|20|SQL: SELECT DISTINCTROW NrCli, Modelo, Placa, Cor FROM Carros WHERE NrCli=4633
+20:46:47|21|SQL: Select Nome From Mecanicos Where codi = 1 and Ativo = True 
+20:46:47|22|CMD: Procrando foto em \\SERVIDOR\MbCarros\Imagens\LU MO.jpg
+20:46:49|23|CMD: Cliente Anterior
+20:46:49|24|SQL: Select NrCli From Clientes Where Nome < 'MC LUCAS CARDOSO DE SOUZA (MOTO)' Order By Nome desc
+20:46:49|25|SQL: Select * From Clientes Where NrCli = 4658
+20:46:49|26|SQL: SELECT DISTINCTROW NrCli, Modelo, Placa, Cor FROM Carros WHERE NrCli=4658
+20:46:49|27|SQL: Select Nome From Mecanicos Where codi = 1 and Ativo = True 
+20:46:49|28|CMD: Procrando foto em \\SERVIDOR\MbCarros\Imagens\LUCAS.jpg
+20:46:51|29|CMD: Chamar Orçamento pela tela de clientes
+20:46:51|30|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE ((Orcamento.Cliente="MC LUCAS (ELETRECISTA)")); 
+20:46:51|31|CMD: Entrou em AdapForm
+20:46:51|32|CMD: GetSystemMetrics
+20:46:51|33|CMD: Saiu do AdapForm
+20:46:51|34|SQL: Select NrCli From Clientes Where Nome = "MC LUCAS (ELETRECISTA)"
+20:46:51|35|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago from Orcamento, Clientes, Carros Where Clientes.NrCli = 4658 and Orcamento.Cliente = Clientes.Nome and Carros.Placa =  Orcamento.Carro
+20:46:58|36|CMD: Carregar Orçameto
+20:46:58|37|UPD: Delete * From TarefasTemp Where IDPC = 3
+20:46:58|38|UPD: Insert Into TarefasTemp (concerto,Vlr,Situacao,Nome, Pago, IDPC, DtConclusao, DtAssumiu) SELECT tpConcertos.concerto, Tarefas.Vlr, tpSituacao.situacao, Mecanicos.Nome, Tarefas.Pago, 3 ,Tarefas.DtConclusao, Tarefas.DtAssumiu from Mecanicos INNER JOIN (tpSituacao INNER JOIN (tpConcertos INNER JOIN Tarefas ON tpConcertos.tipo = Tarefas.concerto) ON tpSituacao.tipo = Tarefas.Situacao) ON Mecanicos.codi = Tarefas.Mec Where Tarefas.Orc = 1589
+20:46:58|39|SQL: Select * From TarefasTemp Where IDPC = 3
+20:46:58|40|DBG: Sem Tarefas
+20:46:58|41|DBG:  
+20:46:58|42|CMD: Entrou em AdapForm
+20:46:58|43|CMD: GetSystemMetrics
+20:46:58|44|CMD: Saiu do AdapForm
+20:46:58|45|SQL: Select Funcionario From Clientes Where NrCli = 4658
+20:46:58|46|CMD: Orçamento Carregado
+20:46:58|47|SQL: Select DISTINCTROW Orcamento.Obs, Orcamento.Carro, Orcamento.Data, Orcamento.Orcamento, Orcamento.Cliente,Orcamento.Kms, Orcamento.Kilom, Orcamento.Total, Orcamento.Garantia, Orcamento.Pagamento, Itens_Orc.Item, Itens_Orc.Quant, Itens_Orc.Valor ,Orcamento.ObsMec ,Orcamento.Vend ,Orcamento.VlrPago ,Itens_Orc.DtItOrc ,Itens_Orc.Cont ,Itens_Orc.NT,Clientes.Observacao from Clientes INNER JOIN (Orcamento LEFT JOIN Itens_Orc ON Orcamento.Orcamento = Itens_Orc.Orçamento) ON Clientes.Nome = Orcamento.Cliente Where Orcamento.Orcamento = 1589 ORDER BY Itens_Orc.Item 
+20:46:58|48|SQL: Select Historico From Carros Where Placa = '99251836'
+20:46:58|49|SQL: SELECT Modelo from Carros WHERE Carros.Placa = '99251836'
+20:46:58|50|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'MC LUCAS (ELETRECISTA)'
+20:46:58|51|SQL: Select Ender From Clientes Where NrCli = 4658
+20:46:58|52|SQL: Select Modelo From Carros Where NrCli = 4658
+20:46:58|53|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE Placa='99251836' AND NrCli=4658
+20:46:58|54|DBG: Saiu do CorPlaca
+20:46:58|55|DBG: MostraCarro
+20:46:58|56|CMD: lbTotal = 3128,65 apartir de MostraOrcamento
+20:46:58|57|SQL: SELECT Sum(Vlr), Orc from Tarefas GROUP BY Orc HAVING Orc = 1589
+20:46:58|58|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10680 Order By DtItOrc desc
+20:46:58|59|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10685 Order By DtItOrc desc
+20:46:58|60|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10665 Order By DtItOrc desc
+20:46:58|61|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10667 Order By DtItOrc desc
+20:46:58|62|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10399 Order By DtItOrc desc
+20:46:58|63|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10379 Order By DtItOrc desc
+20:46:58|64|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10284 Order By DtItOrc desc
+20:46:58|65|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10034 Order By DtItOrc desc
+20:46:59|66|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10355 Order By DtItOrc desc
+20:46:59|67|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10184 Order By DtItOrc desc
+20:46:59|68|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10454 Order By DtItOrc desc
+20:46:59|69|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10521 Order By DtItOrc desc
+20:46:59|70|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10561 Order By DtItOrc desc
+20:46:59|71|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10036 Order By DtItOrc desc
+20:46:59|72|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10074 Order By DtItOrc desc
+20:46:59|73|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10065 Order By DtItOrc desc
+20:46:59|74|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10147 Order By DtItOrc desc
+20:46:59|75|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10000 Order By DtItOrc desc
+20:46:59|76|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10035 Order By DtItOrc desc
+20:46:59|77|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10137 Order By DtItOrc desc
+20:46:59|78|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10668 Order By DtItOrc desc
+20:46:59|79|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10027 Order By DtItOrc desc
+20:46:59|80|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10075 Order By DtItOrc desc
+20:46:59|81|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10457 Order By DtItOrc desc
+20:46:59|82|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10080 Order By DtItOrc desc
+20:46:59|83|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10037 Order By DtItOrc desc
+20:46:59|84|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10398 Order By DtItOrc desc
+20:46:59|85|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10384 Order By DtItOrc desc
+20:46:59|86|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10388 Order By DtItOrc desc
+20:46:59|87|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10033 Order By DtItOrc desc
+20:46:59|88|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10148 Order By DtItOrc desc
+20:46:59|89|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10174 Order By DtItOrc desc
+20:46:59|90|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10232 Order By DtItOrc desc
+20:46:59|91|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10240 Order By DtItOrc desc
+20:46:59|92|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10354 Order By DtItOrc desc
+20:46:59|93|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10353 Order By DtItOrc desc
+20:46:59|94|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10283 Order By DtItOrc desc
+20:46:59|95|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10361 Order By DtItOrc desc
+20:46:59|96|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10534 Order By DtItOrc desc
+20:46:59|97|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10456 Order By DtItOrc desc
+20:46:59|98|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10029 Order By DtItOrc desc
+20:46:59|99|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10032 Order By DtItOrc desc
+20:46:59|100|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10031 Order By DtItOrc desc
+20:46:59|101|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10282 Order By DtItOrc desc
+20:46:59|102|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10400 Order By DtItOrc desc
+20:46:59|103|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10558 Order By DtItOrc desc
+20:46:59|104|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10387 Order By DtItOrc desc
+20:46:59|105|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10093 Order By DtItOrc desc
+20:46:59|106|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10026 Order By DtItOrc desc
+20:46:59|107|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10030 Order By DtItOrc desc
+20:46:59|108|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10346 Order By DtItOrc desc
+20:46:59|109|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10028 Order By DtItOrc desc
+20:46:59|110|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10490 Order By DtItOrc desc
+20:46:59|111|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10520 Order By DtItOrc desc
+20:46:59|112|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10522 Order By DtItOrc desc
+20:46:59|113|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10455 Order By DtItOrc desc
+20:46:59|114|SQL: SELECT Sum(Parcelas.Valor) AS SomaDeValor, Parcelas.Orc from Parcelas GROUP BY Parcelas.Orc HAVING Parcelas.Orc  = 1589
+20:46:59|115|SQL: Select Nome From Mecanicos Where Codi = 1 and Ativo = True 
+20:46:59|116|SQL: Select Historico From Carros Where Placa = '99251836'
+20:46:59|117|UPD: Delete From ItensConcertoTemp Where IDPC = 3
+20:46:59|118|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'MC LUCAS (ELETRECISTA)'
+20:46:59|119|SQL: Select Ender From Clientes Where NrCli = 4658
+20:46:59|120|SQL: Select Modelo From Carros Where NrCli = 4658
+20:46:59|121|CMD: cbCarro.Text[2] = DIVERSOS
+20:46:59|122|CMD: Tempo de carregamento do Orçamento: 0:01.12
+20:47:18|123|DBG: MarcaItemAlterado - Inicializado
+20:47:18|124|DBG: MarcaItemAlterado - REInicializado
+20:47:18|125|CMD: lbTotal = 3141,65 apartir de Sub Total
+20:47:19|126|DBG: TimerItens
+20:47:19|127|SQL: Select Max(Cont) From Itens_Orc
+20:47:19|128|UPD: Insert Into Itens_Orc Values (10697, 1589, 'PEJO', 1, 13, #2020/06/25 20:47:11# , 41429)
+20:47:19|129|SQL: Select Count(*) From Itens_Orc Where Cont = 10697 and Orçamento = 1589 and Item = 'PEJO'
+20:47:19|130|UPD: Insert Into AuditItemOrc (Item_Orc, Balconista, Item, Quant, Valor, DtItOrc) Values (10697, 1, "PEJO", 1, 13, #2020/06/25 20:47:19#)
+20:47:19|131|SQL: SELECT Count(*) AS Expr1, Item, DtItOrc from Itens_Orc Where Orçamento = 1589 GROUP BY Orçamento, Item, DtItOrc Having  Count(*) > 1 
+20:47:21|132|SQL: Select Funcionario From Clientes Where NrCli = 4658
+20:47:21|133|DBG: frmOrc.Gravar
+20:47:21|134|DBG: Cliente: MC LUCAS (ELETRECISTA)
+20:47:21|135|DBG: Carro: 99251836
+20:47:21|136|DBG: QuantItens: 57
+20:47:21|137|SQL: Select * From Orcamento Where Orcamento = 1589
+20:47:21|138|UPD: Update Carros Set Historico = ' '  Where Placa = '99251836'
+20:47:21|139|SQL: Select Max(Cont) From Itens_Orc
+20:47:21|140|UPD: Insert Into Itens_Orc Values (10698, 1589, 'PEJO', 1, 13, #2020/06/25 20:47:11# , 41429)
+20:47:21|141|SQL: Select Count(*) From Itens_Orc Where Cont = 10698 and Orçamento = 1589 and Item = 'PEJO'
+20:47:21|142|UPD: Insert Into AuditItemOrc (Item_Orc, Balconista, Item, Quant, Valor, DtItOrc) Values (10698, 1, "PEJO", 1, 13, #2020/06/25 20:47:21#)
+20:47:21|143|SQL: SELECT Count(*) AS Expr1, Item, DtItOrc from Itens_Orc Where Orçamento = 1589 GROUP BY Orçamento, Item, DtItOrc Having  Count(*) > 1 
+20:47:21|144|DBG: Encontrado Item Duplicado "PEJO"
+20:47:21|145|SQL: SELECT Cont, Valor from Itens_Orc Where Item = "PEJO" And DtItOrc = #2020/06/25 20:47:11# And Orçamento = 1589 ORDER BY Cont 
+20:47:21|146|DBG: Apagado item com valor  13
+20:47:21|147|UPD: Delete From Itens_Orc Where Cont = 10697
+20:47:21|148|DBG: Mantido o com valor  13
+20:47:21|149|SQL: SELECT Count(*) AS Expr1, Item, DtItOrc from Itens_Orc Where Orçamento = 1589 GROUP BY Orçamento, Item, DtItOrc Having  Count(*) > 1 
+20:47:21|150|DBG: BeginTrans
+20:47:21|151|UPD: Delete From Tarefas Where Orc = 1589
+20:47:21|152|SQL: Select * From TarefasTemp Where IDPC = 3 Order By ID
+20:47:21|153|DBG: CommitTrans
+20:47:21|154|DBG: Gravação concluída
+20:56:50|155|CMD: Programa Fechado Normalmente
+20:56:50|156|DBG: 
+20:56:53|1|DBG: 
+20:56:53|2|CMD: MbCarros acionado em 25/06/2020 20:56:53
+20:56:53|3|CMD: Usuário Registrado
+20:56:53|4|DBG: VersãoEXE: 1.1.5
+20:56:53|5|CMD: Modo Escritório
+20:56:53|6|SQL: Select UtComissoes From Config
+20:56:53|7|SQL: Config
+20:56:53|8|SQL: Select Versao From Config
+20:56:53|9|DBG: PC = 3
+20:56:53|10|CMD: Entrou em AdapForm
+20:56:53|11|CMD: GetSystemMetrics
+20:56:53|12|CMD: Saiu do AdapForm
+20:56:54|13|CMD: Programa Fechado Normalmente
+20:56:54|14|DBG: 

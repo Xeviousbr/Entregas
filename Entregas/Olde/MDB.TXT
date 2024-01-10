@@ -1,0 +1,10 @@
+ID
+IdOperador
+Data
+Valor
+Pago
+Tipo
+obs
+NomeAvulso
+Periodo
+txValor

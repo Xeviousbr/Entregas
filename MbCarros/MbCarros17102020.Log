@@ -1,0 +1,285 @@
+12:38:47|61|CMD: Foi clicado na impressão
+12:38:47|62|CMD: Impressora configurada como Folha Inteira 
+12:38:47|63|CMD: Entrou na rotina de impressão NORMAL - Folha Inteira
+12:38:47|64|CMD: Impressora que esta sendo utilizada : \\DENIS-NOT\HP LaserJet M1120 MFP
+12:38:47|65|SQL: Select Telefone From Clientes Where NrCli = 4780
+12:43:06|66|CMD: Programa Fechado Normalmente
+12:43:06|67|DBG: 
+21:53:31|1|DBG: 
+21:53:31|2|CMD: MbCarros acionado em 25/06/2020 21:53:31
+21:53:31|3|CMD: Usuário Registrado
+21:53:31|4|DBG: VersãoEXE: 1.1.5
+21:53:31|5|CMD: Modo Escritório
+21:53:31|6|SQL: Select UtComissoes From Config
+21:53:31|7|SQL: Config
+21:53:31|8|SQL: Select Versao From Config
+21:53:31|9|UPD: Update Config Set Imagem = ''
+21:53:31|10|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+21:53:31|11|DBG: PC = 2
+21:53:31|12|CMD: Entrou em AdapForm
+21:53:31|13|CMD: GetSystemMetrics
+21:53:31|14|CMD: Saiu do AdapForm
+21:53:39|15|MSG: Estoq:Backup Concluído
+21:53:43|16|CMD: Programa Fechado Normalmente
+21:53:43|17|DBG: 
+21:57:10|1|DBG: 
+21:57:10|2|CMD: MbCarros acionado em 25/06/2020 21:57:10
+21:57:10|3|CMD: Usuário Registrado
+21:57:10|4|DBG: VersãoEXE: 1.1.5
+21:57:10|5|CMD: Modo Escritório
+21:57:10|6|SQL: Select UtComissoes From Config
+21:57:10|7|SQL: Config
+21:57:10|8|SQL: Select Versao From Config
+21:57:10|9|UPD: Update Config Set Imagem = ''
+21:57:10|10|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+21:57:10|11|DBG: PC = 2
+21:57:10|12|CMD: Entrou em AdapForm
+21:57:10|13|CMD: GetSystemMetrics
+21:57:10|14|CMD: Saiu do AdapForm
+21:57:58|15|CMD: Pesquisa de Cliente pelo Nome: mc mate
+21:57:58|16|SQL: SELECT NrCli From Clientes WHERE ((Nome Like '*mc mate*')); 
+21:57:59|17|CMD: Entrou em AdapForm
+21:57:59|18|CMD: GetSystemMetrics
+21:57:59|19|CMD: Saiu do AdapForm
+21:57:59|20|SQL: SELECT DISTINCTROW NrCli, Nome, Ender, Telefone, Vend, Funcionario, email, CgcCpf, InscrEst, CEP, Operadora , EmAtraso , foto , apelido from Clientes ORDER BY Nome
+21:57:59|21|SQL: Select DISTINCTROW Nome From Clientes WHERE ((Nome>"")) ORDER BY Nome; 
+21:57:59|22|SQL: SELECT DISTINCTROW NrCli, Modelo, Placa, Cor FROM Carros WHERE NrCli=4767
+21:57:59|23|SQL: Select Nome From Mecanicos Where codi = 1 and Ativo = True 
+21:57:59|24|CMD: Procrando foto em C:\MbCarros\Imagens\pp.jpg
+21:58:11|25|CMD: Gravar Cliente
+21:58:11|26|SQL: Select Count(*) From Clientes Where Nome = 'MC MATEUS (GORDO)' and NrCli <> 4767
+21:58:11|27|SQL: Select Senha from Mecanicos Where codi = 1
+21:58:11|28|SQL: Select codi, Nome From Mecanicos Where Senha = 'DSM' and Oper > 0  and Ativo = True 
+21:58:11|29|UPD: Update Clientes Set Ender = ' ', Telefone = '992414672',  Nome = 'MC MATEUS (GORDO)' , Vend = 1, Funcionario = 0, email = "", CgcCpf = "", InscrEst = "", CEP = "", Operadora = 0, EmAtraso = 0, Apelido = "GORDO" Where NrCli = 4767
+21:58:22|30|CMD: Pesquisa de Cliente pelo Apelido: GORDO
+21:58:22|31|SQL: Select NrCli From Clientes Where UCASE(Apelido) = "GORDO"
+21:58:22|32|CMD: Entrou em AdapForm
+21:58:22|33|CMD: GetSystemMetrics
+21:58:22|34|CMD: Saiu do AdapForm
+21:58:22|35|SQL: SELECT DISTINCTROW NrCli, Nome, Ender, Telefone, Vend, Funcionario, email, CgcCpf, InscrEst, CEP, Operadora , EmAtraso , foto , apelido from Clientes ORDER BY Nome
+21:58:22|36|SQL: SELECT DISTINCTROW NrCli, Modelo, Placa, Cor FROM Carros WHERE NrCli=4767
+21:58:22|37|SQL: Select Nome From Mecanicos Where codi = 1 and Ativo = True 
+21:58:22|38|CMD: Procrando foto em C:\MbCarros\Imagens\pp.jpg
+21:58:24|39|CMD: Chamar Orçamento pela tela de clientes
+21:58:24|40|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE ((Orcamento.Cliente="MC MATEUS (GORDO)")); 
+21:58:24|41|CMD: Entrou em AdapForm
+21:58:24|42|CMD: GetSystemMetrics
+21:58:24|43|CMD: Saiu do AdapForm
+21:58:24|44|SQL: Select NrCli From Clientes Where Nome = "MC MATEUS (GORDO)"
+21:58:24|45|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago from Orcamento, Clientes, Carros Where Clientes.NrCli = 4767 and Orcamento.Cliente = Clientes.Nome and Carros.Placa =  Orcamento.Carro
+21:58:26|46|CMD: Carregar Orçameto
+21:58:26|47|UPD: Delete * From TarefasTemp Where IDPC = 2
+21:58:26|48|UPD: Insert Into TarefasTemp (concerto,Vlr,Situacao,Nome, Pago, IDPC, DtConclusao, DtAssumiu) SELECT tpConcertos.concerto, Tarefas.Vlr, tpSituacao.situacao, Mecanicos.Nome, Tarefas.Pago, 2 ,Tarefas.DtConclusao, Tarefas.DtAssumiu from Mecanicos INNER JOIN (tpSituacao INNER JOIN (tpConcertos INNER JOIN Tarefas ON tpConcertos.tipo = Tarefas.concerto) ON tpSituacao.tipo = Tarefas.Situacao) ON Mecanicos.codi = Tarefas.Mec Where Tarefas.Orc = 1065
+21:58:26|49|SQL: Select * From TarefasTemp Where IDPC = 2
+21:58:26|50|DBG: Sem Tarefas
+21:58:26|51|DBG:  
+21:58:26|52|CMD: Entrou em AdapForm
+21:58:26|53|CMD: GetSystemMetrics
+21:58:26|54|CMD: Saiu do AdapForm
+21:58:26|55|SQL: Select Funcionario From Clientes Where NrCli = 4767
+21:58:26|56|CMD: Orçamento Carregado
+21:58:26|57|SQL: Select DISTINCTROW Orcamento.Obs, Orcamento.Carro, Orcamento.Data, Orcamento.Orcamento, Orcamento.Cliente,Orcamento.Kms, Orcamento.Kilom, Orcamento.Total, Orcamento.Garantia, Orcamento.Pagamento, Itens_Orc.Item, Itens_Orc.Quant, Itens_Orc.Valor ,Orcamento.ObsMec ,Orcamento.Vend ,Orcamento.VlrPago ,Itens_Orc.DtItOrc ,Itens_Orc.Cont ,Itens_Orc.NT,Clientes.Observacao from Clientes INNER JOIN (Orcamento LEFT JOIN Itens_Orc ON Orcamento.Orcamento = Itens_Orc.Orçamento) ON Clientes.Nome = Orcamento.Cliente Where Orcamento.Orcamento = 1065 ORDER BY Itens_Orc.Item 
+21:58:26|58|SQL: Select Historico From Carros Where Placa = '92414672'
+21:58:26|59|SQL: SELECT Modelo from Carros WHERE Carros.Placa = '92414672'
+21:58:27|60|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'MC MATEUS (GORDO)'
+21:58:27|61|SQL: Select Ender From Clientes Where NrCli = 4767
+21:58:27|62|SQL: Select Modelo From Carros Where NrCli = 4767
+21:58:27|63|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE Placa='92414672' AND NrCli=4767
+21:58:27|64|DBG: Saiu do CorPlaca
+21:58:27|65|DBG: MostraCarro
+21:58:27|66|CMD: lbTotal = 86,8 apartir de MostraOrcamento
+21:58:27|67|SQL: SELECT Sum(Vlr), Orc from Tarefas GROUP BY Orc HAVING Orc = 1065
+21:58:27|68|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 6189 Order By DtItOrc desc
+21:58:27|69|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 6193 Order By DtItOrc desc
+21:58:27|70|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 6198 Order By DtItOrc desc
+21:58:27|71|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 6223 Order By DtItOrc desc
+21:58:27|72|SQL: Select Nome From Mecanicos Where Codi = 1 and Ativo = True 
+21:58:27|73|SQL: Select Historico From Carros Where Placa = '92414672'
+21:58:27|74|UPD: Delete From ItensConcertoTemp Where IDPC = 2
+21:58:27|75|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'MC MATEUS (GORDO)'
+21:58:27|76|SQL: Select Ender From Clientes Where NrCli = 4767
+21:58:27|77|SQL: Select Modelo From Carros Where NrCli = 4767
+21:58:27|78|CMD: cbCarro.Text[2] = MECANICO
+21:58:27|79|CMD: Tempo de carregamento do Orçamento: 0:01.12
+21:58:28|80|CMD: Foi clicado na impressão
+21:58:28|81|CMD: Impressora configurada como Folha Inteira 
+21:58:28|82|CMD: Entrou na rotina de impressão NORMAL - Folha Inteira
+21:58:28|83|CMD: Impressora que esta sendo utilizada : \\DENIS-NOT\HP LaserJet M1120 MFP
+21:58:28|84|SQL: Select Telefone From Clientes Where NrCli = 4767
+21:58:41|85|CMD: Programa Fechado Normalmente
+21:58:41|86|DBG: 
+21:58:44|1|DBG: 
+21:58:44|2|CMD: MbCarros acionado em 25/06/2020 21:58:44
+21:58:44|3|CMD: Usuário Registrado
+21:58:44|4|DBG: VersãoEXE: 1.1.5
+21:58:44|5|CMD: Modo Escritório
+21:58:44|6|SQL: Select UtComissoes From Config
+21:58:44|7|SQL: Config
+21:58:44|8|SQL: Select Versao From Config
+21:58:44|9|UPD: Update Config Set Imagem = ''
+21:58:44|10|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+21:58:44|11|DBG: PC = 2
+21:58:44|12|CMD: Entrou em AdapForm
+21:58:44|13|CMD: GetSystemMetrics
+21:58:44|14|CMD: Saiu do AdapForm
+21:58:51|15|CMD: Pesquisa de Cliente pelo Apelido: GORDO
+21:58:51|16|SQL: Select NrCli From Clientes Where UCASE(Apelido) = "GORDO"
+21:58:52|17|CMD: Entrou em AdapForm
+21:58:52|18|CMD: GetSystemMetrics
+21:58:52|19|CMD: Saiu do AdapForm
+21:58:52|20|SQL: SELECT DISTINCTROW NrCli, Nome, Ender, Telefone, Vend, Funcionario, email, CgcCpf, InscrEst, CEP, Operadora , EmAtraso , foto , apelido from Clientes ORDER BY Nome
+21:58:52|21|SQL: Select DISTINCTROW Nome From Clientes WHERE ((Nome>"")) ORDER BY Nome; 
+21:58:52|22|SQL: SELECT DISTINCTROW NrCli, Modelo, Placa, Cor FROM Carros WHERE NrCli=4767
+21:58:52|23|SQL: Select Nome From Mecanicos Where codi = 1 and Ativo = True 
+21:58:52|24|CMD: Procrando foto em C:\MbCarros\Imagens\pp.jpg
+21:58:53|25|CMD: Chamar Orçamento pela tela de clientes
+21:58:53|26|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE ((Orcamento.Cliente="MC MATEUS (GORDO)")); 
+21:58:53|27|CMD: Entrou em AdapForm
+21:58:53|28|CMD: GetSystemMetrics
+21:58:53|29|CMD: Saiu do AdapForm
+21:58:53|30|SQL: Select NrCli From Clientes Where Nome = "MC MATEUS (GORDO)"
+21:58:53|31|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago from Orcamento, Clientes, Carros Where Clientes.NrCli = 4767 and Orcamento.Cliente = Clientes.Nome and Carros.Placa =  Orcamento.Carro
+21:58:55|32|CMD: Carregar Orçameto
+21:58:55|33|UPD: Delete * From TarefasTemp Where IDPC = 2
+21:58:55|34|UPD: Insert Into TarefasTemp (concerto,Vlr,Situacao,Nome, Pago, IDPC, DtConclusao, DtAssumiu) SELECT tpConcertos.concerto, Tarefas.Vlr, tpSituacao.situacao, Mecanicos.Nome, Tarefas.Pago, 2 ,Tarefas.DtConclusao, Tarefas.DtAssumiu from Mecanicos INNER JOIN (tpSituacao INNER JOIN (tpConcertos INNER JOIN Tarefas ON tpConcertos.tipo = Tarefas.concerto) ON tpSituacao.tipo = Tarefas.Situacao) ON Mecanicos.codi = Tarefas.Mec Where Tarefas.Orc = 1074
+21:58:55|35|SQL: Select * From TarefasTemp Where IDPC = 2
+21:58:55|36|DBG: Sem Tarefas
+21:58:55|37|DBG:  
+21:58:55|38|CMD: Entrou em AdapForm
+21:58:55|39|CMD: GetSystemMetrics
+21:58:55|40|CMD: Saiu do AdapForm
+21:58:55|41|SQL: Select Funcionario From Clientes Where NrCli = 4767
+21:58:55|42|CMD: Orçamento Carregado
+21:58:55|43|SQL: Select DISTINCTROW Orcamento.Obs, Orcamento.Carro, Orcamento.Data, Orcamento.Orcamento, Orcamento.Cliente,Orcamento.Kms, Orcamento.Kilom, Orcamento.Total, Orcamento.Garantia, Orcamento.Pagamento, Itens_Orc.Item, Itens_Orc.Quant, Itens_Orc.Valor ,Orcamento.ObsMec ,Orcamento.Vend ,Orcamento.VlrPago ,Itens_Orc.DtItOrc ,Itens_Orc.Cont ,Itens_Orc.NT,Clientes.Observacao from Clientes INNER JOIN (Orcamento LEFT JOIN Itens_Orc ON Orcamento.Orcamento = Itens_Orc.Orçamento) ON Clientes.Nome = Orcamento.Cliente Where Orcamento.Orcamento = 1074 ORDER BY Itens_Orc.Item 
+21:58:55|44|SQL: Select Historico From Carros Where Placa = '92414672'
+21:58:55|45|SQL: SELECT Modelo from Carros WHERE Carros.Placa = '92414672'
+21:58:55|46|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'MC MATEUS (GORDO)'
+21:58:55|47|SQL: Select Ender From Clientes Where NrCli = 4767
+21:58:55|48|SQL: Select Modelo From Carros Where NrCli = 4767
+21:58:55|49|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE Placa='92414672' AND NrCli=4767
+21:58:55|50|DBG: Saiu do CorPlaca
+21:58:55|51|DBG: MostraCarro
+21:58:55|52|CMD: lbTotal = 34 apartir de MostraOrcamento
+21:58:55|53|SQL: SELECT Sum(Vlr), Orc from Tarefas GROUP BY Orc HAVING Orc = 1074
+21:58:55|54|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 6240 Order By DtItOrc desc
+21:58:55|55|SQL: Select Nome From Mecanicos Where Codi = 1 and Ativo = True 
+21:58:55|56|SQL: Select Historico From Carros Where Placa = '92414672'
+21:58:55|57|UPD: Delete From ItensConcertoTemp Where IDPC = 2
+21:58:55|58|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'MC MATEUS (GORDO)'
+21:58:55|59|SQL: Select Ender From Clientes Where NrCli = 4767
+21:58:55|60|SQL: Select Modelo From Carros Where NrCli = 4767
+21:58:55|61|CMD: cbCarro.Text[2] = MECANICO
+21:58:55|62|CMD: Tempo de carregamento do Orçamento: 0:00.12
+21:58:57|63|CMD: Foi clicado na impressão
+21:58:57|64|CMD: Impressora configurada como Folha Inteira 
+21:58:57|65|CMD: Entrou na rotina de impressão NORMAL - Folha Inteira
+21:58:57|66|CMD: Impressora que esta sendo utilizada : \\DENIS-NOT\HP LaserJet M1120 MFP
+21:58:57|67|SQL: Select Telefone From Clientes Where NrCli = 4767
+21:59:01|68|SQL: Select Telefone From Clientes Where NrCli = 4767
+21:59:13|69|CMD: Programa Fechado Normalmente
+21:59:13|70|DBG: 
+21:59:43|1|DBG: 
+21:59:43|2|CMD: MbCarros acionado em 25/06/2020 21:59:43
+21:59:43|3|CMD: Usuário Registrado
+21:59:43|4|DBG: VersãoEXE: 1.1.5
+21:59:43|5|CMD: Modo Escritório
+21:59:43|6|SQL: Select UtComissoes From Config
+21:59:43|7|SQL: Config
+21:59:43|8|SQL: Select Versao From Config
+21:59:43|9|UPD: Update Config Set Imagem = ''
+21:59:43|10|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+21:59:43|11|DBG: PC = 2
+21:59:43|12|CMD: Entrou em AdapForm
+21:59:43|13|CMD: GetSystemMetrics
+21:59:43|14|CMD: Saiu do AdapForm
+21:59:52|15|CMD: Pesquisa de Cliente pelo Nome: MC M
+21:59:52|16|SQL: SELECT NrCli From Clientes WHERE ((Nome Like '*MC M*')); 
+21:59:52|17|CMD: Entrou em AdapForm
+21:59:52|18|CMD: GetSystemMetrics
+21:59:52|19|CMD: Saiu do AdapForm
+21:59:52|20|SQL: SELECT DISTINCTROW NrCli, Nome, Ender, Telefone, Vend, Funcionario, email, CgcCpf, InscrEst, CEP, Operadora , EmAtraso , foto , apelido from Clientes ORDER BY Nome
+21:59:52|21|SQL: Select DISTINCTROW Nome From Clientes WHERE ((Nome>"")) ORDER BY Nome; 
+21:59:52|22|SQL: SELECT DISTINCTROW NrCli, Modelo, Placa, Cor FROM Carros WHERE NrCli=4801
+21:59:52|23|SQL: Select Nome From Mecanicos Where codi = 1 and Ativo = True 
+21:59:52|24|CMD: Procrando foto em C:\MbCarros\Imagens\MARCIO.jpg
+21:59:54|25|CMD: Chamar Orçamento pela tela de clientes
+21:59:54|26|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE ((Orcamento.Cliente="MC MARCIO PG (ANTIGA ROTA JUCA)")); 
+21:59:54|27|CMD: Entrou em AdapForm
+21:59:54|28|CMD: GetSystemMetrics
+21:59:54|29|CMD: Saiu do AdapForm
+21:59:54|30|SQL: Select NrCli From Clientes Where Nome = "MC MARCIO PG (ANTIGA ROTA JUCA)"
+21:59:54|31|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago from Orcamento, Clientes, Carros Where Clientes.NrCli = 4801 and Orcamento.Cliente = Clientes.Nome and Carros.Placa =  Orcamento.Carro
+21:59:56|32|CMD: Carregar Orçameto
+21:59:56|33|UPD: Delete * From TarefasTemp Where IDPC = 2
+21:59:56|34|UPD: Insert Into TarefasTemp (concerto,Vlr,Situacao,Nome, Pago, IDPC, DtConclusao, DtAssumiu) SELECT tpConcertos.concerto, Tarefas.Vlr, tpSituacao.situacao, Mecanicos.Nome, Tarefas.Pago, 2 ,Tarefas.DtConclusao, Tarefas.DtAssumiu from Mecanicos INNER JOIN (tpSituacao INNER JOIN (tpConcertos INNER JOIN Tarefas ON tpConcertos.tipo = Tarefas.concerto) ON tpSituacao.tipo = Tarefas.Situacao) ON Mecanicos.codi = Tarefas.Mec Where Tarefas.Orc = 1663
+21:59:56|35|SQL: Select * From TarefasTemp Where IDPC = 2
+21:59:56|36|DBG: Sem Tarefas
+21:59:56|37|DBG:  
+21:59:56|38|CMD: Entrou em AdapForm
+21:59:56|39|CMD: GetSystemMetrics
+21:59:56|40|CMD: Saiu do AdapForm
+21:59:56|41|SQL: Select Funcionario From Clientes Where NrCli = 4801
+21:59:56|42|CMD: Orçamento Carregado
+21:59:56|43|SQL: Select DISTINCTROW Orcamento.Obs, Orcamento.Carro, Orcamento.Data, Orcamento.Orcamento, Orcamento.Cliente,Orcamento.Kms, Orcamento.Kilom, Orcamento.Total, Orcamento.Garantia, Orcamento.Pagamento, Itens_Orc.Item, Itens_Orc.Quant, Itens_Orc.Valor ,Orcamento.ObsMec ,Orcamento.Vend ,Orcamento.VlrPago ,Itens_Orc.DtItOrc ,Itens_Orc.Cont ,Itens_Orc.NT,Clientes.Observacao from Clientes INNER JOIN (Orcamento LEFT JOIN Itens_Orc ON Orcamento.Orcamento = Itens_Orc.Orçamento) ON Clientes.Nome = Orcamento.Cliente Where Orcamento.Orcamento = 1663 ORDER BY Itens_Orc.Item 
+21:59:56|44|SQL: Select Historico From Carros Where Placa = '86281654'
+21:59:56|45|SQL: SELECT Modelo from Carros WHERE Carros.Placa = '86281654'
+21:59:56|46|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'MC MARCIO PG (ANTIGA ROTA JUCA)'
+21:59:56|47|SQL: Select Ender From Clientes Where NrCli = 4801
+21:59:56|48|SQL: Select Modelo From Carros Where NrCli = 4801
+21:59:56|49|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE Placa='86281654' AND NrCli=4801
+21:59:56|50|DBG: Saiu do CorPlaca
+21:59:56|51|DBG: MostraCarro
+21:59:56|52|CMD: lbTotal = 145 apartir de MostraOrcamento
+21:59:56|53|SQL: SELECT Sum(Vlr), Orc from Tarefas GROUP BY Orc HAVING Orc = 1663
+21:59:56|54|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 10335 Order By DtItOrc desc
+21:59:56|55|SQL: SELECT Sum(Parcelas.Valor) AS SomaDeValor, Parcelas.Orc from Parcelas GROUP BY Parcelas.Orc HAVING Parcelas.Orc  = 1663
+21:59:56|56|SQL: Select Nome From Mecanicos Where Codi = 1 and Ativo = True 
+21:59:56|57|SQL: Select Historico From Carros Where Placa = '86281654'
+21:59:56|58|UPD: Delete From ItensConcertoTemp Where IDPC = 2
+21:59:56|59|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'MC MARCIO PG (ANTIGA ROTA JUCA)'
+21:59:56|60|SQL: Select Ender From Clientes Where NrCli = 4801
+21:59:56|61|SQL: Select Modelo From Carros Where NrCli = 4801
+21:59:57|62|CMD: cbCarro.Text[2] = DIVERSOS
+21:59:57|63|CMD: Tempo de carregamento do Orçamento: 0:01.12
+22:00:07|64|DBG: frmOrc.Gravar
+22:00:07|65|DBG: Cliente: MC MARCIO PG (ANTIGA ROTA JUCA)
+22:00:07|66|DBG: Carro: 86281654
+22:00:07|67|DBG: QuantItens: 1
+22:00:07|68|SQL: Select * From Orcamento Where Orcamento = 1663
+22:00:07|69|UPD: Update Carros Set Historico = ' '  Where Placa = '86281654'
+22:00:07|70|DBG: BeginTrans
+22:00:07|71|UPD: Delete From Tarefas Where Orc = 1663
+22:00:07|72|SQL: Select * From TarefasTemp Where IDPC = 2 Order By ID
+22:00:07|73|DBG: CommitTrans
+22:00:07|74|DBG: Gravação concluída
+22:00:07|75|CMD: Entrou em AdapForm
+22:00:07|76|CMD: GetSystemMetrics
+22:00:07|77|CMD: Saiu do AdapForm
+22:00:07|78|UPD: Delete From ParcelasTemp Where IDPC = 2
+22:00:07|79|UPD: INSERT INTO ParcelasTemp (IDPC, Data, Valor, Orig, Obs) SELECT 2 as IDPC, Data, Valor, 1, Obs from Parcelas WHERE Orc = 1663
+22:00:07|80|SQL: Select Sum(Valor) From Parcelas WHERE Orc = 1663
+22:00:13|81|CMD: Foi clicado na impressão
+22:00:13|82|CMD: Impressora configurada como Folha Inteira 
+22:00:13|83|CMD: Entrou na rotina de impressão NORMAL - Folha Inteira
+22:00:13|84|CMD: Impressora que esta sendo utilizada : \\DENIS-NOT\HP LaserJet M1120 MFP
+22:00:13|85|SQL: Select Telefone From Clientes Where NrCli = 4801
+22:00:15|86|SQL: Select Telefone From Clientes Where NrCli = 4801
+22:01:16|87|CMD: Programa Fechado Normalmente
+22:01:16|88|DBG: 
+22:01:18|1|DBG: 
+22:01:18|2|CMD: MbCarros acionado em 25/06/2020 22:01:18
+22:01:18|3|CMD: Usuário Registrado
+22:01:18|4|DBG: VersãoEXE: 1.1.5
+22:01:18|5|CMD: Modo Escritório
+22:01:18|6|SQL: Select UtComissoes From Config
+22:01:18|7|SQL: Config
+22:01:18|8|SQL: Select Versao From Config
+22:01:18|9|UPD: Update Config Set Imagem = ''
+22:01:18|10|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+22:01:18|11|DBG: PC = 2
+22:01:18|12|CMD: Entrou em AdapForm
+22:01:18|13|CMD: GetSystemMetrics
+22:01:18|14|CMD: Saiu do AdapForm
+22:01:32|15|MSG: Estoq:Backup Concluído
+22:01:34|16|CMD: Programa Fechado Normalmente
+22:01:34|17|DBG: 

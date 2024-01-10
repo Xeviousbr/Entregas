@@ -1,0 +1,79 @@
+2.1.4 Conserto da informação da venda na tela do lucro
+2.1.3 Visualização mensal da tela de entregas
+2.1.3 Previsão para Valor pago semanal zerado
+2.1.2 Totalizações
+2.1.1 Coluna para novo cálculo
+2.1.0 Guardar todas informações de operação da tela de entregas
+2.0.9 Replicar o valor simulado para todos
+2.0.8 Ajuste quando não tem ainda o valor estimado para pagamento
+2.0.7 Valor previsto para pagamento na tela de lucratividade de entregas
+2.0.6 Ajuste na primeira linha na tela de lucros das entregas
+2.0.5 Tela de lucratividade do funcionamento da teleentrega
+2.0.4 Previsão para site fora do ar
+2.0.3 Previsão para lançamentos sem definir a forma de pagamento, na consulta de entregas
+2.0.1 Visualização dos itens da tele-entrega
+2.0.0 Integração com o site Tele-Tudo
+2.0.0 Som
+1.5.7 Retirada da Aba de vendas pra ser agora só uma consulta simples
+1.5.7 Ordenação ao contrário da grid de entregas
+1.5.7 Limite de 100 registros de entrega
+1.5.7 Prever entregas sem entregador
+1.5.7 Previsão de erro na comunicação com tele-tudo
+1.5.6 Ajuste do Layout devido a novo entregador
+1.5.5 Tela de pagamentos dos entregadores
+1.5.4 Tela de pagamentos dos entregadores - versão inicial
+1.5.4 Campo de Observação na Grid de entregas
+1.5.3 Deleção de registro
+1.5.3 Conserto da seleção por datas no filtro da tela de entregas
+1.5.3 Definição do computador a se comunicar com o servidor do Tele-Tudo pelo INI
+1.5.2 Visualização do nome do comprador e valor da venda
+1.5.1 Detecção da venda no MbCarros
+1.5.0 Ajuste na tela de consultas de entregas
+1.4.9 Comissão das vendas por entrega
+1.4.9 Operação de abertura de loja
+1.4.8 Pesquisa por valores de venda
+1.4.8 Login no tele-tudo
+1.4.7 Inclusão da pesquisa do apelido na busca pelo nome na hora da entrega
+1.4.6 Chamar a entrega pela tela de orçamentos
+1.4.6 Chamar a entrega pela tela de clientes
+1.4.2 Versão inicial tela de consultas de Entregas
+1.4.2 Conserto da seleção de clientes e entregadores
+1.4.1 Edição nas entregas
+1.4 Operador tipo MotoBoy
+1.3.1 Impressão do valor pendente caso o orçamento tenha pagamento parcial
+1.3.0 Inclusão do valor pago e do saldo no relatório financeiro
+1.2.9 Impedir de mostrar dívidas duplicadas na tela de dívidas
+1.2.8 Mostragem do total em dívidas
+1.2.7 Alteração do modo de pesquisa da tela de devedores
+1.2.6 Pesquisa por devedores
+1.2.5 Ao clicar no cliente na tela de parcelas, ir pro orçamento em vez de pro cadastro do cliente
+1.2.5 Correção da consulta dos atrasos na tela de atrasos
+1.2.4 Impressão das parcelas
+1.2.3 Alteração das consultas em relação aos atrasos[2]
+1.2.3 Ajuste da quantidade de registros de atraso na tela inicial
+1.2.2 Log para o tempo de carregamento do programa
+1.2.2 Alteração das consultas em relação aos atrasos
+1.2.2 Copia para memória da impressão na visualização do orçamento
+1.2.2 Previsão para MSFlexGrid na alteração da fonte
+1.2.1 Tentativa de correção para caso que item de orçamento foi parar no orçamento de outro cliente
+1.2.0 Mostrar atrasos
+1.1.9 Previsão de erro, para gravação de parcelas sem nada na observação
+1.1.8 Alteração do caminho local
+1.1.7 Impedir a adição de um carro com uma placa de outro carro
+1.1.7 Impressão da Data e do Nr na impressão em fita
+1.1.6 Mostrar cliente na pesquisa de orçamento na janela
+1.1.5 Inclusão do Ini no Backup
+1.1.5 Aumento do Log para impressão [2]
+1.1.4 Menu para busca pelo apelido
+1.1.3 Aumento do Log para impressão
+1.1.2 Ajuste da busca pelo apelido, que tinha deixado de buscar pelo nome
+1.1.1 Campo para apelido do cliente
+1.1.0 Alteração no icone
+1.0.7 Logs na impressão para verificar o caso da impressão em fita, indevida
+1.0.6 Previsão para mais 5 impressoras
+1.0.5 Previsão para mais de 10 impressoras
+1.0.4 Retirada das senhas
+1.0.3 Ajuste na gravação da foto
+1.0.2 Log leitura da foto
+1.0.1 Ajuste automático da imagem ao fundo da tela
+1.0.0 MBCarros

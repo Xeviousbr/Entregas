@@ -1,0 +1,155 @@
+22:53:08|1|DBG: 
+22:53:08|2|CMD: MbCarros acionado em 21/10/2020 22:53:08
+22:53:08|3|CMD: Usuário Registrado
+22:53:08|4|DBG: VersãoEXE: 1.2.2
+22:53:08|5|CMD: Modo Escritório
+22:53:08|6|SQL: Select UtComissoes From Config
+22:53:08|7|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+22:53:08|8|DBG: PC = 2
+22:53:08|9|SQL: SELECT Parcelas.Data, Parcelas.Pagto, Parcelas.Cli, Clientes.Nome, Clientes.NrCli FROM Orcamento, Parcelas INNER JOIN Clientes ON Parcelas.Cli = Clientes.NrCli Where Parcelas.Data < Now() And Orcamento.VlrPago < Orcamento.Total ORDER BY Parcelas.Data DESC 
+22:53:09|10|SQL: Config
+22:53:09|11|UPD: Update Config Set Imagem = ''
+22:53:09|12|CMD: Entrou em AdapForm
+22:53:09|13|CMD: GetSystemMetrics
+22:53:09|14|CMD: Saiu do AdapForm
+22:53:09|15|CMD: Tempo de carregamento do Programa: 0:02.12
+22:53:11|16|CMD: Programa Fechado Normalmente
+22:53:11|17|DBG: 
+22:53:44|1|DBG: 
+22:53:44|2|CMD: MbCarros acionado em 21/10/2020 22:53:44
+22:53:44|3|CMD: Usuário Registrado
+22:53:44|4|DBG: VersãoEXE: 1.2.2
+22:53:44|5|CMD: Modo Escritório
+22:53:44|6|SQL: Select UtComissoes From Config
+22:53:44|7|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+22:53:44|8|DBG: PC = 2
+22:53:44|9|SQL: SELECT Parcelas.Data, Parcelas.Pagto, Parcelas.Cli, Clientes.Nome, Clientes.NrCli FROM Orcamento, Parcelas INNER JOIN Clientes ON Parcelas.Cli = Clientes.NrCli Where Parcelas.Data < Now() And Orcamento.VlrPago < Orcamento.Total ORDER BY Parcelas.Data DESC 
+22:53:45|10|SQL: Config
+22:53:45|11|UPD: Update Config Set Imagem = ''
+22:53:45|12|CMD: Entrou em AdapForm
+22:53:45|13|CMD: GetSystemMetrics
+22:53:45|14|CMD: Saiu do AdapForm
+22:53:45|15|CMD: Tempo de carregamento do Programa: 0:02.12
+22:53:49|16|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE Data > #09/01/2020#
+22:53:49|17|CMD: Entrou em AdapForm
+22:53:49|18|CMD: GetSystemMetrics
+22:53:49|19|CMD: Saiu do AdapForm
+22:53:49|20|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago FROM Orcamento, Carros, Clientes WHERE Orcamento.Carro = Carros.Placa and Orcamento.Data > #09/01/2020# and Clientes.Nome = Orcamento.Cliente Order By Orcamento.Data desc 
+22:53:49|21|SQL: Select DISTINCTROW Nome From Clientes WHERE ((Nome>"")) ORDER BY Nome; 
+22:53:52|22|CMD: Carregar Orçameto
+22:53:52|23|UPD: Delete * From TarefasTemp Where IDPC = 2
+22:53:52|24|UPD: Insert Into TarefasTemp (concerto,Vlr,Situacao,Nome, Pago, IDPC, DtConclusao, DtAssumiu) SELECT tpConcertos.concerto, Tarefas.Vlr, tpSituacao.situacao, Mecanicos.Nome, Tarefas.Pago, 2 ,Tarefas.DtConclusao, Tarefas.DtAssumiu from Mecanicos INNER JOIN (tpSituacao INNER JOIN (tpConcertos INNER JOIN Tarefas ON tpConcertos.tipo = Tarefas.concerto) ON tpSituacao.tipo = Tarefas.Situacao) ON Mecanicos.codi = Tarefas.Mec Where Tarefas.Orc = 1867
+22:53:52|25|SQL: Select * From TarefasTemp Where IDPC = 2
+22:53:52|26|DBG: Sem Tarefas
+22:53:52|27|DBG:  
+22:53:52|28|CMD: Entrou em AdapForm
+22:53:52|29|CMD: GetSystemMetrics
+22:53:52|30|CMD: Saiu do AdapForm
+22:53:52|31|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'EDENIR FROIS COELHO'
+22:53:52|32|SQL: Select Ender From Clientes Where NrCli = 2020
+22:53:52|33|SQL: Select Ender From Clientes Where NrCli = 2020
+22:53:52|34|SQL: Select Modelo From Carros Where NrCli = 2020
+22:53:52|35|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE NrCli=2020
+22:53:52|36|DBG: Saiu do CorPlaca
+22:53:52|37|DBG: MostraCarro
+22:53:52|38|DBG: Saiu do cbCarro_Click
+22:53:52|39|DBG: Saiu do SetaCliente
+22:53:52|40|SQL: Select Funcionario From Clientes Where NrCli = 2020
+22:53:52|41|CMD: Orçamento Carregado
+22:53:52|42|SQL: Select DISTINCTROW Orcamento.Obs, Orcamento.Carro, Orcamento.Data, Orcamento.Orcamento, Orcamento.Cliente,Orcamento.Kms, Orcamento.Kilom, Orcamento.Total, Orcamento.Garantia, Orcamento.Pagamento, Itens_Orc.Item, Itens_Orc.Quant, Itens_Orc.Valor ,Orcamento.ObsMec ,Orcamento.Vend ,Orcamento.VlrPago ,Itens_Orc.DtItOrc ,Itens_Orc.Cont ,Itens_Orc.NT,Clientes.Observacao from Clientes INNER JOIN (Orcamento LEFT JOIN Itens_Orc ON Orcamento.Orcamento = Itens_Orc.Orçamento) ON Clientes.Nome = Orcamento.Cliente Where Orcamento.Orcamento = 1867 ORDER BY Itens_Orc.Item 
+22:53:52|43|SQL: Select Historico From Carros Where Placa = 'IDW1401 '
+22:53:52|44|SQL: SELECT Modelo from Carros WHERE Carros.Placa = 'IDW1401'
+22:53:52|45|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'EDENIR FROIS COELHO'
+22:53:52|46|SQL: Select Ender From Clientes Where NrCli = 2020
+22:53:52|47|SQL: Select Modelo From Carros Where NrCli = 2020
+22:53:52|48|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE Placa='IDW1401' AND NrCli=2020
+22:53:52|49|DBG: Saiu do CorPlaca
+22:53:52|50|DBG: MostraCarro
+22:53:52|51|CMD: lbTotal = 229 apartir de MostraOrcamento
+22:53:52|52|SQL: SELECT Sum(Vlr), Orc from Tarefas GROUP BY Orc HAVING Orc = 1867
+22:53:52|53|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 12129 Order By DtItOrc desc
+22:53:52|54|CMD: lbTotal = 229 apartir de Sub Total
+22:53:52|55|SQL: Select Historico From Carros Where Placa = 'IDW1401'
+22:53:52|56|UPD: Delete From ItensConcertoTemp Where IDPC = 2
+22:53:52|57|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'EDENIR FROIS COELHO'
+22:53:52|58|SQL: Select Ender From Clientes Where NrCli = 2020
+22:53:52|59|SQL: Select Modelo From Carros Where NrCli = 2020
+22:53:52|60|CMD: cbCarro.Text[2] = GM CHEVETE 1,6 ANO 76
+22:53:52|61|CMD: Tempo de carregamento do Orçamento: 0:00.12
+22:53:54|62|CMD: Entrou na rotina de impressão em fita
+22:53:54|63|CMD: 
+22:53:54|64|CMD: Arquivo da impressão: C:\MbCarros\Impres.prn
+22:53:54|65|CMD: 
+22:53:54|66|CMD:                         ORCAMENTO                        
+22:53:54|67|CMD:                  Bonifacio Comercio Ltda                 
+22:53:54|68|CMD:             Estrada do Lami, 639, Belem Novo            
+22:53:54|69|CMD:                         3242-0093                        
+22:53:54|70|CMD:  
+22:53:54|71|CMD: Porto Alegre, 21 de outubro de 2020
+22:53:54|72|CMD: Proprietario do Veiculo: EDENIR FROIS COELHO
+22:53:54|73|CMD: Endereco: AV JUCA BATISTA 5775
+22:53:54|74|SQL: Select CgcCpf, InscrEst From Clientes Where NrCli = 2020
+22:53:54|75|CMD: Veiculo Marca: GM CHEVETE 1,6 ANO 76 AZUL
+22:53:54|76|CMD: Placa IDW1401
+22:53:54|77|CMD: Garantia:  3 Meses
+22:53:54|78|CMD: Combustivel: 
+22:53:54|79|CMD: Kms: 
+22:53:54|80|CMD: Pecas                                     Quant.  Valor
+22:53:54|81|CMD: PN                                           1   229,00
+22:53:54|82|CMD:  
+22:53:54|83|CMD: TOTAL                                            229,00 
+22:53:54|84|SQL: Select Count(*) From IC_Orc Where Orc = 1867
+22:53:54|85|CMD: OBSERVACAO
+22:53:54|86|CMD:  
+22:53:54|87|SQL: Select Observacao From Clientes Where NrCli = 2020
+22:53:54|88|CMD: Observação: 
+1*CHEQUE PAGO 266,00  DIA 29/12/15 DIEGO
+2* PARCELA 100,00 DIA 01/02/2016 DIEGO
+3*PARCELA 100,00 DIA 25/02/16 DIEGO 
+4* PARC 150,00 20-03-16 **PG** NELSON
+5* PARC 100,00 DIA 13/04/16 DIEGO
+6*PARC 100,00 DIA 19/04/16 DIEGO
+7*PARC 150,00 DIA 23/05/16 DIEGO
+22:53:54|89|SQL: Select Count(*) From Parcelas Where Orc = 1867
+22:53:54|90|SQL: Select LinhasApos From Config
+22:53:54|91|SQL: Select Telefone From Clientes Where NrCli = 2020
+22:54:03|92|CMD: Entrou em AdapForm
+22:54:03|93|CMD: GetSystemMetrics
+22:54:03|94|CMD: Saiu do AdapForm
+22:54:03|95|SQL: SELECT Now() - Parcelas.Data as Dias, Parcelas.Cli, Clientes.Nome, Clientes.NrCli, Parcelas.Valor FROM Parcelas INNER JOIN Clientes ON Parcelas.Cli = Clientes.NrCli Where Parcelas.Data BetWeen #01/01/2010# and #10/20/2020#ORDER BY Parcelas.Data DESC 
+22:54:06|96|CMD: Programa Fechado Normalmente
+22:54:06|97|DBG: 
+23:12:05|1|DBG: 
+23:12:05|2|CMD: MbCarros acionado em 21/10/2020 23:12:05
+23:12:05|3|CMD: Usuário Registrado
+23:12:05|4|DBG: VersãoEXE: 1.2.2
+23:12:05|5|CMD: Modo Escritório
+23:12:05|6|SQL: Select UtComissoes From Config
+23:12:05|7|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+23:12:05|8|DBG: PC = 2
+23:12:05|9|SQL: SELECT Parcelas.Data, Parcelas.Pagto, Parcelas.Cli, Clientes.Nome, Clientes.NrCli FROM Orcamento, Parcelas INNER JOIN Clientes ON Parcelas.Cli = Clientes.NrCli Where Parcelas.Data < Now() And Orcamento.VlrPago < Orcamento.Total ORDER BY Parcelas.Data DESC 
+23:12:07|10|SQL: Config
+23:12:07|11|UPD: Update Config Set Imagem = ''
+23:12:07|12|CMD: Entrou em AdapForm
+23:12:07|13|CMD: GetSystemMetrics
+23:12:07|14|CMD: Saiu do AdapForm
+23:12:07|15|CMD: Tempo de carregamento do Programa: 0:02.12
+23:12:32|16|CMD: Pesquisa de Cliente pelo Nome: PAULO RICARDO GAMA
+23:12:32|17|SQL: SELECT NrCli From Clientes WHERE ((Nome Like '*PAULO RICARDO GAMA*')); 
+23:12:32|18|CMD: Entrou em AdapForm
+23:12:32|19|CMD: GetSystemMetrics
+23:12:32|20|CMD: Saiu do AdapForm
+23:12:32|21|SQL: SELECT DISTINCTROW NrCli, Nome, Ender, Telefone, Vend, Funcionario, email, CgcCpf, InscrEst, CEP, Operadora , EmAtraso , foto , apelido from Clientes ORDER BY Nome
+23:12:32|22|SQL: Select DISTINCTROW Nome From Clientes WHERE ((Nome>"")) ORDER BY Nome; 
+23:12:32|23|SQL: SELECT DISTINCTROW NrCli, Modelo, Placa, Cor FROM Carros WHERE NrCli=4757
+23:12:32|24|SQL: Select Nome From Mecanicos Where codi = 1 and Ativo = True 
+23:12:32|25|CMD: Procrando foto em C:\MbCarros\Imagens\ALE.jpg
+23:12:33|26|CMD: Chamar Orçamento pela tela de clientes
+23:12:33|27|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE ((Orcamento.Cliente="PAULO RICARDO GAMA (PRIMO MARCELO)")); 
+23:12:34|28|CMD: Entrou em AdapForm
+23:12:34|29|CMD: GetSystemMetrics
+23:12:34|30|CMD: Saiu do AdapForm
+23:12:34|31|SQL: Select NrCli From Clientes Where Nome = "PAULO RICARDO GAMA (PRIMO MARCELO)"
+23:12:34|32|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago from Orcamento, Clientes, Carros Where Clientes.NrCli = 4757 and Orcamento.Cliente = Clientes.Nome and Carros.Placa =  Orcamento.Carro
+23:13:57|33|CMD: Programa Fechado Normalmente
+23:13:57|34|DBG: 

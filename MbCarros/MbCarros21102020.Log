@@ -1,0 +1,283 @@
+17:01:00|1|DBG: 
+17:01:00|2|CMD: MbCarros acionado em 17/10/2020 17:01:00
+17:01:00|3|CMD: Usuário Registrado
+17:01:00|4|DBG: VersãoEXE: 1.2.2
+17:01:00|5|CMD: Modo Escritório
+17:01:00|6|SQL: Select UtComissoes From Config
+17:01:00|7|SQL: SELECT Parcelas.Data, Parcelas.Pagto, Parcelas.Cli, Clientes.Nome, Clientes.NrCli FROM Parcelas INNER JOIN Clientes ON Parcelas.Cli = Clientes.NrCli Where Parcelas.Data < Now() And Parcelas.Pagto Is Null ORDER BY Parcelas.Data DESC 
+17:01:00|8|SQL: Config
+17:01:00|9|UPD: Update Config Set Imagem = ''
+17:01:00|10|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+17:01:00|11|DBG: PC = 2
+17:01:00|12|CMD: Entrou em AdapForm
+17:01:00|13|CMD: GetSystemMetrics
+17:01:00|14|CMD: Saiu do AdapForm
+17:01:02|15|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE Data > #09/01/2020#
+17:01:02|16|CMD: Entrou em AdapForm
+17:01:02|17|CMD: GetSystemMetrics
+17:01:02|18|CMD: Saiu do AdapForm
+17:01:02|19|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago FROM Orcamento, Carros, Clientes WHERE Orcamento.Carro = Carros.Placa and Orcamento.Data > #09/01/2020# and Clientes.Nome = Orcamento.Cliente Order By Orcamento.Data desc 
+17:01:02|20|SQL: Select DISTINCTROW Nome From Clientes WHERE ((Nome>"")) ORDER BY Nome; 
+17:01:04|21|CMD: Carregar Orçameto
+17:01:04|22|UPD: Delete * From TarefasTemp Where IDPC = 2
+17:01:04|23|UPD: Insert Into TarefasTemp (concerto,Vlr,Situacao,Nome, Pago, IDPC, DtConclusao, DtAssumiu) SELECT tpConcertos.concerto, Tarefas.Vlr, tpSituacao.situacao, Mecanicos.Nome, Tarefas.Pago, 2 ,Tarefas.DtConclusao, Tarefas.DtAssumiu from Mecanicos INNER JOIN (tpSituacao INNER JOIN (tpConcertos INNER JOIN Tarefas ON tpConcertos.tipo = Tarefas.concerto) ON tpSituacao.tipo = Tarefas.Situacao) ON Mecanicos.codi = Tarefas.Mec Where Tarefas.Orc = 1858
+17:01:04|24|SQL: Select * From TarefasTemp Where IDPC = 2
+17:01:04|25|DBG: Sem Tarefas
+17:01:04|26|DBG:  
+17:01:04|27|CMD: Entrou em AdapForm
+17:01:04|28|CMD: GetSystemMetrics
+17:01:04|29|CMD: Saiu do AdapForm
+17:01:04|30|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'MC FERNANDO BOMBA DIESEL'
+17:01:04|31|SQL: Select Ender From Clientes Where NrCli = 4778
+17:01:04|32|SQL: Select Ender From Clientes Where NrCli = 4778
+17:01:04|33|SQL: Select Modelo From Carros Where NrCli = 4778
+17:01:04|34|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE NrCli=4778
+17:01:04|35|DBG: Saiu do CorPlaca
+17:01:04|36|DBG: MostraCarro
+17:01:04|37|DBG: Saiu do cbCarro_Click
+17:01:04|38|DBG: Saiu do SetaCliente
+17:01:04|39|SQL: Select Funcionario From Clientes Where NrCli = 4778
+17:01:04|40|CMD: Orçamento Carregado
+17:01:04|41|SQL: Select DISTINCTROW Orcamento.Obs, Orcamento.Carro, Orcamento.Data, Orcamento.Orcamento, Orcamento.Cliente,Orcamento.Kms, Orcamento.Kilom, Orcamento.Total, Orcamento.Garantia, Orcamento.Pagamento, Itens_Orc.Item, Itens_Orc.Quant, Itens_Orc.Valor ,Orcamento.ObsMec ,Orcamento.Vend ,Orcamento.VlrPago ,Itens_Orc.DtItOrc ,Itens_Orc.Cont ,Itens_Orc.NT,Clientes.Observacao from Clientes INNER JOIN (Orcamento LEFT JOIN Itens_Orc ON Orcamento.Orcamento = Itens_Orc.Orçamento) ON Clientes.Nome = Orcamento.Cliente Where Orcamento.Orcamento = 1858 ORDER BY Itens_Orc.Item 
+17:01:04|42|SQL: Select Historico From Carros Where Placa = '32618934'
+17:01:04|43|SQL: SELECT Modelo from Carros WHERE Carros.Placa = '32618934'
+17:01:04|44|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'MC FERNANDO BOMBA DIESEL'
+17:01:04|45|SQL: Select Ender From Clientes Where NrCli = 4778
+17:01:04|46|SQL: Select Modelo From Carros Where NrCli = 4778
+17:01:04|47|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE Placa='32618934' AND NrCli=4778
+17:01:04|48|DBG: Saiu do CorPlaca
+17:01:04|49|DBG: MostraCarro
+17:01:04|50|CMD: lbTotal = 151,5 apartir de MostraOrcamento
+17:01:04|51|SQL: SELECT Sum(Vlr), Orc from Tarefas GROUP BY Orc HAVING Orc = 1858
+17:01:04|52|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 12052 Order By DtItOrc desc
+17:01:04|53|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 12076 Order By DtItOrc desc
+17:01:04|54|CMD: lbTotal = 151,5 apartir de Sub Total
+17:01:04|55|SQL: Select Historico From Carros Where Placa = '32618934'
+17:01:04|56|UPD: Delete From ItensConcertoTemp Where IDPC = 2
+17:01:04|57|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'MC FERNANDO BOMBA DIESEL'
+17:01:04|58|SQL: Select Ender From Clientes Where NrCli = 4778
+17:01:04|59|SQL: Select Modelo From Carros Where NrCli = 4778
+17:01:04|60|CMD: cbCarro.Text[2] = DIVERSOS
+17:01:04|61|CMD: Tempo de carregamento do Orçamento: 0:00.12
+17:01:08|62|CMD: Entrou na rotina de impressão em fita
+17:01:08|63|CMD: 
+17:01:08|64|CMD: Arquivo da impressão: C:\MbCarros\Impres.prn
+17:01:08|65|CMD: 
+17:01:08|66|CMD:                         ORCAMENTO                        
+17:01:08|67|CMD:                  Bonifacio Comercio Ltda                 
+17:01:08|68|CMD:             Estrada do Lami, 639, Belem Novo            
+17:01:08|69|CMD:                         3242-0093                        
+17:01:08|70|CMD:  
+17:01:08|71|CMD: Porto Alegre, 14 de outubro de 2020
+17:01:08|72|CMD: Proprietario do Veiculo: MC FERNANDO BOMBA DIESEL
+17:01:08|73|CMD: Endereco: BC ARTUR 603 BOA VISTA
+17:01:08|74|SQL: Select CgcCpf, InscrEst From Clientes Where NrCli = 4778
+17:01:08|75|CMD: Veiculo Marca: DIVERSOS BRANCO
+17:01:08|76|CMD: Placa 32618934
+17:01:08|77|CMD: Garantia:  3 Meses
+17:01:08|78|CMD: Combustivel: 
+17:01:08|79|CMD: Kms: 
+17:01:08|80|CMD: Pecas                                     Quant.  Valor
+17:01:08|81|CMD: PN                                           1   103,50
+17:01:08|82|CMD: PN                                           1    48,00
+17:01:08|83|CMD:  
+17:01:08|84|CMD: TOTAL                                            151,50 
+17:01:08|85|SQL: Select Count(*) From IC_Orc Where Orc = 1858
+17:01:08|86|CMD: OBSERVACAO
+17:01:08|87|CMD:  
+17:01:08|88|SQL: Select Observacao From Clientes Where NrCli = 4778
+17:01:08|89|SQL: Select Count(*) From Parcelas Where Orc = 1858
+17:01:08|90|SQL: Select LinhasApos From Config
+17:01:57|1|DBG: 
+17:01:57|2|CMD: MbCarros acionado em 17/10/2020 17:01:57
+17:01:57|3|CMD: Usuário Registrado
+17:01:57|4|DBG: VersãoEXE: 1.2.2
+17:01:57|5|CMD: Modo Escritório
+17:01:57|6|SQL: Select UtComissoes From Config
+17:01:57|7|SQL: SELECT Parcelas.Data, Parcelas.Pagto, Parcelas.Cli, Clientes.Nome, Clientes.NrCli FROM Parcelas INNER JOIN Clientes ON Parcelas.Cli = Clientes.NrCli Where Parcelas.Data < Now() And Parcelas.Pagto Is Null ORDER BY Parcelas.Data DESC 
+17:01:57|8|SQL: Config
+17:01:57|9|UPD: Update Config Set Imagem = ''
+17:01:57|10|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+17:01:57|11|DBG: PC = 2
+17:01:57|12|CMD: Entrou em AdapForm
+17:01:57|13|CMD: GetSystemMetrics
+17:01:57|14|CMD: Saiu do AdapForm
+17:01:59|15|CMD: Entrou em AdapForm
+17:01:59|16|CMD: GetSystemMetrics
+17:01:59|17|CMD: Saiu do AdapForm
+17:01:59|18|SQL: SELECT Now() - Parcelas.Data as Dias, Parcelas.Cli, Clientes.Nome, Clientes.NrCli, Parcelas.Valor FROM Parcelas INNER JOIN Clientes ON Parcelas.Cli = Clientes.NrCli Where Parcelas.Data BetWeen #01/01/2010# and #10/16/2020#ORDER BY Parcelas.Data DESC 
+17:04:32|19|CMD: Programa Fechado Normalmente
+17:04:32|20|DBG: 
+20:32:49|1|DBG: 
+20:32:49|2|CMD: MbCarros acionado em 17/10/2020 20:32:49
+20:32:49|3|CMD: Usuário Registrado
+20:32:49|4|DBG: VersãoEXE: 1.2.1
+20:32:49|5|CMD: Modo Escritório
+20:32:49|6|SQL: Select UtComissoes From Config
+20:32:49|7|SQL: SELECT Parcelas.Data, Parcelas.Pagto, Parcelas.Cli, Clientes.Nome, Clientes.NrCli FROM Parcelas INNER JOIN Clientes ON Parcelas.Cli = Clientes.NrCli Where Parcelas.Data < Now() And Parcelas.Pagto Is Null ORDER BY Parcelas.Data DESC 
+20:32:49|8|SQL: Config
+20:32:49|9|UPD: Update Config Set Imagem = ''
+20:32:49|10|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+20:32:49|11|DBG: PC = 2
+20:32:49|12|CMD: Entrou em AdapForm
+20:32:49|13|CMD: GetSystemMetrics
+20:32:49|14|CMD: Saiu do AdapForm
+20:32:55|15|CMD: Programa Fechado Normalmente
+20:32:55|16|DBG: 
+20:33:33|1|DBG: 
+20:33:33|2|CMD: MbCarros acionado em 17/10/2020 20:33:33
+20:33:33|3|CMD: Usuário Registrado
+20:33:33|4|DBG: VersãoEXE: 1.2.1
+20:33:33|5|CMD: Modo Escritório
+20:33:33|6|SQL: Select UtComissoes From Config
+20:33:33|7|SQL: SELECT Parcelas.Data, Parcelas.Pagto, Parcelas.Cli, Clientes.Nome, Clientes.NrCli FROM Parcelas INNER JOIN Clientes ON Parcelas.Cli = Clientes.NrCli Where Parcelas.Data < Now() And Parcelas.Pagto Is Null ORDER BY Parcelas.Data DESC 
+20:33:33|8|SQL: Config
+20:33:33|9|UPD: Update Config Set Imagem = ''
+20:33:33|10|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+20:33:34|11|DBG: PC = 2
+20:33:34|12|CMD: Entrou em AdapForm
+20:33:34|13|CMD: GetSystemMetrics
+20:33:34|14|CMD: Saiu do AdapForm
+20:33:49|15|CMD: Pesquisa de Cliente pelo Nome: ANTONIO CARLOS VAL
+20:33:49|16|SQL: SELECT NrCli From Clientes WHERE ((Nome Like '*ANTONIO CARLOS VAL*')); 
+20:33:49|17|CMD: Entrou em AdapForm
+20:33:49|18|CMD: GetSystemMetrics
+20:33:49|19|CMD: Saiu do AdapForm
+20:33:49|20|SQL: SELECT DISTINCTROW NrCli, Nome, Ender, Telefone, Vend, Funcionario, email, CgcCpf, InscrEst, CEP, Operadora , EmAtraso , foto , apelido from Clientes ORDER BY Nome
+20:33:49|21|SQL: Select DISTINCTROW Nome From Clientes WHERE ((Nome>"")) ORDER BY Nome; 
+20:33:49|22|SQL: SELECT DISTINCTROW NrCli, Modelo, Placa, Cor FROM Carros WHERE NrCli=4743
+20:33:49|23|SQL: Select Nome From Mecanicos Where codi = 1 and Ativo = True 
+20:33:51|24|CMD: Chamar Orçamento pela tela de clientes
+20:33:51|25|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE ((Orcamento.Cliente="ANTONIO CARLOS VALENTIM")); 
+20:33:51|26|CMD: Entrou em AdapForm
+20:33:51|27|CMD: GetSystemMetrics
+20:33:51|28|CMD: Saiu do AdapForm
+20:33:51|29|SQL: Select NrCli From Clientes Where Nome = "ANTONIO CARLOS VALENTIM"
+20:33:51|30|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago from Orcamento, Clientes, Carros Where Clientes.NrCli = 4743 and Orcamento.Cliente = Clientes.Nome and Carros.Placa =  Orcamento.Carro
+20:34:44|31|CMD: Pesquisa de Cliente pelo Nome: ROGERIO PROPAGANDA
+20:34:44|32|SQL: SELECT NrCli From Clientes WHERE ((Nome Like '*ROGERIO PROPAGANDA*')); 
+20:34:44|33|CMD: Entrou em AdapForm
+20:34:44|34|CMD: GetSystemMetrics
+20:34:44|35|CMD: Saiu do AdapForm
+20:34:44|36|SQL: SELECT DISTINCTROW NrCli, Nome, Ender, Telefone, Vend, Funcionario, email, CgcCpf, InscrEst, CEP, Operadora , EmAtraso , foto , apelido from Clientes ORDER BY Nome
+20:34:44|37|SQL: SELECT DISTINCTROW NrCli, Modelo, Placa, Cor FROM Carros WHERE NrCli=4758
+20:34:44|38|SQL: Select Nome From Mecanicos Where codi = 1 and Ativo = True 
+20:34:44|39|CMD: Procrando foto em C:\MbCarros\Imagens\PROPAG.jpg
+20:34:45|40|CMD: Chamar Orçamento pela tela de clientes
+20:34:45|41|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE ((Orcamento.Cliente="ROGERIO PROPAGANDA")); 
+20:34:46|42|CMD: Entrou em AdapForm
+20:34:46|43|CMD: GetSystemMetrics
+20:34:46|44|CMD: Saiu do AdapForm
+20:34:46|45|SQL: Select NrCli From Clientes Where Nome = "ROGERIO PROPAGANDA"
+20:34:46|46|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago from Orcamento, Clientes, Carros Where Clientes.NrCli = 4758 and Orcamento.Cliente = Clientes.Nome and Carros.Placa =  Orcamento.Carro
+20:34:57|47|CMD: Fechar tela Cliente
+20:35:43|48|CMD: Pesquisa de Cliente pelo Nome: JOSUE DO PIC
+20:35:43|49|SQL: SELECT NrCli From Clientes WHERE ((Nome Like '*JOSUE DO PIC*')); 
+20:35:43|50|CMD: Entrou em AdapForm
+20:35:43|51|CMD: GetSystemMetrics
+20:35:43|52|CMD: Saiu do AdapForm
+20:35:43|53|SQL: SELECT DISTINCTROW NrCli, Nome, Ender, Telefone, Vend, Funcionario, email, CgcCpf, InscrEst, CEP, Operadora , EmAtraso , foto , apelido from Clientes ORDER BY Nome
+20:35:43|54|SQL: SELECT DISTINCTROW NrCli, Modelo, Placa, Cor FROM Carros WHERE NrCli=4759
+20:35:43|55|SQL: Select Nome From Mecanicos Where codi = 1 and Ativo = True 
+20:35:45|56|CMD: Chamar Orçamento pela tela de clientes
+20:35:45|57|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE ((Orcamento.Cliente="JOSUE DO PICOLE")); 
+20:35:45|58|CMD: Entrou em AdapForm
+20:35:45|59|CMD: GetSystemMetrics
+20:35:45|60|CMD: Saiu do AdapForm
+20:35:45|61|SQL: Select NrCli From Clientes Where Nome = "JOSUE DO PICOLE"
+20:35:45|62|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago from Orcamento, Clientes, Carros Where Clientes.NrCli = 4759 and Orcamento.Cliente = Clientes.Nome and Carros.Placa =  Orcamento.Carro
+20:36:17|63|CMD: Pesquisa de Cliente pelo Nome: TONIMARDA SIL
+20:36:17|64|SQL: SELECT NrCli From Clientes WHERE ((Nome Like '*TONIMARDA SIL*')); 
+20:36:17|65|MSG: Não localizei o cliente
+20:36:24|66|CMD: Pesquisa de Cliente pelo Nome: TONIMAR DA SILVA
+20:36:24|67|SQL: SELECT NrCli From Clientes WHERE ((Nome Like '*TONIMAR DA SILVA*')); 
+20:36:24|68|CMD: Entrou em AdapForm
+20:36:24|69|CMD: GetSystemMetrics
+20:36:24|70|CMD: Saiu do AdapForm
+20:36:24|71|SQL: SELECT DISTINCTROW NrCli, Nome, Ender, Telefone, Vend, Funcionario, email, CgcCpf, InscrEst, CEP, Operadora , EmAtraso , foto , apelido from Clientes ORDER BY Nome
+20:36:24|72|SQL: SELECT DISTINCTROW NrCli, Modelo, Placa, Cor FROM Carros WHERE NrCli=4788
+20:36:24|73|SQL: Select Nome From Mecanicos Where codi = 1 and Ativo = True 
+20:36:24|74|CMD: Procrando foto em C:\MbCarros\Imagens\TONIMAR.jp
+20:36:24|75|CMD: Erro no carregamento da imagem de tipo File not found: 'C:\MbCarros\Imagens\TONIMAR.jp'
+20:36:26|76|CMD: Chamar Orçamento pela tela de clientes
+20:36:26|77|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE ((Orcamento.Cliente="TONIMAR DA SILVA")); 
+20:36:26|78|CMD: Entrou em AdapForm
+20:36:26|79|CMD: GetSystemMetrics
+20:36:26|80|CMD: Saiu do AdapForm
+20:36:26|81|SQL: Select NrCli From Clientes Where Nome = "TONIMAR DA SILVA"
+20:36:26|82|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago from Orcamento, Clientes, Carros Where Clientes.NrCli = 4788 and Orcamento.Cliente = Clientes.Nome and Carros.Placa =  Orcamento.Carro
+20:36:28|83|CMD: Carregar Orçameto
+20:36:28|84|UPD: Delete * From TarefasTemp Where IDPC = 2
+20:36:28|85|UPD: Insert Into TarefasTemp (concerto,Vlr,Situacao,Nome, Pago, IDPC, DtConclusao, DtAssumiu) SELECT tpConcertos.concerto, Tarefas.Vlr, tpSituacao.situacao, Mecanicos.Nome, Tarefas.Pago, 2 ,Tarefas.DtConclusao, Tarefas.DtAssumiu from Mecanicos INNER JOIN (tpSituacao INNER JOIN (tpConcertos INNER JOIN Tarefas ON tpConcertos.tipo = Tarefas.concerto) ON tpSituacao.tipo = Tarefas.Situacao) ON Mecanicos.codi = Tarefas.Mec Where Tarefas.Orc = 1517
+20:36:28|86|SQL: Select * From TarefasTemp Where IDPC = 2
+20:36:28|87|DBG: Sem Tarefas
+20:36:28|88|DBG:  
+20:36:28|89|CMD: Entrou em AdapForm
+20:36:28|90|CMD: GetSystemMetrics
+20:36:28|91|CMD: Saiu do AdapForm
+20:36:28|92|SQL: Select Funcionario From Clientes Where NrCli = 4788
+20:36:28|93|CMD: Orçamento Carregado
+20:36:28|94|SQL: Select DISTINCTROW Orcamento.Obs, Orcamento.Carro, Orcamento.Data, Orcamento.Orcamento, Orcamento.Cliente,Orcamento.Kms, Orcamento.Kilom, Orcamento.Total, Orcamento.Garantia, Orcamento.Pagamento, Itens_Orc.Item, Itens_Orc.Quant, Itens_Orc.Valor ,Orcamento.ObsMec ,Orcamento.Vend ,Orcamento.VlrPago ,Itens_Orc.DtItOrc ,Itens_Orc.Cont ,Itens_Orc.NT,Clientes.Observacao from Clientes INNER JOIN (Orcamento LEFT JOIN Itens_Orc ON Orcamento.Orcamento = Itens_Orc.Orçamento) ON Clientes.Nome = Orcamento.Cliente Where Orcamento.Orcamento = 1517 ORDER BY Itens_Orc.Item 
+20:36:28|95|SQL: Select Historico From Carros Where Placa = '93956469'
+20:36:28|96|SQL: SELECT Modelo from Carros WHERE Carros.Placa = '93956469'
+20:36:28|97|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'TONIMAR DA SILVA'
+20:36:28|98|SQL: Select Ender From Clientes Where NrCli = 4788
+20:36:28|99|SQL: Select Modelo From Carros Where NrCli = 4788
+20:36:28|100|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE Placa='93956469' AND NrCli=4788
+20:36:28|101|DBG: Saiu do CorPlaca
+20:36:28|102|DBG: MostraCarro
+20:36:28|103|CMD: lbTotal = 220 apartir de MostraOrcamento
+20:36:28|104|SQL: SELECT Sum(Vlr), Orc from Tarefas GROUP BY Orc HAVING Orc = 1517
+20:36:28|105|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 9396 Order By DtItOrc desc
+20:36:28|106|SQL: SELECT Sum(Parcelas.Valor) AS SomaDeValor, Parcelas.Orc from Parcelas GROUP BY Parcelas.Orc HAVING Parcelas.Orc  = 1517
+20:36:28|107|SQL: Select Nome From Mecanicos Where Codi = 1 and Ativo = True 
+20:36:28|108|SQL: Select Historico From Carros Where Placa = '93956469'
+20:36:28|109|UPD: Delete From ItensConcertoTemp Where IDPC = 2
+20:36:28|110|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'TONIMAR DA SILVA'
+20:36:28|111|SQL: Select Ender From Clientes Where NrCli = 4788
+20:36:28|112|SQL: Select Modelo From Carros Where NrCli = 4788
+20:36:28|113|CMD: cbCarro.Text[2] = GM CORSA
+20:36:28|114|CMD: Tempo de carregamento do Orçamento: 0:00.12
+20:36:37|115|DBG: frmOrc.Gravar
+20:36:37|116|DBG: Cliente: TONIMAR DA SILVA
+20:36:37|117|DBG: Carro: 93956469
+20:36:37|118|DBG: QuantItens: 1
+20:36:37|119|SQL: Select * From Orcamento Where Orcamento = 1517
+20:36:38|120|UPD: Update Carros Set Historico = ' '  Where Placa = '93956469'
+20:36:38|121|DBG: BeginTrans
+20:36:38|122|UPD: Delete From Tarefas Where Orc = 1517
+20:36:38|123|SQL: Select * From TarefasTemp Where IDPC = 2 Order By ID
+20:36:38|124|DBG: CommitTrans
+20:36:38|125|DBG: Gravação concluída
+20:36:38|126|CMD: Entrou em AdapForm
+20:36:38|127|CMD: GetSystemMetrics
+20:36:38|128|CMD: Saiu do AdapForm
+20:36:38|129|UPD: Delete From ParcelasTemp Where IDPC = 2
+20:36:38|130|UPD: INSERT INTO ParcelasTemp (IDPC, Data, Valor, Orig, Obs) SELECT 2 as IDPC, Data, Valor, 1, Obs from Parcelas WHERE Orc = 1517
+20:36:38|131|SQL: Select Sum(Valor) From Parcelas WHERE Orc = 1517
+20:37:03|132|UPD: Update ParcelasTemp Set IDPC = 2 Where IDPC Is Null or IDPC = 0 
+20:37:03|133|SQL: Select Sum(Valor) From ParcelasTemp Where IDPC = 2
+20:37:07|134|SQL: Select codi, Nome From Mecanicos Where Senha = 'DSM' and Oper > 0  and Ativo = True 
+20:37:07|135|SQL: Select Sum(Valor) From ParcelasTemp Where IDPC = 2
+20:37:07|136|SQL: SELECT Data, Valor, Auto, Obs From ParcelasTemp WHERE IDPC = 2 and Orig IS NULL  Order by Auto 
+20:37:07|137|UPD: Insert Into Parcelas (Orc, Cli, NrParc, Data, Valor, BalcFez, Obs  ,BalcRec, Pagto) Values (1517, 4788, 0, #2020/02/02 00:00:00#, 110, 1, "D" ,0, #2020/10/17 20:37:07#)
+20:37:07|138|UPD: Update Orcamento Set Pagamento = #10/17/2020#, Vend = 1, Total = 220, VlrPago = 220 WHERE Orcamento.Orcamento=1517
+20:37:07|139|SQL: SELECT Count(*) AS Expr1, Item, DtItOrc from Itens_Orc Where Orçamento = 1517 GROUP BY Orçamento, Item, DtItOrc Having  Count(*) > 1 
+20:37:13|140|CMD: Programa Fechado Normalmente
+20:37:13|141|DBG: 
+20:37:16|1|DBG: 
+20:37:16|2|CMD: MbCarros acionado em 17/10/2020 20:37:16
+20:37:16|3|CMD: Usuário Registrado
+20:37:16|4|DBG: VersãoEXE: 1.2.1
+20:37:16|5|CMD: Modo Escritório
+20:37:16|6|SQL: Select UtComissoes From Config
+20:37:16|7|SQL: SELECT Parcelas.Data, Parcelas.Pagto, Parcelas.Cli, Clientes.Nome, Clientes.NrCli FROM Parcelas INNER JOIN Clientes ON Parcelas.Cli = Clientes.NrCli Where Parcelas.Data < Now() And Parcelas.Pagto Is Null ORDER BY Parcelas.Data DESC 
+20:37:16|8|SQL: Config
+20:37:16|9|UPD: Update Config Set Imagem = ''
+20:37:16|10|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR'
+20:37:16|11|DBG: PC = 2
+20:37:16|12|CMD: Entrou em AdapForm
+20:37:16|13|CMD: GetSystemMetrics
+20:37:16|14|CMD: Saiu do AdapForm
+20:38:31|15|CMD: Programa Fechado Normalmente
+20:38:31|16|DBG: 

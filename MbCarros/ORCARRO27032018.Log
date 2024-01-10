@@ -1,0 +1,534 @@
+16:05:39|1|DBG: 
+16:05:39|2|CMD: Orcarro acionado em 11/02/2017 16:05:39
+16:05:39|3|CMD: Usuário Registrado
+16:05:39|4|DBG: VersãoEXE: 5.0.1
+16:05:39|5|CMD: Modo Escritório
+16:05:39|6|SQL: Select UtComissoes From Config
+16:05:39|7|SQL: Config
+16:05:39|8|UPD: Update Config Set Imagem = ''
+16:05:39|9|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR1'
+16:05:39|10|DBG: PC = 1
+16:05:39|11|CMD: Entrou em AdapForm
+16:05:39|12|CMD: GetSystemMetrics
+16:05:39|13|CMD: Saiu do AdapForm
+16:06:10|14|CMD: Entrou em AdapForm
+16:06:10|15|CMD: GetSystemMetrics
+16:06:10|16|CMD: Saiu do AdapForm
+16:06:11|17|DBG: Impressão em Fita
+16:06:11|18|CMD: 
+16:06:11|19|CMD: Arquivo da impressão: C:\OrCarro\Impres.prn
+16:06:11|20|CMD: RECIBO
+16:06:11|21|CMD: Bonifacio Comercio Ltda
+16:06:11|22|CMD: 3242-0093
+16:06:11|23|CMD: Estrada do Lami, 639, Belem Novo
+16:06:11|24|SQL: Select CGC From Config
+16:06:11|25|CMD: CNPj: 26251834000163
+16:06:11|26|CMD: 
+16:06:11|27|CMD: QuemPaga: 123
+16:06:11|28|CMD:  
+16:06:11|29|CMD: QuemRecebe: 123
+16:06:11|30|CMD:  
+16:06:11|31|CMD: Identificacao: 123
+16:06:11|32|CMD:  
+16:06:11|33|CMD: Endereco: 123
+16:06:11|34|CMD:  
+16:06:11|35|CMD: Valor: 123,00
+16:06:11|36|CMD: (Cento e Vinte e Tres Reais )
+16:06:11|37|CMD:  
+16:06:11|38|CMD: Referente a 123
+16:06:11|39|CMD:  
+16:06:11|40|CMD:  
+16:06:11|41|CMD: Porto Alegre, 11 de Fevereiro de 2017
+16:06:11|42|CMD:  
+16:06:11|43|CMD:  
+16:06:11|44|CMD: 
+16:06:11|45|SQL: Select LinhasApos From Config
+16:06:11|46|DBG: Impressao na Matricial
+16:06:11|47|CMD: Impressao acionada em: LPT1
+16:08:46|1|DBG: 
+16:08:46|2|CMD: Orcarro acionado em 11/02/2017 16:08:46
+16:08:46|3|CMD: Usuário Registrado
+16:08:46|4|DBG: VersãoEXE: 5.0.1
+16:08:46|5|CMD: Modo Escritório
+16:08:46|6|SQL: Select UtComissoes From Config
+16:08:46|7|SQL: Config
+16:08:47|8|UPD: Update Config Set Imagem = ''
+16:08:47|9|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR1'
+16:08:47|10|DBG: PC = 1
+16:08:47|11|CMD: Entrou em AdapForm
+16:08:47|12|CMD: GetSystemMetrics
+16:08:47|13|CMD: Saiu do AdapForm
+16:08:49|14|CMD: Entrou em AdapForm
+16:08:49|15|CMD: GetSystemMetrics
+16:08:49|16|CMD: Saiu do AdapForm
+16:08:49|17|SQL: Config
+16:08:49|18|SQL: Select LinhasApos From Config
+16:08:49|19|SQL: Select VlrGatComiss From Config
+16:08:49|20|SQL: Select CGC From Config
+16:08:49|21|SQL: Select QtdCarrComiss From Config
+16:08:59|22|CMD: Programa Fechado Normalmente
+16:08:59|23|DBG: 
+16:12:21|1|DBG: 
+16:12:21|2|CMD: Orcarro acionado em 11/02/2017 16:12:21
+16:12:21|3|CMD: Usuário Registrado
+16:12:21|4|DBG: VersãoEXE: 5.0.1
+16:12:21|5|CMD: Modo Escritório
+16:12:21|6|SQL: Select UtComissoes From Config
+16:12:21|7|SQL: Config
+16:12:21|8|UPD: Update Config Set Imagem = ''
+16:12:21|9|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR1'
+16:12:21|10|DBG: PC = 1
+16:12:21|11|CMD: Entrou em AdapForm
+16:12:21|12|CMD: GetSystemMetrics
+16:12:21|13|CMD: Saiu do AdapForm
+16:12:23|14|CMD: Entrou em AdapForm
+16:12:23|15|CMD: GetSystemMetrics
+16:12:23|16|CMD: Saiu do AdapForm
+16:12:23|17|SQL: Config
+16:12:23|18|SQL: Select LinhasApos From Config
+16:12:23|19|SQL: Select VlrGatComiss From Config
+16:12:23|20|SQL: Select CGC From Config
+16:12:23|21|SQL: Select QtdCarrComiss From Config
+16:12:28|22|CMD: Programa Fechado Normalmente
+16:12:28|23|DBG: 
+16:15:57|1|DBG: 
+16:15:57|2|CMD: Orcarro acionado em 11/02/2017 16:15:57
+16:15:57|3|CMD: Usuário Registrado
+16:15:57|4|DBG: VersãoEXE: 5.0.1
+16:15:57|5|CMD: Modo Escritório
+16:15:57|6|SQL: Select UtComissoes From Config
+16:15:57|7|SQL: Config
+16:15:57|8|UPD: Update Config Set Imagem = ''
+16:15:57|9|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR1'
+16:15:57|10|DBG: PC = 1
+16:15:57|11|CMD: Entrou em AdapForm
+16:15:57|12|CMD: GetSystemMetrics
+16:15:57|13|CMD: Saiu do AdapForm
+16:16:08|14|CMD: Entrou em AdapForm
+16:16:08|15|CMD: GetSystemMetrics
+16:16:08|16|CMD: Saiu do AdapForm
+16:16:10|17|DBG: Impressão em Fita
+16:16:10|18|CMD: 
+16:16:10|19|CMD: Arquivo da impressão: C:\OrCarro\Impres.prn
+16:16:10|20|CMD: RECIBO
+16:16:10|21|CMD: Bonifacio Comercio Ltda
+16:16:10|22|CMD: 3242-0093
+16:16:10|23|CMD: Estrada do Lami, 639, Belem Novo
+16:16:10|24|SQL: Select CGC From Config
+16:16:10|25|CMD: CNPj: 26251834000163
+16:16:10|26|CMD: 
+16:16:10|27|CMD: QuemPaga: 123
+16:16:10|28|CMD:  
+16:16:10|29|CMD: QuemRecebe: 123
+16:16:10|30|CMD:  
+16:16:10|31|CMD: Identificacao: 123
+16:16:10|32|CMD:  
+16:16:10|33|CMD: Endereco: 123
+16:16:10|34|CMD:  
+16:16:10|35|CMD: Valor: 123,00
+16:16:10|36|CMD: (Cento e Vinte e Tres Reais )
+16:16:10|37|CMD:  
+16:16:10|38|CMD: Referente a 123
+16:16:10|39|CMD:  
+16:16:10|40|CMD:  
+16:16:10|41|CMD: Porto Alegre, 11 de Fevereiro de 2017
+16:16:10|42|CMD:  
+16:16:10|43|CMD:  
+16:16:10|44|CMD: 
+16:16:10|45|SQL: Select LinhasApos From Config
+16:16:10|46|DBG: Impressao na Matricial
+16:16:10|47|CMD: Impressao acionada em: LPT1
+16:16:43|1|DBG: 
+16:16:43|2|CMD: Orcarro acionado em 11/02/2017 16:16:43
+16:16:43|3|CMD: Usuário Registrado
+16:16:43|4|DBG: VersãoEXE: 5.0.1
+16:16:43|5|CMD: Modo Escritório
+16:16:43|6|SQL: Select UtComissoes From Config
+16:16:43|7|SQL: Config
+16:16:43|8|UPD: Update Config Set Imagem = ''
+16:16:43|9|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR1'
+16:16:43|10|DBG: PC = 1
+16:16:44|11|CMD: Entrou em AdapForm
+16:16:44|12|CMD: GetSystemMetrics
+16:16:44|13|CMD: Saiu do AdapForm
+16:16:52|14|CMD: Entrou em AdapForm
+16:16:52|15|CMD: GetSystemMetrics
+16:16:52|16|CMD: Saiu do AdapForm
+16:16:53|17|DBG: Impressão em Fita
+16:16:53|18|CMD: 
+16:16:53|19|CMD: Arquivo da impressão: C:\OrCarro\Impres.prn
+16:16:53|20|CMD: RECIBO
+16:16:53|21|CMD: Bonifacio Comercio Ltda
+16:16:53|22|CMD: 3242-0093
+16:16:53|23|CMD: Estrada do Lami, 639, Belem Novo
+16:16:53|24|SQL: Select CGC From Config
+16:16:53|25|CMD: CNPj: 26251834000163
+16:16:53|26|CMD: 
+16:16:53|27|CMD: QuemPaga: 123
+16:16:53|28|CMD:  
+16:16:53|29|CMD: QuemRecebe: 123
+16:16:53|30|CMD:  
+16:16:53|31|CMD: Identificacao: 123
+16:16:53|32|CMD:  
+16:16:53|33|CMD: Endereco: 123
+16:16:53|34|CMD:  
+16:16:53|35|CMD: Valor: 123,00
+16:16:53|36|CMD: (Cento e Vinte e Tres Reais )
+16:16:53|37|CMD:  
+16:16:53|38|CMD: Referente a 123
+16:16:53|39|CMD:  
+16:16:53|40|CMD:  
+16:16:53|41|CMD: Porto Alegre, 11 de Fevereiro de 2017
+16:16:53|42|CMD:  
+16:16:53|43|CMD:  
+16:16:53|44|CMD: 
+16:16:53|45|SQL: Select LinhasApos From Config
+16:16:53|46|DBG: Impressao na USB
+16:17:46|47|CMD: Programa Fechado Normalmente
+16:17:46|48|DBG: 
+16:17:47|1|DBG: 
+16:17:47|2|CMD: Orcarro acionado em 11/02/2017 16:17:47
+16:17:47|3|CMD: Usuário Registrado
+16:17:47|4|DBG: VersãoEXE: 5.0.1
+16:17:47|5|CMD: Modo Escritório
+16:17:47|6|SQL: Select UtComissoes From Config
+16:17:47|7|SQL: Config
+16:17:47|8|UPD: Update Config Set Imagem = ''
+16:17:47|9|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR1'
+16:17:47|10|DBG: PC = 1
+16:17:47|11|CMD: Entrou em AdapForm
+16:17:47|12|CMD: GetSystemMetrics
+16:17:47|13|CMD: Saiu do AdapForm
+16:18:03|14|CMD: Entrou em AdapForm
+16:18:03|15|CMD: GetSystemMetrics
+16:18:03|16|CMD: Saiu do AdapForm
+16:18:05|17|DBG: Impressão em Fita
+16:18:05|18|CMD: 
+16:18:05|19|CMD: Arquivo da impressão: C:\OrCarro\Impres.prn
+16:18:05|20|CMD: RECIBO
+16:18:05|21|CMD: Bonifacio Comercio Ltda
+16:18:05|22|CMD: 3242-0093
+16:18:05|23|CMD: Estrada do Lami, 639, Belem Novo
+16:18:05|24|SQL: Select CGC From Config
+16:18:05|25|CMD: CNPj: 26251834000163
+16:18:05|26|CMD: 
+16:18:05|27|CMD: QuemPaga: 1231
+16:18:05|28|CMD:  
+16:18:05|29|CMD: QuemRecebe: 23
+16:18:05|30|CMD:  
+16:18:05|31|CMD: Identificacao: 123
+16:18:05|32|CMD:  
+16:18:05|33|CMD: Endereco: 123
+16:18:05|34|CMD:  
+16:18:05|35|CMD: Valor: 123,00
+16:18:05|36|CMD: (Cento e Vinte e Tres Reais )
+16:18:05|37|CMD:  
+16:18:05|38|CMD: Referente a 123
+16:18:05|39|CMD:  
+16:18:05|40|CMD:  
+16:18:05|41|CMD: Porto Alegre, 11 de Fevereiro de 2017
+16:18:05|42|CMD:  
+16:18:05|43|CMD:  
+16:18:05|44|CMD: 
+16:18:05|45|SQL: Select LinhasApos From Config
+16:18:05|46|DBG: Impressao na USB
+16:21:11|47|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE Data > #01/01/2017#
+16:21:11|48|CMD: Entrou em AdapForm
+16:21:11|49|CMD: GetSystemMetrics
+16:21:11|50|CMD: Saiu do AdapForm
+16:21:11|51|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago FROM Orcamento, Carros, Clientes WHERE Orcamento.Carro = Carros.Placa and Orcamento.Data > #01/01/2017# and Clientes.Nome = Orcamento.Cliente Order By Orcamento.Data desc 
+16:21:11|52|SQL: Select DISTINCTROW Nome From Clientes WHERE ((Nome>"")) ORDER BY Nome; 
+16:21:14|53|CMD: Carregar Orçameto
+16:21:14|54|UPD: Delete * From TarefasTemp Where IDPC = 1
+16:21:14|55|UPD: Insert Into TarefasTemp (concerto,Vlr,Situacao,Nome, Pago, IDPC, DtConclusao, DtAssumiu) SELECT tpConcertos.concerto, Tarefas.Vlr, tpSituacao.situacao, Mecanicos.Nome, Tarefas.Pago, 1 ,Tarefas.DtConclusao, Tarefas.DtAssumiu from Mecanicos INNER JOIN (tpSituacao INNER JOIN (tpConcertos INNER JOIN Tarefas ON tpConcertos.tipo = Tarefas.concerto) ON tpSituacao.tipo = Tarefas.Situacao) ON Mecanicos.codi = Tarefas.Mec Where Tarefas.Orc = 79
+16:21:14|56|SQL: Select * From TarefasTemp Where IDPC = 1
+16:21:14|57|DBG: Sem Tarefas
+16:21:14|58|DBG:  
+16:21:14|59|CMD: Entrou em AdapForm
+16:21:14|60|CMD: GetSystemMetrics
+16:21:14|61|CMD: Saiu do AdapForm
+16:21:14|62|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'JPPR PAULINHO SERRALHERIA'
+16:21:14|63|SQL: Select Ender From Clientes Where NrCli = 4655
+16:21:14|64|SQL: Select Ender From Clientes Where NrCli = 4655
+16:21:14|65|SQL: Select Modelo From Carros Where NrCli = 4655
+16:21:14|66|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE NrCli=4655
+16:21:14|67|DBG: Saiu do CorPlaca
+16:21:14|68|DBG: MostraCarro
+16:21:14|69|DBG: Saiu do cbCarro_Click
+16:21:14|70|DBG: Saiu do SetaCliente
+16:21:14|71|SQL: Select Funcionario From Clientes Where NrCli = 4655
+16:21:14|72|CMD: Orçamento Carregado
+16:21:14|73|SQL: Select DISTINCTROW Orcamento.Obs, Orcamento.Carro, Orcamento.Data, Orcamento.Orcamento, Orcamento.Cliente,Orcamento.Kms, Orcamento.Kilom, Orcamento.Total, Orcamento.Garantia, Orcamento.Pagamento, Itens_Orc.Item, Itens_Orc.Quant, Itens_Orc.Valor ,Orcamento.ObsMec ,Orcamento.Vend ,Orcamento.VlrPago ,Itens_Orc.DtItOrc ,Itens_Orc.Cont ,Clientes.Observacao from Clientes INNER JOIN (Orcamento LEFT JOIN Itens_Orc ON Orcamento.Orcamento = Itens_Orc.Orçamento) ON Clientes.Nome = Orcamento.Cliente Where Orcamento.Orcamento = 79 ORDER BY Itens_Orc.Item 
+16:21:14|74|SQL: Select Historico From Carros Where Placa = '32591439'
+16:21:14|75|SQL: SELECT Modelo from Carros WHERE Carros.Placa = '32591439'
+16:21:14|76|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'JPPR PAULINHO SERRALHERIA'
+16:21:14|77|SQL: Select Ender From Clientes Where NrCli = 4655
+16:21:14|78|SQL: Select Modelo From Carros Where NrCli = 4655
+16:21:14|79|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE Placa='32591439' AND NrCli=4655
+16:21:14|80|DBG: Saiu do CorPlaca
+16:21:14|81|DBG: MostraCarro
+16:21:14|82|CMD: lbTotal = 11,1 apartir de MostraOrcamento
+16:21:14|83|SQL: SELECT Sum(Vlr), Orc from Tarefas GROUP BY Orc HAVING Orc = 79
+16:21:14|84|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 279 Order By DtItOrc desc
+16:21:14|85|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 280 Order By DtItOrc desc
+16:21:14|86|CMD: lbTotal = 11,1 apartir de Sub Total
+16:21:14|87|SQL: Select Historico From Carros Where Placa = '32591439'
+16:21:14|88|UPD: Delete From ItensConcertoTemp Where IDPC = 1
+16:21:15|89|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'JPPR PAULINHO SERRALHERIA'
+16:21:15|90|SQL: Select Ender From Clientes Where NrCli = 4655
+16:21:15|91|SQL: Select Modelo From Carros Where NrCli = 4655
+16:21:15|92|CMD: cbCarro.Text[2] = DIVERSOS
+16:21:15|93|CMD: Tempo de carregamento do Orçamento: 0:01.12
+16:21:21|94|CMD: Programa Fechado Normalmente
+16:21:21|95|DBG: 
+16:37:50|1|DBG: 
+16:37:50|2|CMD: Orcarro acionado em 11/02/2017 16:37:50
+16:37:50|3|CMD: Usuário Registrado
+16:37:50|4|DBG: VersãoEXE: 5.0.1
+16:37:50|5|CMD: Modo Escritório
+16:37:50|6|SQL: Select UtComissoes From Config
+16:37:50|7|SQL: Config
+16:37:50|8|UPD: Update Config Set Imagem = ''
+16:37:50|9|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR1'
+16:37:50|10|DBG: PC = 1
+16:37:50|11|CMD: Entrou em AdapForm
+16:37:50|12|CMD: GetSystemMetrics
+16:37:50|13|CMD: Saiu do AdapForm
+16:38:08|14|CMD: Programa Fechado Normalmente
+16:38:08|15|DBG: 
+16:38:21|1|DBG: 
+16:38:21|2|CMD: Orcarro acionado em 11/02/2017 16:38:21
+16:38:21|3|CMD: Usuário Registrado
+16:38:21|4|DBG: VersãoEXE: 5.0.1
+16:38:21|5|CMD: Modo Escritório
+16:38:21|6|SQL: Select UtComissoes From Config
+16:38:21|7|SQL: Config
+16:38:21|8|UPD: Update Config Set Imagem = ''
+16:38:21|9|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR1'
+16:38:21|10|DBG: PC = 1
+16:38:21|11|CMD: Entrou em AdapForm
+16:38:21|12|CMD: GetSystemMetrics
+16:38:21|13|CMD: Saiu do AdapForm
+16:38:28|14|CMD: Entrou em AdapForm
+16:38:28|15|CMD: GetSystemMetrics
+16:38:28|16|CMD: Saiu do AdapForm
+16:38:30|17|DBG: Impressão em Fita
+16:38:30|18|CMD: 
+16:38:30|19|CMD: Arquivo da impressão: C:\OrCarro\Impres.prn
+16:38:30|20|CMD: E
+16:38:30|21|CMD:              RECIBO             
+16:38:30|22|CMD:      Bonifacio Comercio Ltda     
+16:38:30|23|CMD:             3242-0093            
+16:38:30|24|CMD: Estrada do Lami, 639, Belem Novo
+16:38:30|25|SQL: Select CGC From Config
+16:38:30|26|CMD:       CNPj: 26251834000163      
+16:38:30|27|CMD: -------------------------------
+16:38:30|28|CMD: QuemPaga: 123
+16:38:30|29|CMD:  
+16:38:30|30|CMD: QuemRecebe: 123
+16:38:30|31|CMD:  
+16:38:30|32|CMD: Identificacao: 123
+16:38:30|33|CMD:  
+16:38:30|34|CMD: Endereco: 123
+16:38:30|35|CMD:  
+16:38:30|36|CMD: Valor: 23,00
+16:38:30|37|CMD: (Vinte e Tres Reais )
+16:38:30|38|CMD:  
+16:38:30|39|CMD: Referente a 123
+16:38:30|40|CMD:  
+16:38:30|41|CMD:  
+16:38:30|42|CMD: Porto Alegre, 11 de Fevereiro de 2017
+16:38:30|43|CMD:  
+16:38:30|44|CMD:  
+16:38:30|45|CMD: -------------------------------
+16:38:30|46|SQL: Select LinhasApos From Config
+16:38:30|47|DBG: Impressao na USB
+16:38:43|48|CMD: Entrou em AdapForm
+16:38:43|49|CMD: GetSystemMetrics
+16:38:43|50|CMD: Saiu do AdapForm
+16:49:52|51|CMD: Programa Fechado Normalmente
+16:49:52|52|DBG: 
+16:50:12|1|DBG: 
+16:50:12|2|CMD: Orcarro acionado em 11/02/2017 16:50:12
+16:50:12|3|CMD: Usuário Registrado
+16:50:12|4|DBG: VersãoEXE: 5.0.1
+16:50:12|5|CMD: Modo Escritório
+16:50:12|6|SQL: Select UtComissoes From Config
+16:50:12|7|SQL: Config
+16:50:12|8|UPD: Update Config Set Imagem = ''
+16:50:12|9|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR1'
+16:50:12|10|DBG: PC = 1
+16:50:12|11|CMD: Entrou em AdapForm
+16:50:12|12|CMD: GetSystemMetrics
+16:50:12|13|CMD: Saiu do AdapForm
+16:50:20|14|CMD: Entrou em AdapForm
+16:50:20|15|CMD: GetSystemMetrics
+16:50:20|16|CMD: Saiu do AdapForm
+16:50:22|17|DBG: Impressão em Fita
+16:50:22|18|CMD: 
+16:50:22|19|CMD: Arquivo da impressão: C:\OrCarro\Impres.prn
+16:50:22|20|CMD: E
+16:50:22|21|CMD:              RECIBO             
+16:50:22|22|CMD:      Bonifacio Comercio Ltda     
+16:50:22|23|CMD:             3242-0093            
+16:50:22|24|CMD: Estrada do Lami, 639, Belem Novo
+16:50:22|25|SQL: Select CGC From Config
+16:50:22|26|CMD:       CNPj: 26251834000163      
+16:50:22|27|CMD: -------------------------------
+16:50:22|28|CMD: QuemPaga: 123
+16:50:22|29|CMD:  
+16:50:22|30|CMD: QuemRecebe: 123
+16:50:22|31|CMD:  
+16:50:22|32|CMD: Identificacao: 123
+16:50:22|33|CMD:  
+16:50:22|34|CMD: Endereco: 123
+16:50:22|35|CMD:  
+16:50:22|36|CMD: Valor: 123,00
+16:50:22|37|CMD: (Cento e Vinte e Tres Reais )
+16:50:22|38|CMD:  
+16:50:22|39|CMD: Referente a 123
+16:50:22|40|CMD:  
+16:50:22|41|CMD:  
+16:50:22|42|CMD: Porto Alegre, 11 de Fevereiro de 2017
+16:50:22|43|CMD:  
+16:50:22|44|CMD:  
+16:50:22|45|CMD: -------------------------------
+16:50:22|46|SQL: Select LinhasApos From Config
+16:50:22|47|DBG: Impressao na USB
+16:58:22|1|DBG: 
+16:58:22|2|CMD: Orcarro acionado em 11/02/2017 16:58:22
+16:58:22|3|CMD: Usuário Registrado
+16:58:22|4|DBG: VersãoEXE: 5.0.1
+16:58:22|5|CMD: Modo Escritório
+16:58:22|6|SQL: Select UtComissoes From Config
+16:58:22|7|SQL: Config
+16:58:22|8|UPD: Update Config Set Imagem = ''
+16:58:22|9|SQL: Select IDPC From PCs Where Nome = 'SERVIDOR1'
+16:58:22|10|DBG: PC = 1
+16:58:22|11|CMD: Entrou em AdapForm
+16:58:22|12|CMD: GetSystemMetrics
+16:58:22|13|CMD: Saiu do AdapForm
+16:58:25|14|SQL: SELECT DISTINCTROW Cliente, Data, Orcamento From Orcamento WHERE Data > #01/01/2017#
+16:58:25|15|CMD: Entrou em AdapForm
+16:58:25|16|CMD: GetSystemMetrics
+16:58:25|17|CMD: Saiu do AdapForm
+16:58:25|18|SQL: SELECT DISTINCTROW Orcamento.Data, Orcamento.Total, Orcamento.Kilom, Carros.Modelo, Orcamento.Cliente, Orcamento.Carro, Orcamento.Orcamento, Orcamento.Pagamento, Clientes.Ender, Carros.Placa, Clientes.NrCli ,Orcamento.Obs ,Clientes.Observacao, Clientes.NrCli ,Orcamento.ObsMec ,Carros.Historico ,Clientes.Funcionario ,Orcamento.VlrPago FROM Orcamento, Carros, Clientes WHERE Orcamento.Carro = Carros.Placa and Orcamento.Data > #01/01/2017# and Clientes.Nome = Orcamento.Cliente Order By Orcamento.Data desc 
+16:58:25|19|SQL: Select DISTINCTROW Nome From Clientes WHERE ((Nome>"")) ORDER BY Nome; 
+16:58:32|20|CMD: Carregar Orçameto
+16:58:32|21|UPD: Delete * From TarefasTemp Where IDPC = 1
+16:58:32|22|UPD: Insert Into TarefasTemp (concerto,Vlr,Situacao,Nome, Pago, IDPC, DtConclusao, DtAssumiu) SELECT tpConcertos.concerto, Tarefas.Vlr, tpSituacao.situacao, Mecanicos.Nome, Tarefas.Pago, 1 ,Tarefas.DtConclusao, Tarefas.DtAssumiu from Mecanicos INNER JOIN (tpSituacao INNER JOIN (tpConcertos INNER JOIN Tarefas ON tpConcertos.tipo = Tarefas.concerto) ON tpSituacao.tipo = Tarefas.Situacao) ON Mecanicos.codi = Tarefas.Mec Where Tarefas.Orc = 79
+16:58:32|23|SQL: Select * From TarefasTemp Where IDPC = 1
+16:58:32|24|DBG: Sem Tarefas
+16:58:32|25|DBG:  
+16:58:32|26|CMD: Entrou em AdapForm
+16:58:32|27|CMD: GetSystemMetrics
+16:58:32|28|CMD: Saiu do AdapForm
+16:58:32|29|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'JPPR PAULINHO SERRALHERIA'
+16:58:32|30|SQL: Select Ender From Clientes Where NrCli = 4655
+16:58:32|31|SQL: Select Ender From Clientes Where NrCli = 4655
+16:58:32|32|SQL: Select Modelo From Carros Where NrCli = 4655
+16:58:32|33|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE NrCli=4655
+16:58:32|34|DBG: Saiu do CorPlaca
+16:58:32|35|DBG: MostraCarro
+16:58:32|36|DBG: Saiu do cbCarro_Click
+16:58:32|37|DBG: Saiu do SetaCliente
+16:58:32|38|SQL: Select Funcionario From Clientes Where NrCli = 4655
+16:58:32|39|CMD: Orçamento Carregado
+16:58:32|40|SQL: Select DISTINCTROW Orcamento.Obs, Orcamento.Carro, Orcamento.Data, Orcamento.Orcamento, Orcamento.Cliente,Orcamento.Kms, Orcamento.Kilom, Orcamento.Total, Orcamento.Garantia, Orcamento.Pagamento, Itens_Orc.Item, Itens_Orc.Quant, Itens_Orc.Valor ,Orcamento.ObsMec ,Orcamento.Vend ,Orcamento.VlrPago ,Itens_Orc.DtItOrc ,Itens_Orc.Cont ,Clientes.Observacao from Clientes INNER JOIN (Orcamento LEFT JOIN Itens_Orc ON Orcamento.Orcamento = Itens_Orc.Orçamento) ON Clientes.Nome = Orcamento.Cliente Where Orcamento.Orcamento = 79 ORDER BY Itens_Orc.Item 
+16:58:32|41|SQL: Select Historico From Carros Where Placa = '32591439'
+16:58:32|42|SQL: SELECT Modelo from Carros WHERE Carros.Placa = '32591439'
+16:58:32|43|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'JPPR PAULINHO SERRALHERIA'
+16:58:32|44|SQL: Select Ender From Clientes Where NrCli = 4655
+16:58:32|45|SQL: Select Modelo From Carros Where NrCli = 4655
+16:58:32|46|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE Placa='32591439' AND NrCli=4655
+16:58:32|47|DBG: Saiu do CorPlaca
+16:58:32|48|DBG: MostraCarro
+16:58:32|49|CMD: lbTotal = 11,1 apartir de MostraOrcamento
+16:58:32|50|SQL: SELECT Sum(Vlr), Orc from Tarefas GROUP BY Orc HAVING Orc = 79
+16:58:32|51|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 279 Order By DtItOrc desc
+16:58:32|52|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 280 Order By DtItOrc desc
+16:58:32|53|CMD: lbTotal = 11,1 apartir de Sub Total
+16:58:32|54|SQL: Select Historico From Carros Where Placa = '32591439'
+16:58:32|55|UPD: Delete From ItensConcertoTemp Where IDPC = 1
+16:58:32|56|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'JPPR PAULINHO SERRALHERIA'
+16:58:32|57|SQL: Select Ender From Clientes Where NrCli = 4655
+16:58:32|58|SQL: Select Modelo From Carros Where NrCli = 4655
+16:58:32|59|CMD: cbCarro.Text[2] = DIVERSOS
+16:58:32|60|CMD: Tempo de carregamento do Orçamento: 0:00.12
+16:58:40|61|CMD: Carregar Orçameto
+16:58:40|62|UPD: Delete * From TarefasTemp Where IDPC = 1
+16:58:40|63|UPD: Insert Into TarefasTemp (concerto,Vlr,Situacao,Nome, Pago, IDPC, DtConclusao, DtAssumiu) SELECT tpConcertos.concerto, Tarefas.Vlr, tpSituacao.situacao, Mecanicos.Nome, Tarefas.Pago, 1 ,Tarefas.DtConclusao, Tarefas.DtAssumiu from Mecanicos INNER JOIN (tpSituacao INNER JOIN (tpConcertos INNER JOIN Tarefas ON tpConcertos.tipo = Tarefas.concerto) ON tpSituacao.tipo = Tarefas.Situacao) ON Mecanicos.codi = Tarefas.Mec Where Tarefas.Orc = 79
+16:58:40|64|SQL: Select * From TarefasTemp Where IDPC = 1
+16:58:40|65|DBG: Sem Tarefas
+16:58:40|66|DBG:  
+16:58:41|67|CMD: Entrou em AdapForm
+16:58:41|68|CMD: GetSystemMetrics
+16:58:41|69|CMD: Saiu do AdapForm
+16:58:41|70|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'JPPR PAULINHO SERRALHERIA'
+16:58:41|71|SQL: Select Ender From Clientes Where NrCli = 4655
+16:58:41|72|SQL: Select Ender From Clientes Where NrCli = 4655
+16:58:41|73|SQL: Select Modelo From Carros Where NrCli = 4655
+16:58:41|74|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE NrCli=4655
+16:58:41|75|DBG: Saiu do CorPlaca
+16:58:41|76|DBG: MostraCarro
+16:58:41|77|DBG: Saiu do cbCarro_Click
+16:58:41|78|DBG: Saiu do SetaCliente
+16:58:41|79|SQL: Select Funcionario From Clientes Where NrCli = 4655
+16:58:41|80|CMD: Orçamento Carregado
+16:58:41|81|SQL: Select DISTINCTROW Orcamento.Obs, Orcamento.Carro, Orcamento.Data, Orcamento.Orcamento, Orcamento.Cliente,Orcamento.Kms, Orcamento.Kilom, Orcamento.Total, Orcamento.Garantia, Orcamento.Pagamento, Itens_Orc.Item, Itens_Orc.Quant, Itens_Orc.Valor ,Orcamento.ObsMec ,Orcamento.Vend ,Orcamento.VlrPago ,Itens_Orc.DtItOrc ,Itens_Orc.Cont ,Clientes.Observacao from Clientes INNER JOIN (Orcamento LEFT JOIN Itens_Orc ON Orcamento.Orcamento = Itens_Orc.Orçamento) ON Clientes.Nome = Orcamento.Cliente Where Orcamento.Orcamento = 79 ORDER BY Itens_Orc.Item 
+16:58:41|82|SQL: Select Historico From Carros Where Placa = '32591439'
+16:58:41|83|SQL: SELECT Modelo from Carros WHERE Carros.Placa = '32591439'
+16:58:41|84|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'JPPR PAULINHO SERRALHERIA'
+16:58:41|85|SQL: Select Ender From Clientes Where NrCli = 4655
+16:58:41|86|SQL: Select Modelo From Carros Where NrCli = 4655
+16:58:41|87|SQL: SELECT DISTINCTROW Placa, Cor, Modelo from Carros WHERE Placa='32591439' AND NrCli=4655
+16:58:41|88|DBG: Saiu do CorPlaca
+16:58:41|89|DBG: MostraCarro
+16:58:41|90|CMD: lbTotal = 11,1 apartir de MostraOrcamento
+16:58:41|91|SQL: SELECT Sum(Vlr), Orc from Tarefas GROUP BY Orc HAVING Orc = 79
+16:58:41|92|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 279 Order By DtItOrc desc
+16:58:41|93|SQL: SELECT top 1 Nome from AuditItemOrc INNER JOIN Mecanicos ON AuditItemOrc.Balconista = Mecanicos.codi Where Item_Orc = 280 Order By DtItOrc desc
+16:58:41|94|CMD: lbTotal = 11,1 apartir de Sub Total
+16:58:41|95|SQL: Select Historico From Carros Where Placa = '32591439'
+16:58:41|96|UPD: Delete From ItensConcertoTemp Where IDPC = 1
+16:58:41|97|SQL: Select NrCli, EmAtraso from clientes Where Nome = 'JPPR PAULINHO SERRALHERIA'
+16:58:41|98|SQL: Select Ender From Clientes Where NrCli = 4655
+16:58:41|99|SQL: Select Modelo From Carros Where NrCli = 4655
+16:58:41|100|CMD: cbCarro.Text[2] = DIVERSOS
+16:58:41|101|CMD: Tempo de carregamento do Orçamento: 0:01.12
+16:58:43|102|CMD: Entrou em AdapForm
+16:58:43|103|CMD: GetSystemMetrics
+16:58:43|104|CMD: Saiu do AdapForm
+16:58:45|105|CMD: 
+16:58:45|106|CMD: Arquivo da impressão: C:\OrCarro\Impres.prn
+16:58:45|107|CMD: 
+16:58:45|108|CMD:             ORCAMENTO            
+16:58:45|109|CMD:      Bonifacio Comercio Ltda     
+16:58:45|110|CMD: Estrada do Lami, 639, Belem Novo
+16:58:45|111|CMD:             3242-0093            
+16:58:45|112|CMD:  
+16:58:45|113|CMD: Porto Alegre, 11 de fevereiro de 2017
+16:58:45|114|CMD: Proprietario do Veiculo: 
+16:58:45|115|CMD: JPPR PAULINHO SERRALHERIA
+16:58:45|116|CMD: Endereco: 
+16:58:45|117|CMD: HEITOR VIEIRA
+16:58:45|118|SQL: Select CgcCpf, InscrEst From Clientes Where NrCli = 4655
+16:58:45|119|CMD: Veiculo Marca: 
+16:58:45|120|CMD: DIVERSOS BRANCO
+16:58:45|121|CMD: Placa 32591439
+16:58:45|122|CMD: Garantia:  3 Meses
+16:58:45|123|CMD: Combustivel: 
+16:58:45|124|CMD: Kms: 
+16:58:45|125|CMD: Pecas             Quant.  Valor
+16:58:45|126|CMD: QUEBRA GALHO 58988
+16:58:45|127|CMD:                     1     2,60
+16:58:45|128|CMD: REP CAMBIO SAVEIRO 160.0320
+16:58:45|129|CMD:                     1     8,50
+16:58:45|130|CMD:  
+16:58:45|131|CMD: TOTAL                    11,10 
+16:58:45|132|SQL: Select Count(*) From IC_Orc Where Orc = 79
+16:58:45|133|CMD: OBSERVACAO
+16:58:45|134|CMD: JPPR 
+16:58:45|135|SQL: Select Observacao From Clientes Where NrCli = 4655
+16:58:45|136|SQL: Select LinhasApos From Config
+16:58:45|137|DBG: Impressao na USB

@@ -1,0 +1,10 @@
+C:\Prog\OrCarro\Cobranca\CobraOrCarro\CobraOrCarro\bin\Debug\CobraOrCarro.exe.config
+C:\Prog\OrCarro\Cobranca\CobraOrCarro\CobraOrCarro\bin\Debug\CobraOrCarro.exe
+C:\Prog\OrCarro\Cobranca\CobraOrCarro\CobraOrCarro\bin\Debug\CobraOrCarro.pdb
+C:\Prog\OrCarro\Cobranca\CobraOrCarro\CobraOrCarro\obj\Debug\CobraOrCarro.csproj.AssemblyReference.cache
+C:\Prog\OrCarro\Cobranca\CobraOrCarro\CobraOrCarro\obj\Debug\CobraOrCarro.Form1.resources
+C:\Prog\OrCarro\Cobranca\CobraOrCarro\CobraOrCarro\obj\Debug\CobraOrCarro.Properties.Resources.resources
+C:\Prog\OrCarro\Cobranca\CobraOrCarro\CobraOrCarro\obj\Debug\CobraOrCarro.csproj.GenerateResource.cache
+C:\Prog\OrCarro\Cobranca\CobraOrCarro\CobraOrCarro\obj\Debug\CobraOrCarro.csproj.CoreCompileInputs.cache
+C:\Prog\OrCarro\Cobranca\CobraOrCarro\CobraOrCarro\obj\Debug\CobraOrCarro.exe
+C:\Prog\OrCarro\Cobranca\CobraOrCarro\CobraOrCarro\obj\Debug\CobraOrCarro.pdb
