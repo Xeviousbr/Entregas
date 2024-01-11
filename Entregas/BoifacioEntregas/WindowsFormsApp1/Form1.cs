@@ -24,24 +24,18 @@ namespace WindowsFormsApp1
 
         private void AbrirOuFocarFormulario<T>() where T : Form, new()
         {
-            // Verifica se já existe uma instância do formulário
             T formExistente = Application.OpenForms.OfType<T>().FirstOrDefault();
-
             if (formExistente != null)
             {
-                // Se a janela estiver minimizada, restaura para o estado normal
                 if (formExistente.WindowState == FormWindowState.Minimized)
                 {
                     formExistente.WindowState = FormWindowState.Normal;
                 }
-
-                // Traz a janela para o primeiro plano
                 formExistente.BringToFront();
                 formExistente.Focus();
             }
             else
             {
-                // Se não houver uma instância existente, cria uma nova
                 T novoForm = new T();
                 novoForm.Show();
             }
