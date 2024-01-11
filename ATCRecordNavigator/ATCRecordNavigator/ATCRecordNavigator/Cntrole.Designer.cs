@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ATCRecordNavigator
@@ -33,27 +34,31 @@ namespace ATCRecordNavigator
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cntrole));
-
             this.txtPesquisar = new System.Windows.Forms.ToolStripTextBox();
             this.btnPesquisarAdicional = new System.Windows.Forms.ToolStripButton();
-
-            // Configura o campo de texto
-            this.txtPesquisar.Size = new System.Drawing.Size(100, 25); // ajuste o tamanho conforme necessário
-            this.txtPesquisar.Visible = false; // inicialmente oculto
-
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnPesquisa = new System.Windows.Forms.ToolStripButton();
-            this.btnParaTras = new System.Windows.Forms.ToolStripButton();
             this.btnParaFrente = new System.Windows.Forms.ToolStripButton();
+            this.btnParaTras = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnApagar = new System.Windows.Forms.ToolStripButton();
-
-            this.btnPesquisarAdicional.Text = "Pesquisar";
-            this.btnPesquisarAdicional.Click += new System.EventHandler(this.btnPesquisarAdicional_Click);
-            this.btnPesquisarAdicional.Visible = false; // inicialmente oculto
-
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(100, 55);
+            this.txtPesquisar.Visible = false;
+            // 
+            // btnPesquisarAdicional
+            // 
+            this.btnPesquisarAdicional.Name = "btnPesquisarAdicional";
+            this.btnPesquisarAdicional.Size = new System.Drawing.Size(61, 52);
+            this.btnPesquisarAdicional.Text = "Pesquisar";
+            this.btnPesquisarAdicional.Visible = false;
+            this.btnPesquisarAdicional.Click += new System.EventHandler(this.btnPesquisarAdicional_Click);
             // 
             // toolStrip1
             // 
@@ -78,20 +83,21 @@ namespace ATCRecordNavigator
             this.btnPesquisa.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPesquisa.Name = "btnPesquisa";
             this.btnPesquisa.Size = new System.Drawing.Size(52, 52);
-            this.btnPesquisa.Text = "Pesquisa";
+            this.btnPesquisa.Text = "Pesquisa1";
+            this.btnPesquisa.ToolTipText = "Pesquisa1";
             this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
-            // 
-            // btnParaTras
-            // 
-            this.btnParaTras.Image = ((System.Drawing.Image)(resources.GetObject("btnParaTras.Image")));
-            this.btnParaTras.Name = "btnParaTras";
-            this.btnParaTras.Size = new System.Drawing.Size(52, 52);
             // 
             // btnParaFrente
             // 
             this.btnParaFrente.Image = ((System.Drawing.Image)(resources.GetObject("btnParaFrente.Image")));
             this.btnParaFrente.Name = "btnParaFrente";
             this.btnParaFrente.Size = new System.Drawing.Size(52, 52);
+            // 
+            // btnParaTras
+            // 
+            this.btnParaTras.Image = ((System.Drawing.Image)(resources.GetObject("btnParaTras.Image")));
+            this.btnParaTras.Name = "btnParaTras";
+            this.btnParaTras.Size = new System.Drawing.Size(52, 52);
             // 
             // btnEditar
             // 
@@ -136,12 +142,34 @@ namespace ATCRecordNavigator
             this.txtPesquisar.Visible = !this.txtPesquisar.Visible;
             this.btnPesquisarAdicional.Visible = !this.btnPesquisarAdicional.Visible;
 
-            // Se o campo de texto está visível, foca nele
+            // Atualizar o layout do ToolStrip
+            this.toolStrip1.PerformLayout();
+
             if (this.txtPesquisar.Visible)
             {
+                // Ajuste o campo de texto para preencher o espaço disponível
+                int espacoParaBotao = 150; // Tamanho estimado para o botão
+                this.txtPesquisar.AutoSize = false;
+                this.txtPesquisar.Width = this.toolStrip1.Width - espacoParaBotao;
+                this.txtPesquisar.Font = new Font(this.txtPesquisar.Font.FontFamily, 12);
+
+                // Assegure-se de que o botão de pesquisa adicional esteja visível e alinhado à direita
+                this.btnPesquisarAdicional.Alignment = ToolStripItemAlignment.Right;
+                this.btnPesquisarAdicional.Font = new Font(this.btnPesquisarAdicional.Font.FontFamily, 12);
+
+                // Focar no campo de texto
                 this.txtPesquisar.Focus();
             }
+            else
+            {
+                // Reverter as alterações
+                this.txtPesquisar.AutoSize = true;
+                this.txtPesquisar.Font = new Font(this.txtPesquisar.Font.FontFamily, 8.25F);
+                this.btnPesquisarAdicional.Alignment = ToolStripItemAlignment.Left;
+                this.btnPesquisarAdicional.Font = new Font(this.btnPesquisarAdicional.Font.FontFamily, 8.25F);
+            }
         }
+
         #endregion
 
         private System.Windows.Forms.ToolTip toolTip1;

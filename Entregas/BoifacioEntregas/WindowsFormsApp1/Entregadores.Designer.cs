@@ -29,12 +29,33 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            this.cntrole1 = new ATCRecordNavigator.Cntrole();
+            this.SuspendLayout();
+            // 
+            // cntrole1
+            // 
+            this.cntrole1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cntrole1.Location = new System.Drawing.Point(0, 0);
+            this.cntrole1.Name = "cntrole1";
+            this.cntrole1.Size = new System.Drawing.Size(800, 54);
+            this.cntrole1.TabIndex = 0;
+            // 
+            // Form2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form2";
+            this.Controls.Add(this.cntrole1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form2";
+            this.Text = "Entregadores";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private ATCRecordNavigator.Cntrole cntrole1;
     }
 }
