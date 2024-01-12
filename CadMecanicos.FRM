@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form CadMecanicos 
    Appearance      =   0  'Flat
    BackColor       =   &H00C0C0C0&
@@ -457,15 +457,15 @@ Begin VB.Form CadMecanicos
       End
    End
    Begin MSComctlLib.Toolbar Toolbar1 
-      Height          =   780
+      Height          =   810
       Left            =   0
       TabIndex        =   10
       Top             =   0
       Width           =   9300
       _ExtentX        =   16404
-      _ExtentY        =   1376
-      ButtonWidth     =   1799
-      ButtonHeight    =   1376
+      _ExtentY        =   1429
+      ButtonWidth     =   1905
+      ButtonHeight    =   1429
       Appearance      =   1
       Style           =   1
       ImageList       =   "ImageList1"

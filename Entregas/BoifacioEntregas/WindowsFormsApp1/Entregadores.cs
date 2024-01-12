@@ -8,13 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace BonifacioEntregas
 {
     public partial class Form2 : Form
     {
+        private dao.EntregadorDAO entregadorDAO;
+
         public Form2()
         {
             InitializeComponent();
+            entregadorDAO = new dao.EntregadorDAO();
+            tb.Entregador reg = entregadorDAO.GetUltimoEntregador();
+            Mostra(reg); 
+        }
+
+        private void Mostra(tb.Entregador reg)
+        {
+            txtNome.Text = reg.Nome;
+            txtTelefone.Text = reg.Telefone;
         }
     }
 }

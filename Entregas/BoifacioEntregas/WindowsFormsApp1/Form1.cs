@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace BonifacioEntregas
 {
     public partial class Form1 : Form
     {
+        private INI MeuIni;
+
         public Form1()
         {
             InitializeComponent();
@@ -64,7 +66,11 @@ namespace WindowsFormsApp1
             }
         }
 
-
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MeuIni = new INI();
+            GlobalConfig.CaminhoBase = MeuIni.ReadString("Config", "Base", "");
+        }
     }
 
 }

@@ -1,36 +1,28 @@
-﻿
-namespace WindowsFormsApp1
+﻿namespace BonifacioEntregas
 {
     partial class Form2
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Label lblTelefone;
+        private System.Windows.Forms.TextBox txtTelefone;
+        private System.Windows.Forms.Label lblCNH;
+        private System.Windows.Forms.TextBox txtCNH;
+        private System.Windows.Forms.Label lblValidadeCNH;
+        private System.Windows.Forms.MaskedTextBox mtxtValidadeCNH;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.cntrole1 = new ATCRecordNavigator.Cntrole();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblTelefone = new System.Windows.Forms.Label();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.lblCNH = new System.Windows.Forms.Label();
+            this.txtCNH = new System.Windows.Forms.TextBox();
+            this.lblValidadeCNH = new System.Windows.Forms.Label();
+            this.mtxtValidadeCNH = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // cntrole1
@@ -38,23 +30,104 @@ namespace WindowsFormsApp1
             this.cntrole1.Dock = System.Windows.Forms.DockStyle.Top;
             this.cntrole1.Location = new System.Drawing.Point(0, 0);
             this.cntrole1.Name = "cntrole1";
-            this.cntrole1.Size = new System.Drawing.Size(800, 54);
+            this.cntrole1.Size = new System.Drawing.Size(331, 54);
             this.cntrole1.TabIndex = 0;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(30, 70);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.TabIndex = 0;
+            this.lblNome.Text = "Nome";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(30, 90);
+            this.txtNome.MaxLength = 100;
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(250, 23);
+            this.txtNome.TabIndex = 1;
+            // 
+            // lblTelefone
+            // 
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Location = new System.Drawing.Point(30, 120);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefone.TabIndex = 2;
+            this.lblTelefone.Text = "Telefone";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefone.Location = new System.Drawing.Point(30, 140);
+            this.txtTelefone.MaxLength = 20;
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(108, 23);
+            this.txtTelefone.TabIndex = 3;
+            // 
+            // lblCNH
+            // 
+            this.lblCNH.AutoSize = true;
+            this.lblCNH.Location = new System.Drawing.Point(30, 175);
+            this.lblCNH.Name = "lblCNH";
+            this.lblCNH.Size = new System.Drawing.Size(30, 13);
+            this.lblCNH.TabIndex = 6;
+            this.lblCNH.Text = "CNH";
+            // 
+            // txtCNH
+            // 
+            this.txtCNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCNH.Location = new System.Drawing.Point(30, 195);
+            this.txtCNH.MaxLength = 12;
+            this.txtCNH.Name = "txtCNH";
+            this.txtCNH.Size = new System.Drawing.Size(108, 23);
+            this.txtCNH.TabIndex = 7;
+            // 
+            // lblValidadeCNH
+            // 
+            this.lblValidadeCNH.AutoSize = true;
+            this.lblValidadeCNH.Location = new System.Drawing.Point(206, 175);
+            this.lblValidadeCNH.Name = "lblValidadeCNH";
+            this.lblValidadeCNH.Size = new System.Drawing.Size(74, 13);
+            this.lblValidadeCNH.TabIndex = 8;
+            this.lblValidadeCNH.Text = "Validade CNH";
+            // 
+            // mtxtValidadeCNH
+            // 
+            this.mtxtValidadeCNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtxtValidadeCNH.Location = new System.Drawing.Point(206, 195);
+            this.mtxtValidadeCNH.Mask = "00/00/0000";
+            this.mtxtValidadeCNH.Name = "mtxtValidadeCNH";
+            this.mtxtValidadeCNH.Size = new System.Drawing.Size(74, 23);
+            this.mtxtValidadeCNH.TabIndex = 9;
+            this.mtxtValidadeCNH.ValidatingType = typeof(System.DateTime);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(331, 237);
             this.Controls.Add(this.cntrole1);
+            this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.lblTelefone);
+            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.lblCNH);
+            this.Controls.Add(this.txtCNH);
+            this.Controls.Add(this.lblValidadeCNH);
+            this.Controls.Add(this.mtxtValidadeCNH);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form2";
-            this.Text = "Entregadores";
+            this.Text = "Cadastro de Entregador";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
-
-        #endregion
 
         private ATCRecordNavigator.Cntrole cntrole1;
     }

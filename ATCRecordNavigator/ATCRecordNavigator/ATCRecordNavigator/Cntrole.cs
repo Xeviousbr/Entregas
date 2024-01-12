@@ -15,6 +15,7 @@ namespace ATCRecordNavigator
         public Cntrole()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Top;
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
