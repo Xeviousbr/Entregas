@@ -41,8 +41,8 @@ namespace ATCRecordNavigator
             this.btnAdicionar = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnApagar = new System.Windows.Forms.ToolStripButton();
-            this.btnParaFrente = new System.Windows.Forms.ToolStripButton();
             this.btnParaTras = new System.Windows.Forms.ToolStripButton();
+            this.btnParaFrente = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,24 +104,28 @@ namespace ATCRecordNavigator
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(52, 52);
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnApagar
             // 
             this.btnApagar.Image = ((System.Drawing.Image)(resources.GetObject("btnApagar.Image")));
             this.btnApagar.Name = "btnApagar";
             this.btnApagar.Size = new System.Drawing.Size(52, 52);
-            // 
-            // btnParaFrente
-            // 
-            this.btnParaFrente.Image = ((System.Drawing.Image)(resources.GetObject("btnParaFrente.Image")));
-            this.btnParaFrente.Name = "btnParaFrente";
-            this.btnParaFrente.Size = new System.Drawing.Size(52, 52);
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // btnParaTras
             // 
             this.btnParaTras.Image = ((System.Drawing.Image)(resources.GetObject("btnParaTras.Image")));
             this.btnParaTras.Name = "btnParaTras";
             this.btnParaTras.Size = new System.Drawing.Size(52, 52);
+            this.btnParaTras.Click += new System.EventHandler(this.btnParaTras_Click_1);
+            // 
+            // btnParaFrente
+            // 
+            this.btnParaFrente.Image = ((System.Drawing.Image)(resources.GetObject("btnParaFrente.Image")));
+            this.btnParaFrente.Name = "btnParaFrente";
+            this.btnParaFrente.Size = new System.Drawing.Size(52, 52);
+            this.btnParaFrente.Click += new System.EventHandler(this.btnParaFrente_Click);
             // 
             // Cntrole
             // 
@@ -139,12 +143,12 @@ namespace ATCRecordNavigator
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            AcaoRealizada?.Invoke(this, new AcaoEventArgs("Adicionar"));
         }
 
         private void btnPesquisarAdicional_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            AcaoRealizada?.Invoke(this, new AcaoEventArgs("Pesquisa"));
         }
 
         private void btnPesquisa_Click(object sender, EventArgs e)

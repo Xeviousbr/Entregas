@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcaoEventArgs.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Cntrole.cs">
       <SubType>UserControl</SubType>
