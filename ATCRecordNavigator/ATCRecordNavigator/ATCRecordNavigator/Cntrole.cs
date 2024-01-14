@@ -63,12 +63,22 @@ namespace ATCRecordNavigator
                 }
                 else
                 {
-                    btnPesquisa.Enabled = true;
-                    btnAdicionar.Enabled = true;
-                    btnParaFrente.Enabled = !Primeiro;
-                    btnParaTras.Enabled = !Ultimo;
-                    btnEditar.Enabled = !EmEdicao && !EmAdicao;
-                    btnApagar.Enabled = !EmEdicao && !EmAdicao;
+                    if (EmEdicao)
+                    {
+                        this.btnEditar.Visible = false;
+                        this.btnApagar.Visible = false;
+                        this.btnOk.Visible = true;
+                        this.btnCancelar.Visible = true;
+                    }
+                    else
+                    {
+                        btnPesquisa.Enabled = true;
+                        btnAdicionar.Enabled = true;
+                        btnParaFrente.Enabled = !Primeiro;
+                        btnParaTras.Enabled = !Ultimo;
+                        btnEditar.Enabled = !EmEdicao && !EmAdicao;
+                        btnApagar.Enabled = !EmEdicao && !EmAdicao;
+                    }
                 }                
             }
         }
@@ -103,19 +113,30 @@ namespace ATCRecordNavigator
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (emAdicao)
-            {                
-                this.btnEditar.BackColor = SystemColors.Control; 
-                this.btnEditar.ForeColor = SystemColors.ControlText;
-                emAdicao = false;
+            if (EmEdicao)
+            {
+                this.btnEditar.Visible = true;
+                this.btnApagar.Visible = true;
+                this.btnOk.Visible = false;
+                this.btnCancelar.Visible = false;
+                emEdicao = false;
             } else
-            {                
-                this.btnEditar.BackColor = SystemColors.Highlight;
-                this.btnEditar.ForeColor = Color.White;
-                emAdicao = true;
+            {
+                this.btnEditar.Visible = false;
+                this.btnApagar.Visible = false;
+                this.btnOk.Visible = true;
+                this.btnCancelar.Visible = true;
+                emEdicao = true;
             }                    
             AcaoRealizada?.Invoke(this, new AcaoEventArgs("Editar"));
-            DecideBotoes();
+        }
+
+        private void MostraEdicao()
+        {
+            this.btnEditar.Visible = true;
+            this.btnApagar.Visible = true;
+            this.btnOk.Visible = false;
+            this.btnCancelar.Visible = false;
         }
 
         public void ResetarAparenciaEditar()
@@ -123,5 +144,20 @@ namespace ATCRecordNavigator
 
         }
 
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            emEdicao = false;
+            emAdicao = false;
+            AcaoRealizada?.Invoke(this, new AcaoEventArgs("OK"));
+            MostraEdicao();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            emEdicao = false;
+            emAdicao = false;
+            AcaoRealizada?.Invoke(this, new AcaoEventArgs("CANC"));
+            MostraEdicao();
+        }
     }
 }

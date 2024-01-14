@@ -127,9 +127,11 @@
             this.Controls.Add(this.lblValidadeCNH);
             this.Controls.Add(this.mtxtValidadeCNH);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "Form2";
             this.Text = "Cadastro de Entregador";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Teclou);
             this.ResumeLayout(false);
             this.PerformLayout();
 

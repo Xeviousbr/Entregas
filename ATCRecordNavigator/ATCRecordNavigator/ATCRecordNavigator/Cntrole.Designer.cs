@@ -39,6 +39,8 @@ namespace ATCRecordNavigator
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnPesquisa = new System.Windows.Forms.ToolStripButton();
             this.btnAdicionar = new System.Windows.Forms.ToolStripButton();
+            this.btnOk = new System.Windows.Forms.ToolStripButton();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnApagar = new System.Windows.Forms.ToolStripButton();
             this.btnParaTras = new System.Windows.Forms.ToolStripButton();
@@ -50,13 +52,13 @@ namespace ATCRecordNavigator
             // 
             this.txtPesquisar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(100, 55);
+            this.txtPesquisar.Size = new System.Drawing.Size(100, 23);
             this.txtPesquisar.Visible = false;
             // 
             // btnPesquisarAdicional
             // 
             this.btnPesquisarAdicional.Name = "btnPesquisarAdicional";
-            this.btnPesquisarAdicional.Size = new System.Drawing.Size(61, 52);
+            this.btnPesquisarAdicional.Size = new System.Drawing.Size(61, 19);
             this.btnPesquisarAdicional.Text = "Pesquisar";
             this.btnPesquisarAdicional.Visible = false;
             this.btnPesquisarAdicional.Click += new System.EventHandler(this.btnPesquisarAdicional_Click);
@@ -67,6 +69,8 @@ namespace ATCRecordNavigator
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnPesquisa,
             this.btnAdicionar,
+            this.btnOk,
+            this.btnCancelar,
             this.btnEditar,
             this.btnApagar,
             this.btnParaTras,
@@ -98,6 +102,22 @@ namespace ATCRecordNavigator
             this.btnAdicionar.Size = new System.Drawing.Size(52, 52);
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            // 
+            // btnOk
+            // 
+            this.btnOk.Image = ((System.Drawing.Image)(resources.GetObject("btnOk.Image")));
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(52, 52);
+            this.btnOk.Visible = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(52, 52);
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -201,6 +221,7 @@ namespace ATCRecordNavigator
         private ToolStripTextBox txtPesquisar;
         private ToolStripButton btnPesquisarAdicional;
         private System.Windows.Forms.ToolStripButton btnAdicionar;
-
+        private System.Windows.Forms.ToolStripButton btnOk;
+        private System.Windows.Forms.ToolStripButton btnCancelar;
     }
 }

@@ -12,6 +12,7 @@ namespace BonifacioEntregas.dao
         private string connectionString;
         private int Esseid = 0;
         private string EsseNome = "";
+        private string EsseTelefone = "";
 
         public EntregadorDAO()
         {
@@ -33,40 +34,59 @@ namespace BonifacioEntregas.dao
             // Código para adicionar um novo entregador ao banco de dados
         }
 
-        //public tb.Entregador GetUltimoEntregador()
-        //{
-        //    using (OleDbConnection connection = new OleDbConnection(this.connectionString))
-        //    {
-        //        try
-        //        {
-        //            connection.Open();
-        //            string query = "SELECT TOP 1 * FROM Mecanicos ORDER BY codi Desc "; // Substitua com o nome correto da tabela e coluna
-        //            using (OleDbCommand command = new OleDbCommand(query, connection))
-        //            {
-        //                using (OleDbDataReader reader = command.ExecuteReader())
-        //                {
-        //                    if (reader.Read())
-        //                    {
-        //                        Esseid = Convert.ToInt32(reader["codi"]);
-        //                        return new tb.Entregador
-        //                        {
-        //                            Id = Esseid,
-        //                            Nome = reader["Nome"].ToString(),
-        //                            Telefone = reader["Telefone"].ToString(),                                    
-        //                        };
-        //                    }
-        //                }
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            // Tratamento de exceções adequado
-        //            string x = ex.ToString();
-        //            throw;
-        //        }
-        //    }
-        //    return null; 
-        //}
+        public void Grava(tb.Entregador entregador)
+        {
+            string query = "UPDATE Mecanicos SET Nome = ?, Telefone = ? WHERE codi = ?";
+            List<OleDbParameter> parameters = new List<OleDbParameter>
+            {
+                new OleDbParameter("@Nome", entregador.Nome),
+                new OleDbParameter("@Telefone", entregador.Telefone),
+                new OleDbParameter("@codi", Esseid) // Garanta que Esseid esteja definido corretamente
+            };
+
+            try
+            {
+                int result = ExecutarComandoSQL(query, parameters);
+                // Tratar o resultado conforme necessário
+            }
+            catch (Exception ex)
+            {
+                // Tratamento de erro
+                // throw ou outra lógica de erro
+            }
+        }
+
+        public int ExecutarComandoSQL(string query, List<OleDbParameter> parameters)
+        {
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    foreach (var param in parameters)
+                    {
+                        command.Parameters.Add(param);
+                    }
+
+                    connection.Open();
+                    return command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void Apagar()
+        {
+            ExecutarComandoSQL($"Delete From Mecanicos Where codi = {Esseid} ", null);
+        }
+
+        public tb.Entregador GetEsse()
+        {
+            return new tb.Entregador
+            {
+                Id = Esseid,
+                Nome = EsseNome,
+                Telefone = EsseTelefone,
+            };
+        }
 
         public tb.Entregador GetUltimoEntregador()
         {
@@ -101,13 +121,8 @@ namespace BonifacioEntregas.dao
                             {
                                 EsseNome = reader["Nome"].ToString();
                                 Esseid = Convert.ToInt32(reader["codi"]);
-                                string Oper = reader["Oper"].ToString();
-                                return new tb.Entregador
-                                {
-                                    Id = Esseid,
-                                    Nome = EsseNome,
-                                    Telefone = reader["Telefone"].ToString(),
-                                };
+                                EsseTelefone = reader["Telefone"].ToString();
+                                return GetEsse();
                             }
                         }
                     }

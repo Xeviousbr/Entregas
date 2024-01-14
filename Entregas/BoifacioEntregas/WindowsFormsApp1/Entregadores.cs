@@ -61,11 +61,28 @@ namespace BonifacioEntregas
                     }
                     break;
                 case "Editar":
-                    //cntrole1.Editanto = true; ;
                     this.Text = "clicou";
                     break;
-
+                case "CANC":
+                    reg = entregadorDAO.GetEsse();
+                    Mostra();
+                    break; 
+                case "OK":
+                    Grava();
+                    break; 
             }
+        }
+
+        private void Grava()
+        {
+            reg.Nome = txtNome.Text;
+            reg.Telefone = txtTelefone.Text;
+            entregadorDAO.Grava(reg);
+        }
+
+        private void Teclou(object sender, KeyEventArgs e)
+        {
+            cntrole1.EmEdicao = true; 
         }
     }
 }
