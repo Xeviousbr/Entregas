@@ -1,32 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BonifacioEntregas.dao
 {
     public class EntregadorDAO
     {
         private string connectionString;
-        private int Esseid = 0;
+        public int Esseid = 0;
         private string EsseNome = "";
         private string EsseTelefone = "";
 
         public EntregadorDAO()
         {
             this.connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + GlobalConfig.CaminhoBase + ";";
-        }
-
-        public List<tb.Entregador> GetAllEntregadores()
-        {
-            List<tb.Entregador> entregadores = new List<tb.Entregador>();
-
-            // Código para buscar todos os entregadores do banco de dados
-            // Utilizando a conexão com o banco e comando SQL
-
-            return entregadores;
         }
 
         public void AddEntregador(tb.Entregador entregador)
@@ -36,23 +23,65 @@ namespace BonifacioEntregas.dao
 
         public void Grava(tb.Entregador entregador)
         {
-            string query = "UPDATE Mecanicos SET Nome = ?, Telefone = ? WHERE codi = ?";
-            List<OleDbParameter> parameters = new List<OleDbParameter>
+            string query;
+            int result = 0;
+            List<OleDbParameter> parameters;
+            if (entregador.Id == 0)
             {
-                new OleDbParameter("@Nome", entregador.Nome),
-                new OleDbParameter("@Telefone", entregador.Telefone),
-                new OleDbParameter("@codi", Esseid) // Garanta que Esseid esteja definido corretamente
-            };
-
+                Esseid = VeUltReg()+1;
+                query = "INSERT INTO Mecanicos (codi, Oper, Nome, Telefone) VALUES (?, ?, ?, ?)";
+                parameters = new List<OleDbParameter>
+                {
+                    new OleDbParameter("@codi", Esseid),
+                    new OleDbParameter("@Oper", 3),
+                    new OleDbParameter("@Nome", entregador.Nome),
+                    new OleDbParameter("@Telefone", entregador.Telefone)
+                };
+            }
+            else
+            {
+                query = "UPDATE Mecanicos SET Nome = ?, Telefone = ? WHERE codi = ?";
+                parameters = new List<OleDbParameter>
+                {
+                    new OleDbParameter("@Nome", entregador.Nome),
+                    new OleDbParameter("@Telefone", entregador.Telefone),
+                    new OleDbParameter("@codi", entregador.Id)
+                };
+            }
             try
             {
-                int result = ExecutarComandoSQL(query, parameters);
-                // Tratar o resultado conforme necessário
+                result = ExecutarComandoSQL(query, parameters);
             }
             catch (Exception ex)
             {
-                // Tratamento de erro
-                // throw ou outra lógica de erro
+                string x = ex.ToString();
+            }
+        }
+
+        private int VeUltReg()
+        {
+            string query = $"SELECT Max(codi) as codi FROM Mecanicos";
+            using (OleDbConnection connection = new OleDbConnection(this.connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    {
+                        using (OleDbDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                return Convert.ToInt32(reader["codi"]);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    string x = ex.ToString();
+                }
+                return 0;
             }
         }
 
@@ -62,20 +91,31 @@ namespace BonifacioEntregas.dao
             {
                 using (OleDbCommand command = new OleDbCommand(query, connection))
                 {
-                    foreach (var param in parameters)
+                    if (parameters != null)
                     {
-                        command.Parameters.Add(param);
+                        foreach (var param in parameters)
+                        {
+                            command.Parameters.Add(param);
+                        }
                     }
-
                     connection.Open();
                     return command.ExecuteNonQuery();
                 }
             }
         }
 
-        public void Apagar()
+        public tb.Entregador Apagar(int Direcao)
         {
-            ExecutarComandoSQL($"Delete From Mecanicos Where codi = {Esseid} ", null);
+            ExecutarComandoSQL("Delete From Mecanicos Where codi = "+Esseid.ToString(),null);
+            string query = "";
+            if (Direcao>-1)
+            {
+                query = "SELECT TOP 1 * FROM Mecanicos Where codi<" + Esseid.ToString()+" ORDER BY codi Desc";
+            } else
+            {
+                query = "SELECT TOP 1 * FROM Mecanicos Where codi>" + Esseid.ToString() + " ORDER BY codi";
+            }
+            return ExecutarConsultaEntregador(query);            
         }
 
         public tb.Entregador GetEsse()
@@ -90,7 +130,7 @@ namespace BonifacioEntregas.dao
 
         public tb.Entregador GetUltimoEntregador()
         {
-            string query = "SELECT TOP 1 * FROM Mecanicos Where Oper = 3 ORDER BY codi Desc"; // Ajuste a query conforme necessário
+            string query = "SELECT TOP 1 * FROM Mecanicos Where Oper = 3 ORDER BY codi Desc"; 
             return ExecutarConsultaEntregador(query);
         }
 

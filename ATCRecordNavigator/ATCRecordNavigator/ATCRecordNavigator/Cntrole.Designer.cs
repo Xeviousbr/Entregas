@@ -163,7 +163,9 @@ namespace ATCRecordNavigator
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
+            emAdicao = true;
             AcaoRealizada?.Invoke(this, new AcaoEventArgs("Adicionar"));
+            MostraEmEstadodeEdicao();
         }
 
         private void btnPesquisarAdicional_Click(object sender, EventArgs e)

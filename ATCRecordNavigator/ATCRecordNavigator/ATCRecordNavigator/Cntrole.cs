@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ATCRecordNavigator
@@ -108,7 +101,24 @@ namespace ATCRecordNavigator
 
         private void btnApagar_Click(object sender, EventArgs e)
         {
-            AcaoRealizada?.Invoke(this, new AcaoEventArgs("Delete"));
+            this.btnEditar.Enabled = false;
+            this.btnAdicionar.Enabled = false;
+            this.btnPesquisa.Enabled = false;
+            this.btnParaFrente.Enabled = false;
+            this.btnParaTras.Enabled = false;
+            DialogResult result = MessageBox.Show("Tem certeza que deseja deletar?",
+                                                  "Confirmar Deleção",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
+            this.btnEditar.Enabled = true;
+            this.btnAdicionar.Enabled = true;
+            this.btnPesquisa.Enabled = true;
+            this.btnParaFrente.Enabled = true;
+            this.btnParaTras.Enabled = true;
+            if (result == DialogResult.Yes)
+            {
+                AcaoRealizada?.Invoke(this, new AcaoEventArgs("Delete"));
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -122,13 +132,22 @@ namespace ATCRecordNavigator
                 emEdicao = false;
             } else
             {
-                this.btnEditar.Visible = false;
-                this.btnApagar.Visible = false;
-                this.btnOk.Visible = true;
-                this.btnCancelar.Visible = true;
+                MostraEmEstadodeEdicao();
                 emEdicao = true;
             }                    
             AcaoRealizada?.Invoke(this, new AcaoEventArgs("Editar"));
+        }
+
+        private void MostraEmEstadodeEdicao()
+        {
+            this.btnEditar.Visible = false;
+            this.btnApagar.Visible = false;
+            this.btnOk.Visible = true;
+            this.btnCancelar.Visible = true;
+            this.btnAdicionar.Enabled = false;
+            this.btnPesquisa.Enabled = false;
+            this.btnParaFrente.Enabled = false;
+            this.btnParaTras.Enabled = false;
         }
 
         private void MostraEdicao()
@@ -137,6 +156,10 @@ namespace ATCRecordNavigator
             this.btnApagar.Visible = true;
             this.btnOk.Visible = false;
             this.btnCancelar.Visible = false;
+            this.btnAdicionar.Enabled = true;
+            this.btnPesquisa.Enabled = true;
+            this.btnParaFrente.Enabled = true;
+            this.btnParaTras.Enabled = true;
         }
 
         public void ResetarAparenciaEditar()

@@ -56,6 +56,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(250, 23);
             this.txtNome.TabIndex = 1;
+            this.txtNome.Tag = "Nome";
             // 
             // lblTelefone
             // 
@@ -74,6 +75,7 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(108, 23);
             this.txtTelefone.TabIndex = 3;
+            this.txtTelefone.Tag = "Telefone";
             // 
             // lblCNH
             // 
