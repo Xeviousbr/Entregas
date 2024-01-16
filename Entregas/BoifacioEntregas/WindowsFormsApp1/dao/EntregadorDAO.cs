@@ -4,18 +4,17 @@ using System.Data.OleDb;
 
 namespace BonifacioEntregas.dao
 {
-    public class EntregadorDAO
+    public class EntregadorDAO: BaseDAO  // public EntregadorDAO() : base()
     {
-        private string connectionString;
-        public int Esseid = 0;
-        private string EsseNome = "";
-        private string EsseTelefone = "";
-        private string EsseCNH = "";
-        private DateTime EsseDataValidadeCNH;
+        protected int id { get; set; }
+        public string Nome { get; set; }
+        public string Telefone { get; set; }
+        public string CNH { get; set; }
+        public DateTime DataValidadeCNH { get; set; }
 
         public EntregadorDAO()
         {
-            this.connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + GlobalConfig.CaminhoBase + ";";
+            
         }
 
         public void AddEntregador(tb.Entregador entregador)
@@ -23,12 +22,13 @@ namespace BonifacioEntregas.dao
             // Código para adicionar um novo entregador ao banco de dados
         }
 
-        public void Grava(tb.Entregador entregador)
+        public override void Grava(object obj)
         {
+            EntregadorDAO entregador = (EntregadorDAO)obj;
             string query;
             List<OleDbParameter> parameters;
             int result = 0;
-            if (entregador.Id == 0)
+            if (entregador.Adicao)
             {
                 query = "INSERT INTO Mecanicos (codi, Oper, Nome, Telefone, CNH, DataValidadeCNH) VALUES (?, ?, ?, ?, ?, ?)";
                 parameters = ConstruirParametrosEntregador(entregador, true);
@@ -50,48 +50,7 @@ namespace BonifacioEntregas.dao
             }
         }
 
-        //public void Grava(tb.Entregador entregador)
-        //{
-        //    string query;
-        //    List<OleDbParameter> parameters;
-        //    int result = 0;
-        //    if (entregador.Id == 0)
-        //    {
-        //        Esseid = VeUltReg() + 1;
-        //        query = "INSERT INTO Mecanicos (codi, Oper, Nome, Telefone, CNH, DataValidadeCNH) VALUES (?, ?, ?, ?, ?, ?)";
-        //        parameters = new List<OleDbParameter>
-        //        {
-        //            new OleDbParameter("@codi", Esseid),
-        //            new OleDbParameter("@Oper", 3),
-        //            new OleDbParameter("@Nome", entregador.Nome),
-        //            new OleDbParameter("@Telefone", entregador.Telefone),
-        //            new OleDbParameter("@CNH", entregador.CNH),
-        //            new OleDbParameter("@DataValidadeCNH", entregador.DataValidadeCNH)
-        //        };
-        //    }
-        //    else
-        //    {
-        //        query = "UPDATE Mecanicos SET Nome = ?, Telefone = ?, CNH = ?, DataValidadeCNH = ? WHERE codi = ?";
-        //        parameters = new List<OleDbParameter>
-        //        {
-        //            new OleDbParameter("@Nome", entregador.Nome),
-        //            new OleDbParameter("@Telefone", entregador.Telefone),
-        //            new OleDbParameter("@CNH", entregador.CNH),
-        //            new OleDbParameter("@DataValidadeCNH", entregador.DataValidadeCNH),
-        //            new OleDbParameter("@codi", entregador.Id)
-        //        };
-        //    }
-        //    try
-        //    {
-        //        result = ExecutarComandoSQL(query, parameters);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        string x = ex.ToString();
-        //    }
-        //}
-
-        private List<OleDbParameter> ConstruirParametrosEntregador(tb.Entregador entregador, bool inserindo)
+        private List<OleDbParameter> ConstruirParametrosEntregador(EntregadorDAO entregador, bool inserindo)
         {
             var parametros = new List<OleDbParameter>
             {
@@ -107,48 +66,10 @@ namespace BonifacioEntregas.dao
             }
             else
             {
-                parametros.Add(new OleDbParameter("@codi", entregador.Id));
+                parametros.Add(new OleDbParameter("@codi", entregador.id)); 
             }
             return parametros;
         }
-
-
-        //public void Grava(tb.Entregador entregador)
-        //{
-        //    string query;
-        //    int result = 0;
-        //    List<OleDbParameter> parameters;
-        //    if (entregador.Id == 0)
-        //    {
-        //        Esseid = VeUltReg()+1;
-        //        query = "INSERT INTO Mecanicos (codi, Oper, Nome, Telefone) VALUES (?, ?, ?, ?)";
-        //        parameters = new List<OleDbParameter>
-        //        {
-        //            new OleDbParameter("@codi", Esseid),
-        //            new OleDbParameter("@Oper", 3),
-        //            new OleDbParameter("@Nome", entregador.Nome),
-        //            new OleDbParameter("@Telefone", entregador.Telefone)
-        //        };
-        //    }
-        //    else
-        //    {
-        //        query = "UPDATE Mecanicos SET Nome = ?, Telefone = ? WHERE codi = ?";
-        //        parameters = new List<OleDbParameter>
-        //        {
-        //            new OleDbParameter("@Nome", entregador.Nome),
-        //            new OleDbParameter("@Telefone", entregador.Telefone),
-        //            new OleDbParameter("@codi", entregador.Id)
-        //        };
-        //    }
-        //    try
-        //    {
-        //        result = ExecutarComandoSQL(query, parameters);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        string x = ex.ToString();
-        //    }
-        //}
 
         private int VeUltReg()
         {
@@ -196,44 +117,45 @@ namespace BonifacioEntregas.dao
             }
         }
 
-        public tb.Entregador Apagar(int direcao)
+        public override object Apagar(int direcao)
         {
-            ExecutarComandoSQL("DELETE FROM Mecanicos WHERE codi = " + Esseid.ToString(), null);
-            tb.Entregador proximoEntregador = direcao > -1 ? ParaFrente() : ParaTraz();
+            ExecutarComandoSQL("DELETE FROM Mecanicos WHERE codi = " + id.ToString(), null);
+            tb.Entregador proximoEntregador = direcao > -1 ? ParaFrente() as tb.Entregador : ParaTraz() as tb.Entregador;
             if (proximoEntregador == null || proximoEntregador.Id == 0)
             {
-                proximoEntregador = direcao > -1 ? ParaTraz() : ParaFrente();
+                proximoEntregador = direcao > -1 ? ParaTraz() as tb.Entregador : ParaFrente() as tb.Entregador;
             }
             return proximoEntregador ?? new tb.Entregador();
         }
 
-        public tb.Entregador GetEsse()
+        public override object GetEsse()
         {
-            return new tb.Entregador
+            return (tb.Entregador)new tb.Entregador
             {
-                Id = Esseid,
-                Nome = EsseNome,
-                Telefone = EsseTelefone,
-                CNH = EsseCNH,
-                DataValidadeCNH= EsseDataValidadeCNH
+                Id = id,
+                Nome = Nome,
+                Telefone = Telefone,
+                CNH = CNH,
+                DataValidadeCNH = DataValidadeCNH
             };
+
         }
 
-        public tb.Entregador GetUltimoEntregador()
+        public override object GetUltimo()
         {
             string query = "SELECT TOP 1 * FROM Mecanicos Where Oper = 3 ORDER BY codi Desc"; 
             return ExecutarConsultaEntregador(query);
         }
 
-        public tb.Entregador ParaTraz()
+        public override object ParaTraz()
         {
-            string query = $"SELECT TOP 1 * FROM Mecanicos Where Oper = 3 and Nome < '{EsseNome}' ORDER BY Nome Desc"; 
+            string query = $"SELECT TOP 1 * FROM Mecanicos Where Oper = 3 and Nome < '{Nome}' ORDER BY Nome Desc"; 
             return ExecutarConsultaEntregador(query);
         }
 
-        public tb.Entregador ParaFrente()
+        public override object ParaFrente()
         {
-            string query = $"SELECT TOP 1 * FROM Mecanicos Where Oper = 3 and Nome > '{EsseNome}' ORDER BY Nome ";
+            string query = $"SELECT TOP 1 * FROM Mecanicos Where Oper = 3 and Nome > '{Nome}' ORDER BY Nome ";
             return ExecutarConsultaEntregador(query);
         }
 
@@ -250,19 +172,19 @@ namespace BonifacioEntregas.dao
                         {
                             if (reader.Read())
                             {
-                                EsseNome = reader["Nome"].ToString();
-                                Esseid = Convert.ToInt32(reader["codi"]);
-                                EsseTelefone = reader["Telefone"].ToString();
-                                EsseCNH = reader["CNH"].ToString();
+                                Nome = reader["Nome"].ToString();
+                                id = Convert.ToInt32(reader["codi"]);
+                                Telefone = reader["Telefone"].ToString();
+                                CNH = reader["CNH"].ToString();
                                 if (reader["DataValidadeCNH"] != DBNull.Value)
                                 {
-                                    EsseDataValidadeCNH = Convert.ToDateTime(reader["DataValidadeCNH"]);
+                                    DataValidadeCNH = Convert.ToDateTime(reader["DataValidadeCNH"]);
                                 }
                                 else
                                 {
-                                    EsseDataValidadeCNH = DateTime.MinValue; 
+                                    DataValidadeCNH = DateTime.MinValue; 
                                 }
-                                return GetEsse();
+                                return (tb.Entregador)GetEsse();
                             }
                         }
                     }

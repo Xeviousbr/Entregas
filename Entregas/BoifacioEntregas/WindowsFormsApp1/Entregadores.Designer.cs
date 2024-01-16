@@ -15,7 +15,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.cntrole1 = new ATCRecordNavigator.Cntrole();
             this.lblNome = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblTelefone = new System.Windows.Forms.Label();
@@ -28,17 +27,8 @@
             // 
             // cntrole1
             // 
-            this.cntrole1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cntrole1.EmAdicao = false;
-            this.cntrole1.EmEdicao = false;
-            this.cntrole1.Location = new System.Drawing.Point(0, 0);
-            this.cntrole1.Name = "cntrole1";
-            this.cntrole1.Primeiro = false;
             this.cntrole1.Size = new System.Drawing.Size(331, 54);
-            this.cntrole1.TabIndex = 0;
-            this.cntrole1.Ultimo = false;
-            this.cntrole1.AcaoRealizada += new System.EventHandler<AcaoEventArgs>(this.cntrole1_AcaoRealizada);
-            this.cntrole1.Load += new System.EventHandler(this.cntrole1_Load);
+            this.cntrole1.AcaoRealizada += new System.EventHandler<AcaoEventArgs>(this.cntrole1_AcaoRealizada_1);
             // 
             // lblNome
             // 
@@ -122,7 +112,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(331, 237);
-            this.Controls.Add(this.cntrole1);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblTelefone);
@@ -137,11 +126,18 @@
             this.Name = "Form2";
             this.Text = "Cadastro de Entregador";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Teclou);
+            this.Controls.SetChildIndex(this.cntrole1, 0);
+            this.Controls.SetChildIndex(this.dtpDataValidadeCNH, 0);
+            this.Controls.SetChildIndex(this.lblValidadeCNH, 0);
+            this.Controls.SetChildIndex(this.txtCNH, 0);
+            this.Controls.SetChildIndex(this.lblCNH, 0);
+            this.Controls.SetChildIndex(this.txtTelefone, 0);
+            this.Controls.SetChildIndex(this.lblTelefone, 0);
+            this.Controls.SetChildIndex(this.txtNome, 0);
+            this.Controls.SetChildIndex(this.lblNome, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
-        private ATCRecordNavigator.Cntrole cntrole1;
     }
 }

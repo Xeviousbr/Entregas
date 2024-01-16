@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace BonifacioEntregas.tb
 {
-    public class Entregador
+    public class Entregador : IDataEntity
     {
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Telefone { get; set; }
 
         public string CNH { get; set; }
-        public DateTime  DataValidadeCNH { get; set; }
+        public DateTime  DataValidadeCNH { get; set; }        
+        public bool Adicao { get; set; }
     }
 }
