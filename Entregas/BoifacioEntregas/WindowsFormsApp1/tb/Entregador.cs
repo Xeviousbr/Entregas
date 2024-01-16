@@ -11,6 +11,8 @@ namespace BonifacioEntregas.tb
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Telefone { get; set; }
-        // Outros campos...
+
+        public string CNH { get; set; }
+        public DateTime  DataValidadeCNH { get; set; }
     }
 }

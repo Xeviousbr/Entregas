@@ -17,38 +17,14 @@ namespace BonifacioEntregas
         private tb.Entregador reg;
         private int Direcao = 0;
         private bool EmAdicao = false;
+        private bool Mostrando = false;
 
         public Form2()
         {
             InitializeComponent();
             entregadorDAO = new dao.EntregadorDAO();
             reg = entregadorDAO.GetUltimoEntregador();
-            // cntrole1.Ultimo = true;
             Mostra(); 
-        }
-
-        private bool Mostra()
-        {
-            if (reg == null)
-            {
-                return false;
-            }
-            else
-            {
-                foreach (Control control in this.Controls)
-                {
-                    if (control is TextBox && control.Tag != null)
-                    {
-                        PropertyInfo propertyInfo = reg.GetType().GetProperty(control.Tag.ToString());
-                        if (propertyInfo != null)
-                        {
-                            string valor = propertyInfo.GetValue(reg, null)?.ToString() ?? string.Empty;
-                            control.Text = valor;
-                        }
-                    }
-                }
-                return true;
-            }
         }
 
         private void cntrole1_Load(object sender, EventArgs e)
@@ -105,10 +81,6 @@ namespace BonifacioEntregas
                     break; 
             }
         }
-        private void Apagar()
-        {
-            
-        }
 
         private void Grava()
         {
@@ -126,29 +98,6 @@ namespace BonifacioEntregas
             cntrole1.EmEdicao = true; 
         }
 
-        private void MapearCamposParaModelo(tb.Entregador reg)
-        {
-            foreach (Control control in this.Controls)
-            {
-                if (control is TextBox && control.Tag != null)
-                {
-                    try
-                    {
-                        PropertyInfo propertyInfo = reg.GetType().GetProperty(control.Tag.ToString());
-                        if (propertyInfo != null)
-                        {
-                            propertyInfo.SetValue(reg, control.Text, null);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        string x = ex.ToString();
-                    }
-
-                }
-            }
-        }
-
         private void LimparCampos()
         {
             foreach (Control control in this.Controls)
@@ -156,6 +105,144 @@ namespace BonifacioEntregas
                 if (control is TextBox)
                 {
                     control.Text = string.Empty;
+                }
+            }
+        }
+
+        #region Campos
+
+        private bool Mostra()
+        {
+            if (reg == null)
+            {
+                return false;
+            }
+            else
+            {
+                Mostrando = true;
+                foreach (Control control in this.Controls)
+                {
+                    if (control is TextBox textBox)
+                    {
+                        ProcessarTextBox(textBox);
+                    }
+                    else if (control is DateTimePicker dateTimePicker)
+                    {
+                        ProcessarDateTimePicker(dateTimePicker);
+                    }
+                }
+                Mostrando = false;
+                return true;
+            }
+        }
+
+        private void ProcessarTextBox(TextBox textBox)
+        {
+            string propertyName = textBox.Name.Substring(3); // Remove o prefixo 'txt'
+            PropertyInfo propertyInfo = reg.GetType().GetProperty(propertyName);
+            if (propertyInfo != null)
+            {
+                string valor = propertyInfo.GetValue(reg, null)?.ToString() ?? string.Empty;
+                textBox.Text = valor;
+            }
+        }
+
+        private void ProcessarDateTimePicker(DateTimePicker dtpControl)
+        {
+            string propertyName = dtpControl.Name.Substring(3); // Remove o prefixo 'dtp'
+            PropertyInfo propertyInfo = reg.GetType().GetProperty(propertyName);
+            if (propertyInfo != null && propertyInfo.PropertyType == typeof(DateTime) || propertyInfo.PropertyType == typeof(DateTime?))
+            {
+                DateTime? data = propertyInfo.GetValue(reg, null) as DateTime?;
+                if (!data.HasValue || data.Value == DateTime.MinValue)
+                {
+                    dtpControl.CustomFormat = " ";
+                    dtpControl.Format = DateTimePickerFormat.Custom;
+                }
+                else
+                {
+                    dtpControl.Value = data.Value;
+                    dtpControl.Format = DateTimePickerFormat.Short;
+                }
+            }
+        }
+
+        private void MapearCamposParaModelo(tb.Entregador reg)
+        {
+            foreach (Control control in this.Controls)
+            {
+                try
+                {
+                    if (control is TextBox textBox)
+                    {
+                        MapearTextBoxParaModelo(textBox, reg);
+                    }
+                    else if (control is DateTimePicker dateTimePicker)
+                    {
+                        MapearDateTimePickerParaModelo(dateTimePicker, reg);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    string x = ex.ToString();
+                    // Tratamento adequado de exceções
+                }
+            }
+        }
+
+        private void MapearTextBoxParaModelo(TextBox textBox, tb.Entregador reg)
+        {
+            string propertyName = textBox.Name.Substring(3); // Remove o prefixo 'txt'
+            PropertyInfo propertyInfo = reg.GetType().GetProperty(propertyName);
+            if (propertyInfo != null)
+            {
+                propertyInfo.SetValue(reg, textBox.Text, null);
+            }
+        }
+
+        private void MapearDateTimePickerParaModelo(DateTimePicker dtpControl, tb.Entregador reg)
+        {
+            string propertyName = dtpControl.Name.Substring(3); // Remove o prefixo 'dtp'
+            PropertyInfo propertyInfo = reg.GetType().GetProperty(propertyName);
+            if (propertyInfo != null && (propertyInfo.PropertyType == typeof(DateTime) || propertyInfo.PropertyType == typeof(DateTime?)))
+            {
+                if (dtpControl.Format != DateTimePickerFormat.Custom)
+                {
+                    propertyInfo.SetValue(reg, dtpControl.Value, null);
+                }
+                else
+                {
+                    propertyInfo.SetValue(reg, null, null); // ou DateTime.MinValue
+                }
+            }
+        }
+
+        #endregion
+
+        private void dtpValidadeCNH_ValueChanged(object sender, EventArgs e)
+        {
+            if (Mostrando == false)
+            {
+                cntrole1.EmEdicao = true;
+                DateTimePicker picker = sender as DateTimePicker;
+                if (picker != null)
+                {
+                    string propertyName = picker.Name.Substring(3); // Remove o prefixo 'dtp'
+                    PropertyInfo propertyInfo = reg.GetType().GetProperty(propertyName);
+                    if (propertyInfo != null && (propertyInfo.PropertyType == typeof(DateTime) || propertyInfo.PropertyType == typeof(DateTime?)))
+                    {
+                        if (picker.Value != DateTime.MinValue)
+                        {
+                            picker.Format = DateTimePickerFormat.Short;
+                            propertyInfo.SetValue(reg, picker.Value, null);
+                        }
+                        else
+                        {
+                            picker.CustomFormat = " ";
+                            picker.Format = DateTimePickerFormat.Custom;
+                            propertyInfo.SetValue(reg, null, null);
+                        }
+                    }
                 }
             }
         }

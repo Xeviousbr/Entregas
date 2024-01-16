@@ -9,7 +9,8 @@
         private System.Windows.Forms.Label lblCNH;
         private System.Windows.Forms.TextBox txtCNH;
         private System.Windows.Forms.Label lblValidadeCNH;
-        private System.Windows.Forms.MaskedTextBox mtxtValidadeCNH;
+        private System.Windows.Forms.DateTimePicker dtpDataValidadeCNH;
+
 
         private void InitializeComponent()
         {
@@ -22,7 +23,7 @@
             this.lblCNH = new System.Windows.Forms.Label();
             this.txtCNH = new System.Windows.Forms.TextBox();
             this.lblValidadeCNH = new System.Windows.Forms.Label();
-            this.mtxtValidadeCNH = new System.Windows.Forms.MaskedTextBox();
+            this.dtpDataValidadeCNH = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // cntrole1
@@ -94,6 +95,7 @@
             this.txtCNH.Name = "txtCNH";
             this.txtCNH.Size = new System.Drawing.Size(108, 23);
             this.txtCNH.TabIndex = 7;
+            this.txtCNH.Tag = "CNH";
             // 
             // lblValidadeCNH
             // 
@@ -104,15 +106,16 @@
             this.lblValidadeCNH.TabIndex = 8;
             this.lblValidadeCNH.Text = "Validade CNH";
             // 
-            // mtxtValidadeCNH
+            // dtpDataValidadeCNH
             // 
-            this.mtxtValidadeCNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtValidadeCNH.Location = new System.Drawing.Point(206, 195);
-            this.mtxtValidadeCNH.Mask = "00/00/0000";
-            this.mtxtValidadeCNH.Name = "mtxtValidadeCNH";
-            this.mtxtValidadeCNH.Size = new System.Drawing.Size(74, 23);
-            this.mtxtValidadeCNH.TabIndex = 9;
-            this.mtxtValidadeCNH.ValidatingType = typeof(System.DateTime);
+            this.dtpDataValidadeCNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtpDataValidadeCNH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataValidadeCNH.Location = new System.Drawing.Point(206, 195);
+            this.dtpDataValidadeCNH.Name = "dtpDataValidadeCNH";
+            this.dtpDataValidadeCNH.Size = new System.Drawing.Size(100, 23);
+            this.dtpDataValidadeCNH.TabIndex = 9;
+            this.dtpDataValidadeCNH.Tag = "A";
+            this.dtpDataValidadeCNH.ValueChanged += new System.EventHandler(this.dtpValidadeCNH_ValueChanged);
             // 
             // Form2
             // 
@@ -127,7 +130,7 @@
             this.Controls.Add(this.lblCNH);
             this.Controls.Add(this.txtCNH);
             this.Controls.Add(this.lblValidadeCNH);
-            this.Controls.Add(this.mtxtValidadeCNH);
+            this.Controls.Add(this.dtpDataValidadeCNH);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
