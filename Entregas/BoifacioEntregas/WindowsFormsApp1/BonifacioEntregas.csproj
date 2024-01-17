@@ -33,8 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>fed1b915-bf93-4679-b259-07527a8e0bd1.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ATCRecordNavigator">
@@ -53,14 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dao\BaseDAO.cs" />
-    <Compile Include="dao\EntregadorDAO.cs" />
-    <Compile Include="tb\IDataEntity.cs" />
-    <Compile Include="Entregadores.cs">
+    <Compile Include="CadClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Entregadores.Designer.cs">
-      <DependentUpon>Entregadores.cs</DependentUpon>
+    <Compile Include="CadClientes.Designer.cs">
+      <DependentUpon>CadClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dao\BaseDAO.cs" />
+    <Compile Include="dao\ClienteDAO.cs" />
+    <Compile Include="dao\EntregadorDAO.cs" />
+    <Compile Include="tb\Cliente.cs" />
+    <Compile Include="tb\IDataEntity.cs" />
+    <Compile Include="CadEntregadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadEntregadores.Designer.cs">
+      <DependentUpon>CadEntregadores.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -79,8 +86,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tb\Entregador.cs" />
-    <EmbeddedResource Include="Entregadores.resx">
-      <DependentUpon>Entregadores.cs</DependentUpon>
+    <EmbeddedResource Include="CadClientes.resx">
+      <DependentUpon>CadClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadEntregadores.resx">
+      <DependentUpon>CadEntregadores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -110,6 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fed1b915-bf93-4679-b259-07527a8e0bd1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

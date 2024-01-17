@@ -19,6 +19,12 @@ namespace BonifacioEntregas
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            MeuIni = new INI();
+            GlobalConfig.CaminhoBase = MeuIni.ReadString("Config", "Base", "");
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             // 
@@ -45,7 +51,7 @@ namespace BonifacioEntregas
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            AbrirOuFocarFormulario<Form2>();
+            AbrirOuFocarFormulario<fCadEntregadores>();
         }
 
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
@@ -66,10 +72,9 @@ namespace BonifacioEntregas
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
-            MeuIni = new INI();
-            GlobalConfig.CaminhoBase = MeuIni.ReadString("Config", "Base", "");
+            AbrirOuFocarFormulario<fCadClientes>();
         }
     }
 
