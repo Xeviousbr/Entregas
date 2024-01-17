@@ -46,7 +46,7 @@
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(250, 23);
-            this.txtNome.TabIndex = 1;
+            this.txtNome.TabIndex = 0;
             this.txtNome.Tag = "Nome";
             // 
             // lblTelefone
@@ -65,7 +65,7 @@
             this.txtTelefone.MaxLength = 20;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(108, 23);
-            this.txtTelefone.TabIndex = 3;
+            this.txtTelefone.TabIndex = 1;
             this.txtTelefone.Tag = "Telefone";
             // 
             // lblCNH
@@ -84,7 +84,7 @@
             this.txtCNH.MaxLength = 12;
             this.txtCNH.Name = "txtCNH";
             this.txtCNH.Size = new System.Drawing.Size(108, 23);
-            this.txtCNH.TabIndex = 7;
+            this.txtCNH.TabIndex = 2;
             this.txtCNH.Tag = "CNH";
             // 
             // lblValidadeCNH
@@ -103,11 +103,11 @@
             this.dtpDataValidadeCNH.Location = new System.Drawing.Point(206, 195);
             this.dtpDataValidadeCNH.Name = "dtpDataValidadeCNH";
             this.dtpDataValidadeCNH.Size = new System.Drawing.Size(100, 23);
-            this.dtpDataValidadeCNH.TabIndex = 9;
+            this.dtpDataValidadeCNH.TabIndex = 3;
             this.dtpDataValidadeCNH.Tag = "A";
             this.dtpDataValidadeCNH.ValueChanged += new System.EventHandler(this.dtpValidadeCNH_ValueChanged);
             // 
-            // Form2
+            // fCadEntregadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -123,7 +123,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
-            this.Name = "Form2";
+            this.Name = "fCadEntregadores";
             this.Text = "Cadastro de Entregador";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Teclou);
             this.Controls.SetChildIndex(this.cntrole1, 0);

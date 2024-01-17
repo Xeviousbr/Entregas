@@ -1,0 +1,15 @@
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Release\BonifacioEntregas.exe.config
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Release\BonifacioEntregas.exe
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Release\BonifacioEntregas.pdb
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Release\ATCRecordNavigator.dll
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Release\ATCRecordNavigator.pdb
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.csproj.AssemblyReference.cache
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.fCadClientes.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.fCadEntregadores.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.Form1.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.FormBase.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.Properties.Resources.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.csproj.GenerateResource.cache
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.csproj.CoreCompileInputs.cache
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.exe
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.pdb

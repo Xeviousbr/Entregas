@@ -1,0 +1,9 @@
+C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\bin\Release\ATCRecordNavigator.dll
+C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\bin\Release\ATCRecordNavigator.pdb
+C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Release\ATCRecordNavigator.csproj.AssemblyReference.cache
+C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Release\ATCRecordNavigator.Cntrole.resources
+C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Release\ATCRecordNavigator.Properties.Resources.resources
+C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Release\ATCRecordNavigator.csproj.GenerateResource.cache
+C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Release\ATCRecordNavigator.csproj.CoreCompileInputs.cache
+C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Release\ATCRecordNavigator.dll
+C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Release\ATCRecordNavigator.pdb

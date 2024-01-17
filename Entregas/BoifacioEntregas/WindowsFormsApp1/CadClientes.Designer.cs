@@ -35,11 +35,13 @@ namespace BonifacioEntregas
             this.txtTelefone = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtemail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtEnder = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cntrole1
             // 
-            this.cntrole1.Size = new System.Drawing.Size(331, 54);
+            this.cntrole1.Size = new System.Drawing.Size(329, 54);
             this.cntrole1.AcaoRealizada += new System.EventHandler<AcaoEventArgs>(this.cntrole1_AcaoRealizada);
             this.cntrole1.Load += new System.EventHandler(this.cntrole1_Load);
             // 
@@ -59,7 +61,7 @@ namespace BonifacioEntregas
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(298, 23);
-            this.txtNome.TabIndex = 5;
+            this.txtNome.TabIndex = 0;
             this.txtNome.Tag = "Nome";
             // 
             // lblTelefone
@@ -78,13 +80,13 @@ namespace BonifacioEntregas
             this.txtTelefone.MaxLength = 20;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(108, 23);
-            this.txtTelefone.TabIndex = 7;
+            this.txtTelefone.TabIndex = 1;
             this.txtTelefone.Tag = "Telefone";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 172);
+            this.label1.Location = new System.Drawing.Point(9, 242);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 8;
@@ -93,18 +95,39 @@ namespace BonifacioEntregas
             // txtemail
             // 
             this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemail.Location = new System.Drawing.Point(15, 200);
+            this.txtemail.Location = new System.Drawing.Point(12, 270);
             this.txtemail.MaxLength = 100;
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(298, 23);
-            this.txtemail.TabIndex = 9;
+            this.txtemail.TabIndex = 3;
             this.txtemail.Tag = "Nome";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Endereço";
+            // 
+            // txtEnder
+            // 
+            this.txtEnder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEnder.Location = new System.Drawing.Point(12, 201);
+            this.txtEnder.MaxLength = 40;
+            this.txtEnder.Name = "txtEnder";
+            this.txtEnder.Size = new System.Drawing.Size(298, 23);
+            this.txtEnder.TabIndex = 2;
+            this.txtEnder.Tag = "Nome";
             // 
             // fCadClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(331, 248);
+            this.ClientSize = new System.Drawing.Size(329, 322);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtEnder);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtemail);
             this.Controls.Add(this.lblNome);
@@ -122,6 +145,8 @@ namespace BonifacioEntregas
             this.Controls.SetChildIndex(this.lblNome, 0);
             this.Controls.SetChildIndex(this.txtemail, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.txtEnder, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +160,7 @@ namespace BonifacioEntregas
         private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtemail;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtEnder;
     }
 }

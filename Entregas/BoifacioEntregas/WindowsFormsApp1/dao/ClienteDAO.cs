@@ -12,6 +12,7 @@ namespace BonifacioEntregas.dao
         public string Telefone { get; set; }
 
         public string email { get; set; }
+        public string Ender { get;  set; }
 
         public void Addcliente(tb.Cliente cliente)
         {
@@ -26,12 +27,12 @@ namespace BonifacioEntregas.dao
             int result = 0;
             if (cliente.Adicao)
             {
-                query = "INSERT INTO Clientes (NrCli, Nome, Telefone, email) VALUES (?, ?, ?, ?)";
+                query = "INSERT INTO Clientes (NrCli, Nome, Telefone, email, Ender) VALUES (?, ?, ?, ?, ?)";
                 parameters = ConstruirParametroscliente(cliente, true);
             }
             else
             {
-                query = "UPDATE Clientes SET Nome = ?, Telefone = ?, email = ? WHERE NrCli = ?";
+                query = "UPDATE Clientes SET Nome = ?, Telefone = ?, email = ?, Ender  =? WHERE NrCli = ?";
                 parameters = ConstruirParametroscliente(cliente, false);
             }
 
@@ -53,6 +54,8 @@ namespace BonifacioEntregas.dao
                 new OleDbParameter("@Nome", cliente.Nome),
                 new OleDbParameter("@Telefone", cliente.Telefone),
                 new OleDbParameter("@email", cliente.email),
+                new OleDbParameter("@Ender", cliente.Ender),
+                
             };
             if (inserindo)
             {
@@ -129,14 +132,16 @@ namespace BonifacioEntregas.dao
                 Id = id,
                 Nome = Nome,
                 Telefone = Telefone,
-                email = email
+                email = email,
+                Ender=Ender
             };
 
         }
 
         public override object GetUltimo()
         {
-            string query = "SELECT TOP 1 * FROM Clientes ORDER BY NrCli Desc";
+            // string query = "SELECT TOP 1 * FROM Clientes ORDER BY NrCli Desc";
+            string query = "SELECT TOP 1 * FROM Clientes Where NrCli =4925 ";
             return ExecutarConsultacliente(query);
         }
 
@@ -169,6 +174,7 @@ namespace BonifacioEntregas.dao
                                 id = Convert.ToInt32(reader["NrCli"]);
                                 Telefone = reader["Telefone"].ToString();
                                 email = reader["email"].ToString();
+                                Ender = reader["Ender"].ToString();
                                 return (tb.Cliente)GetEsse();
                             }
                         }

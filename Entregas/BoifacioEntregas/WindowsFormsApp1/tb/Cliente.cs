@@ -15,5 +15,7 @@ namespace BonifacioEntregas.tb
         public string Telefone { get; set; }
 
         public string email { get; set; }
+
+        public string Ender { get; set; }
     }
 }

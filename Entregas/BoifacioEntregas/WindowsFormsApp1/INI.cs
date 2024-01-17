@@ -17,7 +17,8 @@ namespace BonifacioEntregas
         }
         public INI()
         {
-            FileName = Path.ChangeExtension(Application.ExecutablePath, ".ini");
+            // FileName = Path.ChangeExtension(Application.ExecutablePath, ".ini");
+            FileName = @"C:\Entregas\BonifacioEntregas.ini";
         }
 
         #endregion
