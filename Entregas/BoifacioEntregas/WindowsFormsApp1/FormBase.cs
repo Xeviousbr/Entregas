@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BonifacioEntregas.tb;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -150,20 +151,132 @@ namespace BonifacioEntregas
             }
         }
 
-        #endregion
-
-        #region Crud
-        protected void Grava()
+        public void ResetarAparenciaControles()
         {
-            MapearCamposParaModelo(DAO);
-            if (EmAdicao)
+            foreach (Control ctrl in this.Controls)
             {
-                DAO.Adicao = true;
+                if (ctrl is TextBox)
+                {
+                    ctrl.BackColor = SystemColors.Window; // Cor normal
+                }
+                // Adicione mais lógica aqui se houver outros tipos de controles
             }
-            DAO.Grava(DAO);
-            EmAdicao = false;
         }
 
         #endregion
+
+        #region Crud
+        protected void Grava(List<CampoTagInfo> tagsDosCampos)
+        {
+            MapearCamposParaModelo(DAO);
+            List<string> criticas = FazerCriticas(DAO, tagsDosCampos);            
+            if (criticas.Count == 0)
+            {
+                DAO.Adicao = EmAdicao;                
+                DAO.Grava(DAO);
+                EmAdicao = false;
+                cntrole1.ControlesNormais();
+            }
+            else
+            {                
+                string mensagemCritica = string.Join("\n", criticas);
+                MessageBox.Show(mensagemCritica, "Críticas", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        #endregion
+
+        #region Criticas
+
+        public List<string> FazerCriticas<T>(T objeto, List<CampoTagInfo> tagsDosCampos) where T : class
+        {
+            List<string> criticas = new List<string>();
+
+            // Use reflexão para obter propriedades da classe
+            PropertyInfo[] propriedades = objeto.GetType().GetProperties();
+
+            foreach (CampoTagInfo campoTag in tagsDosCampos)
+            {
+                // Encontre a propriedade correspondente no objeto
+                PropertyInfo propriedade = propriedades.FirstOrDefault(p => p.Name.Equals(campoTag.Nome, StringComparison.OrdinalIgnoreCase));
+
+                if (propriedade != null)
+                {
+                    // Realize as críticas com base na tag e nos dados em DAO
+                    if (campoTag.Tag == "O")
+                    {
+                        // Verifique se o valor na propriedade correspondente em DAO é vazio
+                        object valor = propriedade.GetValue(objeto);
+                        if (valor == null || (valor is string && string.IsNullOrEmpty((string)valor)))
+                        {
+                            criticas.Add($"O campo {propriedade.Name} é obrigatório.");
+                        }
+                    }
+                    // Adicione outras verificações de tag conforme necessário
+                }
+            }
+            MarcarControlesComErro(criticas);
+            return criticas;
+        }
+
+        public List<tb.CampoTagInfo> LerTagsDosCamposDeTexto()
+        {
+            List<tb.CampoTagInfo> tags = new List<tb.CampoTagInfo>();
+
+            foreach (Control control in Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    // Verifique se a Tag está definida como uma propriedade do TextBox (você pode personalizar isso)
+                    if (textBox.Tag != null)
+                    {
+                        tags.Add(new CampoTagInfo
+                        {
+                            Nome = textBox.Name.Substring(3),
+                            Tag = textBox.Tag.ToString()
+                        });
+                    }
+                }
+            }
+
+            return tags;
+        }
+
+        private void MarcarControlesComErro(List<string> criticas)
+        {
+            // Uma lista para manter o registro dos nomes dos campos com erros
+            HashSet<string> camposComErro = new HashSet<string>();
+
+            foreach (string critica in criticas)
+            {
+                // Assumindo que a crítica contém o nome do campo, exemplo: "O campo Nome é obrigatório."
+                string nomeCampo = critica.Split(' ')[2]; // Isso precisa ser ajustado conforme o formato da sua crítica
+                camposComErro.Add(nomeCampo);
+            }
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox textBox)
+                {
+                    // Extrair o nome do campo do nome do controle, assumindo que o nome do controle começa com "txt"
+                    string nomeCampo = textBox.Name.Substring(3);
+
+                    if (camposComErro.Contains(nomeCampo))
+                    {
+                        // Marcar como erro
+                        textBox.BackColor = Color.LightPink; // Cor para indicar erro
+                    }
+                    else
+                    {
+                        // Resetar a aparência para o normal
+                        textBox.BackColor = SystemColors.Window;
+                    }
+                }
+                // Adicione mais lógica aqui se houver outros tipos de controles
+            }
+        }
+
+        #endregion
+
     }
 }

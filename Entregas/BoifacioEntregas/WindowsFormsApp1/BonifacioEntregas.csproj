@@ -61,6 +61,8 @@
     <Compile Include="dao\BaseDAO.cs" />
     <Compile Include="dao\ClienteDAO.cs" />
     <Compile Include="dao\EntregadorDAO.cs" />
+    <Compile Include="tb\CampoTagAttribute.cs" />
+    <Compile Include="tb\CampoTagInfo.cs" />
     <Compile Include="tb\Cliente.cs" />
     <Compile Include="tb\IDataEntity.cs" />
     <Compile Include="CadEntregadores.cs">

@@ -13,7 +13,11 @@ namespace BonifacioEntregas.tb
         public string Telefone { get; set; }
 
         public string CNH { get; set; }
-        public DateTime  DataValidadeCNH { get; set; }        
+
+        [CampoTag("H")] 
+        public DateTime DataValidadeCNH { get; set; }
+
+
         public bool Adicao { get; set; }
     }
 }

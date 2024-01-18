@@ -1,15 +1,22 @@
-﻿using System.Windows.Forms;
+﻿using BonifacioEntregas.tb;
+using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace BonifacioEntregas
 {
     public partial class fCadClientes : FormBase
     {
+
+        List<CampoTagInfo> tagsDosCampos;
+
         public fCadClientes()
         {
             InitializeComponent();
             base.DAO = new dao.ClienteDAO();
             base.reg = (tb.IDataEntity)DAO.GetUltimo();
             base.Mostra();
+            tagsDosCampos = base.LerTagsDosCamposDeTexto();
         }
 
         private void cntrole1_AcaoRealizada(object sender, AcaoEventArgs e)
@@ -55,10 +62,11 @@ namespace BonifacioEntregas
                     break;
                 case "CANC":
                     reg = (tb.Cliente)DAO.GetEsse();
+                    ResetarAparenciaControles();
                     Mostra();
                     break;
-                case "OK":
-                    Grava();
+                case "OK":                    
+                    Grava(tagsDosCampos);
                     break;
             }
         }
@@ -72,5 +80,7 @@ namespace BonifacioEntregas
         {
 
         }
+
+
     }
 }

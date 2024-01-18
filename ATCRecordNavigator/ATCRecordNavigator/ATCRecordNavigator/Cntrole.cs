@@ -150,7 +150,7 @@ namespace ATCRecordNavigator
             this.btnParaTras.Enabled = false;
         }
 
-        private void MostraEdicao()
+        public void ControlesNormais()
         {
             this.btnEditar.Visible = true;
             this.btnApagar.Visible = true;
@@ -172,7 +172,7 @@ namespace ATCRecordNavigator
             emEdicao = false;
             emAdicao = false;
             AcaoRealizada?.Invoke(this, new AcaoEventArgs("OK"));
-            MostraEdicao();
+            // MostraEdicao();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -180,7 +180,7 @@ namespace ATCRecordNavigator
             emEdicao = false;
             emAdicao = false;
             AcaoRealizada?.Invoke(this, new AcaoEventArgs("CANC"));
-            MostraEdicao();
+            ControlesNormais();
         }
     }
 }

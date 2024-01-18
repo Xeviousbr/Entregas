@@ -62,7 +62,7 @@ namespace BonifacioEntregas
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(298, 23);
             this.txtNome.TabIndex = 0;
-            this.txtNome.Tag = "Nome";
+            this.txtNome.Tag = "O";
             // 
             // lblTelefone
             // 
@@ -81,7 +81,7 @@ namespace BonifacioEntregas
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(108, 23);
             this.txtTelefone.TabIndex = 1;
-            this.txtTelefone.Tag = "Telefone";
+            this.txtTelefone.Tag = "O";
             // 
             // label1
             // 
@@ -100,7 +100,7 @@ namespace BonifacioEntregas
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(298, 23);
             this.txtemail.TabIndex = 3;
-            this.txtemail.Tag = "Nome";
+            this.txtemail.Tag = "";
             // 
             // label2
             // 
@@ -119,7 +119,7 @@ namespace BonifacioEntregas
             this.txtEnder.Name = "txtEnder";
             this.txtEnder.Size = new System.Drawing.Size(298, 23);
             this.txtEnder.TabIndex = 2;
-            this.txtEnder.Tag = "Nome";
+            this.txtEnder.Tag = "O";
             // 
             // fCadClientes
             // 

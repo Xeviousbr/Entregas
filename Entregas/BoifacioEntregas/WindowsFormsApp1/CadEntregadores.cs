@@ -99,7 +99,7 @@ namespace BonifacioEntregas
                     Mostra();
                     break;
                 case "OK":
-                    Grava();
+                    // Grava();
                     break;
             }
         }

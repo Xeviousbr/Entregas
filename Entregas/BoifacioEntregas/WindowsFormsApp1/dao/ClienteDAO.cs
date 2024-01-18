@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
+using System.Windows.Forms;
 
 namespace BonifacioEntregas.dao
 {
@@ -43,7 +44,7 @@ namespace BonifacioEntregas.dao
             catch (Exception ex)
             {
                 string x = ex.ToString();
-                // Considerar um melhor tratamento de exceções ou log
+                MessageBox.Show(x, "Erro na operação do banco de dados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
