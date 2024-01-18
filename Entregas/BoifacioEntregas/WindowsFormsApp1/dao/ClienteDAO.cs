@@ -115,7 +115,7 @@ namespace BonifacioEntregas.dao
             }
         }
 
-        public override object Apagar(int direcao)
+        public override tb.IDataEntity Apagar(int direcao, tb.IDataEntity entidade)
         {
             ExecutarComandoSQL("DELETE FROM Clientes WHERE NrCli = " + id.ToString(), null);
             tb.Cliente proximocliente = direcao > -1 ? ParaFrente() as tb.Cliente : ParaTraz() as tb.Cliente;
@@ -126,7 +126,7 @@ namespace BonifacioEntregas.dao
             return proximocliente ?? new tb.Cliente();
         }
 
-        public override object GetEsse()
+        public override tb.IDataEntity GetEsse()
         {
             return (tb.Cliente)new tb.Cliente
             {
@@ -141,18 +141,17 @@ namespace BonifacioEntregas.dao
 
         public override object GetUltimo()
         {
-            // string query = "SELECT TOP 1 * FROM Clientes ORDER BY NrCli Desc";
-            string query = "SELECT TOP 1 * FROM Clientes Where NrCli =4925 ";
+            string query = "SELECT TOP 1 * FROM Clientes ORDER BY NrCli Desc";
             return ExecutarConsultacliente(query);
         }
 
-        public override object ParaTraz()
+        public override tb.IDataEntity ParaTraz()
         {
             string query = $"SELECT TOP 1 * FROM Clientes Where Nome < '{Nome}' ORDER BY Nome Desc";
             return ExecutarConsultacliente(query);
         }
 
-        public override object ParaFrente()
+        public override tb.IDataEntity ParaFrente()
         {
             string query = $"SELECT TOP 1 * FROM Clientes Where Nome > '{Nome}' ORDER BY Nome ";
             return ExecutarConsultacliente(query);

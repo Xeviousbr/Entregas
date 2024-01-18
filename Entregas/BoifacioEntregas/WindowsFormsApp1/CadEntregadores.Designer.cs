@@ -47,7 +47,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(250, 23);
             this.txtNome.TabIndex = 0;
-            this.txtNome.Tag = "Nome";
+            this.txtNome.Tag = "O";
             // 
             // lblTelefone
             // 
@@ -66,7 +66,8 @@
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(108, 23);
             this.txtTelefone.TabIndex = 1;
-            this.txtTelefone.Tag = "Telefone";
+            this.txtTelefone.Tag = "0";
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             // 
             // lblCNH
             // 
@@ -85,7 +86,7 @@
             this.txtCNH.Name = "txtCNH";
             this.txtCNH.Size = new System.Drawing.Size(108, 23);
             this.txtCNH.TabIndex = 2;
-            this.txtCNH.Tag = "CNH";
+            this.txtCNH.Tag = "";
             // 
             // lblValidadeCNH
             // 
@@ -104,7 +105,7 @@
             this.dtpDataValidadeCNH.Name = "dtpDataValidadeCNH";
             this.dtpDataValidadeCNH.Size = new System.Drawing.Size(100, 23);
             this.dtpDataValidadeCNH.TabIndex = 3;
-            this.dtpDataValidadeCNH.Tag = "A";
+            this.dtpDataValidadeCNH.Tag = "H";
             this.dtpDataValidadeCNH.ValueChanged += new System.EventHandler(this.dtpValidadeCNH_ValueChanged);
             // 
             // fCadEntregadores

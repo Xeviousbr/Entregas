@@ -1,4 +1,5 @@
 ﻿using System;
+using BonifacioEntregas.tb;
 using System.Windows.Forms;
 using System.Reflection;
 
@@ -6,13 +7,15 @@ namespace BonifacioEntregas
 {
     public partial class fCadEntregadores : FormBase
     {
-
+        private tb.Entregador clienteEspecifico;
         public fCadEntregadores()
         {
             InitializeComponent();
             base.DAO = new dao.EntregadorDAO();
-            base.reg = (tb.IDataEntity)DAO.GetUltimo();
+            clienteEspecifico = DAO.GetUltimo() as tb.Entregador;
+            base.reg = DAO.GetUltimo() as tb.Entregador;
             base.Mostra();
+            base.LerTagsDosCamposDeTexto();
         }
 
         private void cntrole1_Load(object sender, EventArgs e)
@@ -22,7 +25,13 @@ namespace BonifacioEntregas
 
         private void Teclou(object sender, KeyEventArgs e)
         {
-            base.cntrole1.EmEdicao = true; 
+            if (e.KeyCode == Keys.Escape)
+            {
+                base.Cancela();
+            } else
+            {
+                base.cntrole1.EmEdicao = true;
+            }            
         }
 
         private void dtpValidadeCNH_ValueChanged(object sender, EventArgs e)
@@ -55,52 +64,14 @@ namespace BonifacioEntregas
 
         private void cntrole1_AcaoRealizada_1(object sender, AcaoEventArgs e)
         {
-            switch (e.Acao)
+            base.cntrole1_AcaoRealizada(sender, e, clienteEspecifico);
+        }
+
+        private void txtTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.Equals(e.KeyChar, '-') && !char.Equals(e.KeyChar, '/') && !char.Equals(e.KeyChar, '(') && !char.Equals(e.KeyChar, ')'))
             {
-                case "Adicionar":
-                    LimparCampos();
-                    EmAdicao = true;
-                    break;
-                case "Delete":
-                    reg = (tb.Entregador)DAO.Apagar(Direcao);
-                    if (!Mostra())
-                    {
-                        if (Direcao == 1)
-                        {
-                            cntrole1.Ultimo = true;
-                        }
-                        else
-                        {
-                            cntrole1.Primeiro = true;
-                        }
-                    }
-                    break;
-                case "ParaTras":
-                    Direcao = -1;
-                    reg = (tb.Entregador)DAO.ParaTraz();
-                    if (!Mostra())
-                    {
-                        cntrole1.Ultimo = true;
-                    }
-                    break;
-                case "ParaFrente":
-                    Direcao = 1; ;
-                    reg = (tb.Entregador)DAO.ParaFrente();
-                    if (!Mostra())
-                    {
-                        cntrole1.Primeiro = true;
-                    }
-                    break;
-                case "Editar":
-                    // this.Text = "clicou";
-                    break;
-                case "CANC":
-                    reg = (tb.Entregador)DAO.GetEsse();
-                    Mostra();
-                    break;
-                case "OK":
-                    // Grava();
-                    break;
+                e.Handled = true;
             }
         }
     }

@@ -14,7 +14,6 @@ namespace BonifacioEntregas.tb
 
         public string CNH { get; set; }
 
-        [CampoTag("H")] 
         public DateTime DataValidadeCNH { get; set; }
 
 

@@ -13,3 +13,4 @@ C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\Bonifacio
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.csproj.CoreCompileInputs.cache
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.exe
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.pdb
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.csproj.CopyComplete

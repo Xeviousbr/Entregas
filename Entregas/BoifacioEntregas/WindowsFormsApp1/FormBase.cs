@@ -20,10 +20,12 @@ namespace BonifacioEntregas
         protected bool Mostrando = false;
         protected dao.BaseDAO DAO;
         protected tb.IDataEntity reg;
+        private List<CampoTagInfo> tagsDosCampos;
 
         public FormBase()
         {
             InitializeComponent();
+            tagsDosCampos = new List<tb.CampoTagInfo>();
         }
 
         #region Campos
@@ -163,13 +165,70 @@ namespace BonifacioEntregas
             }
         }
 
+        protected void cntrole1_AcaoRealizada(object sender, AcaoEventArgs e, tb.IDataEntity entidade)
+        {
+            switch (e.Acao)
+            {
+                case "Adicionar":
+                    LimparCampos();
+                    EmAdicao = true;
+                    break;
+                case "Delete":
+                    reg = DAO.Apagar(Direcao, entidade);
+                    if (!Mostra())
+                    {
+                        if (Direcao == 1)
+                        {
+                            cntrole1.Ultimo = true;
+                        }
+                        else
+                        {
+                            cntrole1.Primeiro = true;
+                        }
+                    }
+                    break;
+                case "ParaTras":
+                    Direcao = -1;
+                    reg = DAO.ParaTraz();
+                    if (!Mostra())
+                    {
+                        cntrole1.Ultimo = true;
+                    }
+                    break;
+                case "ParaFrente":
+                    Direcao = 1; ;
+                    reg = DAO.ParaFrente();
+                    if (!Mostra())
+                    {
+                        cntrole1.Primeiro = true;
+                    }
+                    break;
+                case "Editar":
+                    // this.Text = "clicou";
+                    break;
+                case "CANC":
+                    Cancela();
+                    break;
+                case "OK":
+                    Grava();
+                    break;
+            }
+        }
+
+        protected void Cancela()
+        {
+            reg = DAO.GetEsse();
+            ResetarAparenciaControles();
+            Mostra();
+        }
+
         #endregion
 
         #region Crud
-        protected void Grava(List<CampoTagInfo> tagsDosCampos)
+        protected void Grava()
         {
             MapearCamposParaModelo(DAO);
-            List<string> criticas = FazerCriticas(DAO, tagsDosCampos);            
+            List<string> criticas = FazerCriticas(DAO);            
             if (criticas.Count == 0)
             {
                 DAO.Adicao = EmAdicao;                
@@ -188,91 +247,106 @@ namespace BonifacioEntregas
 
         #region Criticas
 
-        public List<string> FazerCriticas<T>(T objeto, List<CampoTagInfo> tagsDosCampos) where T : class
+        public List<string> FazerCriticas<T>(T objeto) where T : class
         {
             List<string> criticas = new List<string>();
-
-            // Use reflexão para obter propriedades da classe
             PropertyInfo[] propriedades = objeto.GetType().GetProperties();
-
             foreach (CampoTagInfo campoTag in tagsDosCampos)
             {
-                // Encontre a propriedade correspondente no objeto
                 PropertyInfo propriedade = propriedades.FirstOrDefault(p => p.Name.Equals(campoTag.Nome, StringComparison.OrdinalIgnoreCase));
-
                 if (propriedade != null)
                 {
-                    // Realize as críticas com base na tag e nos dados em DAO
                     if (campoTag.Tag == "O")
                     {
-                        // Verifique se o valor na propriedade correspondente em DAO é vazio
                         object valor = propriedade.GetValue(objeto);
                         if (valor == null || (valor is string && string.IsNullOrEmpty((string)valor)))
                         {
                             criticas.Add($"O campo {propriedade.Name} é obrigatório.");
                         }
                     }
-                    // Adicione outras verificações de tag conforme necessário
+                    else if (campoTag.Tag == "H" && propriedade.PropertyType == typeof(DateTime))
+                    {
+                        DateTime dataValor = (DateTime)propriedade.GetValue(objeto);
+                        if (dataValor > DateTime.Today)
+                        {
+                            criticas.Add($"A data no campo {propriedade.Name} não pode ser posterior a hoje.");
+                        }
+                    }
                 }
             }
             MarcarControlesComErro(criticas);
             return criticas;
         }
 
-        public List<tb.CampoTagInfo> LerTagsDosCamposDeTexto()
+        public void LerTagsDosCamposDeTexto()
         {
-            List<tb.CampoTagInfo> tags = new List<tb.CampoTagInfo>();
-
+            tagsDosCampos.Clear();
             foreach (Control control in Controls)
             {
                 if (control is TextBox textBox)
                 {
-                    // Verifique se a Tag está definida como uma propriedade do TextBox (você pode personalizar isso)
                     if (textBox.Tag != null)
                     {
-                        tags.Add(new CampoTagInfo
+                        tagsDosCampos.Add(new CampoTagInfo
                         {
                             Nome = textBox.Name.Substring(3),
                             Tag = textBox.Tag.ToString()
                         });
                     }
                 }
+                else if (control is DateTimePicker dtp)
+                {
+                    if (dtp.Tag != null)
+                    {
+                        tagsDosCampos.Add(new CampoTagInfo
+                        {
+                            Nome = dtp.Name.Substring(3),
+                            Tag = dtp.Tag.ToString()
+                        });
+                    }
+                }
             }
-
-            return tags;
         }
 
         private void MarcarControlesComErro(List<string> criticas)
         {
-            // Uma lista para manter o registro dos nomes dos campos com erros
             HashSet<string> camposComErro = new HashSet<string>();
-
             foreach (string critica in criticas)
             {
-                // Assumindo que a crítica contém o nome do campo, exemplo: "O campo Nome é obrigatório."
-                string nomeCampo = critica.Split(' ')[2]; // Isso precisa ser ajustado conforme o formato da sua crítica
-                camposComErro.Add(nomeCampo);
+                string[] palavras = critica.Split(' ');
+                int indiceCampo = Array.IndexOf(palavras, "campo");
+                if (indiceCampo != -1 && indiceCampo + 1 < palavras.Length)
+                {
+                    string nomeCampo = palavras[indiceCampo + 1];
+                    camposComErro.Add(nomeCampo);
+                }
             }
-
             foreach (Control ctrl in this.Controls)
             {
                 if (ctrl is TextBox textBox)
                 {
-                    // Extrair o nome do campo do nome do controle, assumindo que o nome do controle começa com "txt"
                     string nomeCampo = textBox.Name.Substring(3);
-
                     if (camposComErro.Contains(nomeCampo))
                     {
-                        // Marcar como erro
-                        textBox.BackColor = Color.LightPink; // Cor para indicar erro
+                        textBox.BackColor = Color.LightPink;
                     }
                     else
                     {
-                        // Resetar a aparência para o normal
                         textBox.BackColor = SystemColors.Window;
                     }
                 }
-                // Adicione mais lógica aqui se houver outros tipos de controles
+                else if (ctrl is DateTimePicker dtp)
+                {
+                    string nomeCampo = dtp.Name.Substring(3);
+                    if (camposComErro.Contains(nomeCampo))
+                    {
+                        dtp.Font = new Font(dtp.Font.FontFamily, dtp.Font.Size, FontStyle.Bold);
+                    }
+                    else
+                    {
+                        dtp.Font = new Font(dtp.Font.FontFamily, dtp.Font.Size, FontStyle.Regular);
+                    }
+                }
             }
         }
 

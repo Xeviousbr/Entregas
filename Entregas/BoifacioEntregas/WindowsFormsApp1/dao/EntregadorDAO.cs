@@ -117,18 +117,18 @@ namespace BonifacioEntregas.dao
             }
         }
 
-        public override object Apagar(int direcao)
+        public override tb.IDataEntity Apagar(int direcao, tb.IDataEntity entidade)
         {
             ExecutarComandoSQL("DELETE FROM Mecanicos WHERE codi = " + id.ToString(), null);
-            tb.Entregador proximoEntregador = direcao > -1 ? ParaFrente() as tb.Entregador : ParaTraz() as tb.Entregador;
-            if (proximoEntregador == null || proximoEntregador.Id == 0)
+            tb.Entregador proximocliente = direcao > -1 ? ParaFrente() as tb.Entregador : ParaTraz() as tb.Entregador;
+            if (proximocliente == null || proximocliente.Id == 0)
             {
-                proximoEntregador = direcao > -1 ? ParaTraz() as tb.Entregador : ParaFrente() as tb.Entregador;
+                proximocliente = direcao > -1 ? ParaTraz() as tb.Entregador : ParaFrente() as tb.Entregador;
             }
-            return proximoEntregador ?? new tb.Entregador();
+            return proximocliente ?? new tb.Entregador();
         }
 
-        public override object GetEsse()
+        public override tb.IDataEntity GetEsse()
         {
             return (tb.Entregador)new tb.Entregador
             {
@@ -147,13 +147,13 @@ namespace BonifacioEntregas.dao
             return ExecutarConsultaEntregador(query);
         }
 
-        public override object ParaTraz()
+        public override tb.IDataEntity ParaTraz()
         {
             string query = $"SELECT TOP 1 * FROM Mecanicos Where Oper = 3 and Nome < '{Nome}' ORDER BY Nome Desc"; 
             return ExecutarConsultaEntregador(query);
         }
 
-        public override object ParaFrente()
+        public override tb.IDataEntity ParaFrente()
         {
             string query = $"SELECT TOP 1 * FROM Mecanicos Where Oper = 3 and Nome > '{Nome}' ORDER BY Nome ";
             return ExecutarConsultaEntregador(query);

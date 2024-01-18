@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BonifacioEntregas.dao
+﻿namespace BonifacioEntregas.dao
 {
     public class BaseDAO
     {
@@ -21,7 +15,7 @@ namespace BonifacioEntregas.dao
         {
 
         }
-        public virtual object Apagar(int direcao)
+        public virtual tb.IDataEntity Apagar(int direcao, tb.IDataEntity entidade)
         {
             return null;
         }
@@ -31,17 +25,17 @@ namespace BonifacioEntregas.dao
             return null;
         }
 
-        public virtual object ParaTraz()
+        public virtual tb.IDataEntity ParaTraz()
         {
             return null;
         }
 
-        public virtual object ParaFrente()
+        public virtual tb.IDataEntity ParaFrente()
         {
             return null;
         }
 
-        public virtual object GetEsse()
+        public virtual tb.IDataEntity GetEsse()
         {
             return null;
         }

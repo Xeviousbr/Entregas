@@ -82,6 +82,7 @@ namespace BonifacioEntregas
             this.txtTelefone.Size = new System.Drawing.Size(108, 23);
             this.txtTelefone.TabIndex = 1;
             this.txtTelefone.Tag = "O";
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefone_KeyPress);
             // 
             // label1
             // 
