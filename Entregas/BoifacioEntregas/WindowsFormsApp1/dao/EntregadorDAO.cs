@@ -13,6 +13,8 @@ namespace BonifacioEntregas.dao
         public string CNH { get; set; }
         public DateTime DataValidadeCNH { get; set; }
 
+        private int Linhas;
+
         public EntregadorDAO()
         {
 
@@ -199,7 +201,12 @@ namespace BonifacioEntregas.dao
             return null;
         }
 
-        public override System.Data.DataTable CarregarDados()
+        public override void SetarLinhas(int v)
+        {
+            this.Linhas = v;
+        }
+
+        public override DataTable getDados()
         {
             string query = "SELECT * FROM Mecanicos";
             using (OleDbConnection connection = new OleDbConnection(this.connectionString))
@@ -212,14 +219,14 @@ namespace BonifacioEntregas.dao
                         using (OleDbDataReader reader = command.ExecuteReader())
                         {
                             DataTable dataTable = new DataTable();
-                            dataTable.Columns.Add("codi", typeof(int));
+                            dataTable.Columns.Add("id", typeof(int));
                             dataTable.Columns.Add("Nome", typeof(string));
                             dataTable.Columns.Add("Telefone", typeof(string));
                             dataTable.Columns.Add("CNH", typeof(string));
                             while (reader.Read())
                             {
                                 DataRow row = dataTable.NewRow();
-                                row["codi"] = reader["codi"];
+                                row["id"] = reader["codi"];
                                 row["Nome"] = reader["Nome"];
                                 row["Telefone"] = reader["Telefone"];
                                 row["CNH"] = reader["CNH"];
@@ -235,51 +242,16 @@ namespace BonifacioEntregas.dao
                     return null;
                 }
             }
-
         }
 
-        //public override System.Data.DataTable CarregarDados()
-        //{
-        //    return null;
-        //    //string query = "SELECT * FROM Clientes";
-        //    //using (OleDbConnection connection = new OleDbConnection(this.connectionString))
-        //    //{
-        //    //    try
-        //    //    {
-        //    //        connection.Open();
-        //    //        using (OleDbCommand command = new OleDbCommand(query, connection))
-        //    //        {
-        //    //            using (OleDbDataReader reader = command.ExecuteReader())
-        //    //            {
-        //    //                DataTable dataTable = new DataTable();
-        //    //                dataTable.Columns.Add("NrCli", typeof(int));
-        //    //                dataTable.Columns.Add("Nome", typeof(string));
-        //    //                dataTable.Columns.Add("Telefone", typeof(string));
-        //    //                dataTable.Columns.Add("email", typeof(string));
-        //    //                dataTable.Columns.Add("Ender", typeof(string));
-
-        //    //                while (reader.Read())
-        //    //                {
-        //    //                    DataRow row = dataTable.NewRow();
-        //    //                    row["NrCli"] = reader["NrCli"];
-        //    //                    row["Nome"] = reader["Nome"];
-        //    //                    row["Telefone"] = reader["Telefone"];
-        //    //                    row["email"] = reader["email"];
-        //    //                    row["Ender"] = reader["Ender"];
-        //    //                    dataTable.Rows.Add(row);
-        //    //                }
-        //    //                return dataTable;
-        //    //            }
-        //    //        }
-        //    //    }
-        //    //    catch (Exception ex)
-        //    //    {
-        //    //        throw;
-        //    //    }
-        //    }
-        //}
-    }
+        public override tb.IDataEntity GetPeloID(string id)
+        {
+            string query = $"SELECT * FROM Mecanicos Where codi = {id} ";
+            return ExecutarConsultaEntregador(query);
+        }
 
     }
+
+}
 
 

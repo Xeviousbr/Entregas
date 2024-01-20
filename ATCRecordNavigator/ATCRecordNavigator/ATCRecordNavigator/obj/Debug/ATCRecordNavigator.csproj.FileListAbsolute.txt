@@ -6,3 +6,4 @@ C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\bin\Deb
 C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\bin\Debug\ATCRecordNavigator.pdb
 C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Debug\ATCRecordNavigator.dll
 C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Debug\ATCRecordNavigator.pdb
+C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Debug\ATCRecordNavigator.csproj.AssemblyReference.cache

@@ -20,6 +20,7 @@ namespace BonifacioEntregas
             base.reg = DAO.GetUltimo() as tb.Cliente;
             base.Mostra();
             base.LerTagsDosCamposDeTexto();
+            base.NrLinhas(20);
         }
 
         private void cntrole1_AcaoRealizada(object sender, AcaoEventArgs e)
@@ -54,17 +55,17 @@ namespace BonifacioEntregas
 
         private void fCadClientes_Activated(object sender, EventArgs e)
         {
-            InitializeDataGrid();
-            int x = 0;
+            //InitializeDataGrid();
+            //int x = 0;
         }
 
-        private void InitializeDataGrid()
-        {
-            //DataTable dataTable = base.DAO.CarregarDados();
+        //private void InitializeDataGrid()
+        //{
+        //    //DataTable dataTable = base.DAO.CarregarDados();
 
-            //List<dao.Cliente> clienteEspecifico = dataTable.AsEnumerable().ToList<dao.Cliente()>();
+        //    //List<dao.Cliente> clienteEspecifico = dataTable.AsEnumerable().ToList<dao.Cliente()>();
 
-        }
+        //}
 
     }
 }

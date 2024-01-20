@@ -150,23 +150,6 @@ namespace ATCRecordNavigator
             this.btnParaTras.Enabled = false;
         }
 
-        public void ControlesNormais()
-        {
-            this.btnEditar.Visible = true;
-            this.btnApagar.Visible = true;
-            this.btnOk.Visible = false;
-            this.btnCancelar.Visible = false;
-            this.btnAdicionar.Enabled = true;
-            this.btnPesquisa.Enabled = true;
-            this.btnParaFrente.Enabled = true;
-            this.btnParaTras.Enabled = true;
-        }
-
-        public void ResetarAparenciaEditar()
-        {
-
-        }
-
         private void btnOk_Click(object sender, EventArgs e)
         {
             emEdicao = false;
@@ -182,6 +165,31 @@ namespace ATCRecordNavigator
             AcaoRealizada?.Invoke(this, new AcaoEventArgs("CANC"));
             ControlesNormais();
         }
-    
+
+        public void ControlesNormais()
+        {
+            // CHAMADO PELO RETORNO DA PESQUISA
+            this.btnEditar.Visible = true;
+            this.btnApagar.Visible = true;
+            this.btnAdicionar.Visible = true;
+            this.btnPesquisa.Visible = true;
+            this.btnParaFrente.Visible = true;
+            this.btnParaTras.Visible = true;
+            this.btnPesquisarAdicional.Visible = false;
+            this.txtPesquisar.Visible = false;
+        }
+
+        public void ModoNormal()
+        {
+            // CHAMADO PELA GRAVAÇÃO E CANCELAMENTO
+            this.btnOk.Visible = false;
+            this.btnCancelar.Visible = false;
+            this.btnEditar.Visible = true;
+            this.btnApagar.Visible = true;
+            this.btnAdicionar.Visible = true;
+            this.btnPesquisa.Visible = true;
+            this.btnParaFrente.Visible = true;
+            this.btnParaTras.Visible = true;
+        }
     }
 }

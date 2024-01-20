@@ -8,6 +8,7 @@ namespace BonifacioEntregas.dao
 {
     public class ClienteDAO : BaseDAO
     {
+        private int Linhas;
 
         protected int id { get; set; }
         public string Nome { get; set; }
@@ -190,9 +191,14 @@ namespace BonifacioEntregas.dao
             return null;
         }
 
-        public override System.Data.DataTable CarregarDados()
+        public override void SetarLinhas(int v)
         {
-            string query = "SELECT * FROM Clientes";
+            this.Linhas = v;
+        }
+
+        public override DataTable getDados()
+        {
+            string query = $"SELECT TOP {this.Linhas} * FROM Clientes";
             using (OleDbConnection connection = new OleDbConnection(this.connectionString))
             {
                 try
@@ -203,7 +209,7 @@ namespace BonifacioEntregas.dao
                         using (OleDbDataReader reader = command.ExecuteReader())
                         {
                             DataTable dataTable = new DataTable();
-                            dataTable.Columns.Add("NrCli", typeof(int));
+                            dataTable.Columns.Add("id", typeof(int));
                             dataTable.Columns.Add("Nome", typeof(string));
                             dataTable.Columns.Add("Telefone", typeof(string));
                             dataTable.Columns.Add("email", typeof(string));
@@ -212,7 +218,7 @@ namespace BonifacioEntregas.dao
                             while (reader.Read())
                             {
                                 DataRow row = dataTable.NewRow();
-                                row["NrCli"] = reader["NrCli"];
+                                row["id"] = reader["NrCli"];
                                 row["Nome"] = reader["Nome"];
                                 row["Telefone"] = reader["Telefone"];
                                 row["email"] = reader["email"];
@@ -228,10 +234,13 @@ namespace BonifacioEntregas.dao
                     throw;
                 }
             }
-
         }
 
+        public override tb.IDataEntity GetPeloID(string id)
+        {
+            string query = $"SELECT * FROM Clientes Where NrCli = {id} ";
+            return ExecutarConsultacliente(query);
+        }
     }
-
 
 }

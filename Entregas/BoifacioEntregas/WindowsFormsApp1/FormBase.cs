@@ -20,8 +20,9 @@ namespace BonifacioEntregas
         protected bool EmAdicao = false;
         protected bool Mostrando = false;
         protected dao.BaseDAO DAO;
-        protected tb.IDataEntity reg;
+        protected tb.IDataEntity reg;        
         private List<CampoTagInfo> tagsDosCampos;
+
         private System.Windows.Forms.DataGrid dataGrid;
         private bool GridCarregada=false;
 
@@ -169,7 +170,6 @@ namespace BonifacioEntregas
                 {
                     ctrl.BackColor = SystemColors.Window; // Cor normal
                 }
-                // Adicione mais lógica aqui se houver outros tipos de controles
             }
         }
 
@@ -228,60 +228,6 @@ namespace BonifacioEntregas
                     break;
             }
         }
-
-        private System.Data.DataTable getDados()
-        {
-            return null;
-        }
-        private void PesqAcionar()
-        {
-            AlterarVisibilidadeControles(true);
-            // rest
-        }
-
-        public void LigaGrid()
-        {
-            AlterarVisibilidadeControles(false);
-            if (!GridCarregada)
-            {
-                System.Data.DataTable Dados = getDados();
-                System.Windows.Forms.DataGrid dataGrid = new System.Windows.Forms.DataGrid();
-                this.Controls.Add(dataGrid);
-                dataGrid.Location = new Point(10, 10);
-                dataGrid.Size = new Size(400, 300);
-                dataGrid.DataSource = Dados;
-                dataGrid.Dock = DockStyle.Fill;
-                dataGrid.Name = "GRID";
-                dataGrid.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom; 
-                GridCarregada = true;
-            }
-        }
-
-        protected void Cancela()
-        {
-            reg = DAO.GetEsse();
-            ResetarAparenciaControles();
-            Mostra();
-        }
-
-        private void AlterarVisibilidadeControles(bool visivel)
-        {
-            foreach (Control control in this.Controls)
-            {
-                switch (control.Name)
-                {
-                    case "cntrole1": 
-                        break;
-                    case "GRID":
-                        control.Visible = !visivel;
-                        break;
-                    default:
-                        control.Visible = visivel;
-                        break;
-                }
-            }
-        }
-
         #endregion
 
         #region Crud
@@ -294,7 +240,7 @@ namespace BonifacioEntregas
                 DAO.Adicao = EmAdicao;                
                 DAO.Grava(DAO);
                 EmAdicao = false;
-                cntrole1.ControlesNormais();
+                cntrole1.ModoNormal();
             }
             else
             {                
@@ -406,6 +352,83 @@ namespace BonifacioEntregas
                     {
                         dtp.Font = new Font(dtp.Font.FontFamily, dtp.Font.Size, FontStyle.Regular);
                     }
+                }
+            }
+        }
+
+        #endregion
+
+        #region Pesquisa
+
+        public void NrLinhas(int v)
+        {
+            DAO.SetarLinhas(v);
+        }
+
+        private System.Data.DataTable getDados()
+        {
+            return DAO.getDados();
+        }
+        private void PesqAcionar()
+        {
+            AlterarVisibilidadeControles(true);
+        }
+        public void LigaGrid()
+        {
+            AlterarVisibilidadeControles(false);
+            if (!GridCarregada)
+            {
+                System.Data.DataTable Dados = getDados();
+                System.Windows.Forms.DataGrid dataGrid = new System.Windows.Forms.DataGrid();
+                this.Controls.Add(dataGrid);
+                dataGrid.Location = new Point(10, 10);
+                dataGrid.Size = new Size(400, 300);
+                dataGrid.DataSource = Dados;
+                dataGrid.Dock = DockStyle.Fill;
+                dataGrid.Name = "GRID";
+                dataGrid.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
+                dataGrid.DoubleClick += new EventHandler(dataGrid_DoubleClick);
+                GridCarregada = true;
+            }
+        }
+
+        private void dataGrid_DoubleClick(object sender, EventArgs e)
+        {
+            System.Windows.Forms.DataGrid grid = (System.Windows.Forms.DataGrid)sender;
+            if (grid.CurrentRowIndex >= 0)
+            {
+                int rowIndex = grid.CurrentRowIndex;
+                System.Data.DataRowView selectedRowView = (System.Data.DataRowView)grid.BindingContext[grid.DataSource].Current;
+                object idValue = selectedRowView.Row["id"];
+                string ID = idValue.ToString();
+                reg = DAO.GetPeloID(ID);
+                Mostra();
+                PesqAcionar();
+                cntrole1.ControlesNormais();
+            }
+        }
+
+        protected void Cancela()
+        {
+            reg = DAO.GetEsse();
+            ResetarAparenciaControles();
+            Mostra();
+        }
+
+        private void AlterarVisibilidadeControles(bool visivel)
+        {
+            foreach (Control control in this.Controls)
+            {
+                switch (control.Name)
+                {
+                    case "cntrole1":
+                        break;
+                    case "GRID":
+                        control.Visible = !visivel;
+                        break;
+                    default:
+                        control.Visible = visivel;
+                        break;
                 }
             }
         }

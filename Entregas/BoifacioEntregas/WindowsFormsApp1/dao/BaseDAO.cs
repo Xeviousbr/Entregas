@@ -6,6 +6,7 @@ namespace BonifacioEntregas.dao
     public class BaseDAO
     {
         protected string connectionString;
+        private int nrLinhas = 0;
 
         public bool Adicao { get; set; }
 
@@ -44,6 +45,20 @@ namespace BonifacioEntregas.dao
         }
 
         public virtual System.Data.DataTable CarregarDados()
+        {
+            return null;
+        }
+
+        public virtual DataTable getDados()
+        {
+            return null;
+        }
+
+        public virtual void SetarLinhas(int v)
+        {
+
+        }
+        public virtual tb.IDataEntity GetPeloID(string id)
         {
             return null;
         }
