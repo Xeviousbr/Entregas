@@ -138,6 +138,7 @@ namespace BonifacioEntregas
             this.KeyPreview = true;
             this.Name = "fCadClientes";
             this.Text = "Clientes";
+            this.Activated += new System.EventHandler(this.fCadClientes_Activated);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.fCadClientes_KeyUp);
             this.Controls.SetChildIndex(this.cntrole1, 0);
             this.Controls.SetChildIndex(this.txtTelefone, 0);

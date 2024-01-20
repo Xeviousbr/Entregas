@@ -27,7 +27,7 @@
             // 
             // cntrole1
             // 
-            this.cntrole1.Size = new System.Drawing.Size(331, 54);
+            this.cntrole1.Size = new System.Drawing.Size(330, 54);
             this.cntrole1.AcaoRealizada += new System.EventHandler<AcaoEventArgs>(this.cntrole1_AcaoRealizada_1);
             // 
             // lblNome
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(331, 237);
+            this.ClientSize = new System.Drawing.Size(330, 237);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblTelefone);
@@ -126,6 +126,7 @@
             this.MaximizeBox = false;
             this.Name = "fCadEntregadores";
             this.Text = "Cadastro de Entregador";
+            this.Activated += new System.EventHandler(this.fCadEntregadores_Activated);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Teclou);
             this.Controls.SetChildIndex(this.cntrole1, 0);
             this.Controls.SetChildIndex(this.dtpDataValidadeCNH, 0);

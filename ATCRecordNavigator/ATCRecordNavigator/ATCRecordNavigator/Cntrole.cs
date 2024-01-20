@@ -182,5 +182,6 @@ namespace ATCRecordNavigator
             AcaoRealizada?.Invoke(this, new AcaoEventArgs("CANC"));
             ControlesNormais();
         }
+    
     }
 }

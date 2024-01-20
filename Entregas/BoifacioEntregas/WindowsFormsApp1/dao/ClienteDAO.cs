@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
@@ -189,6 +190,48 @@ namespace BonifacioEntregas.dao
             return null;
         }
 
+        public override System.Data.DataTable CarregarDados()
+        {
+            string query = "SELECT * FROM Clientes";
+            using (OleDbConnection connection = new OleDbConnection(this.connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    {
+                        using (OleDbDataReader reader = command.ExecuteReader())
+                        {
+                            DataTable dataTable = new DataTable();
+                            dataTable.Columns.Add("NrCli", typeof(int));
+                            dataTable.Columns.Add("Nome", typeof(string));
+                            dataTable.Columns.Add("Telefone", typeof(string));
+                            dataTable.Columns.Add("email", typeof(string));
+                            dataTable.Columns.Add("Ender", typeof(string));
+
+                            while (reader.Read())
+                            {
+                                DataRow row = dataTable.NewRow();
+                                row["NrCli"] = reader["NrCli"];
+                                row["Nome"] = reader["Nome"];
+                                row["Telefone"] = reader["Telefone"];
+                                row["email"] = reader["email"];
+                                row["Ender"] = reader["Ender"];
+                                dataTable.Rows.Add(row);
+                            }
+                            return dataTable;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+            }
+
+        }
+
     }
+
 
 }

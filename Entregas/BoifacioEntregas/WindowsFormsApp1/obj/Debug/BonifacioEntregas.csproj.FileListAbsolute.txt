@@ -13,3 +13,16 @@ C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEn
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.FormBase.resources
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.fCadEntregadores.resources
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.fCadClientes.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.oprConfig.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\Syncfusion.Licensing.dll
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.dll
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Windows.dll
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Base.xml
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\Syncfusion.Shared.Windows.xml
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\SourceGrid.dll
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\System.Data.SQLite.dll
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\WebActivatorEx.dll
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\SourceGrid.xml
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\System.Data.SQLite.xml
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.csproj.CopyComplete

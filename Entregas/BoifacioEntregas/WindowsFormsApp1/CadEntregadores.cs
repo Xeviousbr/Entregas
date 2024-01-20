@@ -2,6 +2,9 @@
 using BonifacioEntregas.tb;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Data;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BonifacioEntregas
 {
@@ -74,6 +77,12 @@ namespace BonifacioEntregas
                 e.Handled = true;
             }
         }
+
+        private void fCadEntregadores_Activated(object sender, EventArgs e)
+        {
+            
+        }
+
     }
 
 }

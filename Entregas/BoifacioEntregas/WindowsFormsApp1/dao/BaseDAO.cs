@@ -1,4 +1,7 @@
-﻿namespace BonifacioEntregas.dao
+﻿using System;
+using System.Data;
+
+namespace BonifacioEntregas.dao
 {
     public class BaseDAO
     {
@@ -39,7 +42,11 @@
         {
             return null;
         }
-        
+
+        public virtual System.Data.DataTable CarregarDados()
+        {
+            return null;
+        }
 
     }
 }

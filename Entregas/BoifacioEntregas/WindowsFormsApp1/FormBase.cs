@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SourceGrid;
 
 namespace BonifacioEntregas
 {
@@ -21,11 +22,18 @@ namespace BonifacioEntregas
         protected dao.BaseDAO DAO;
         protected tb.IDataEntity reg;
         private List<CampoTagInfo> tagsDosCampos;
+        private System.Windows.Forms.DataGrid dataGrid;
+        private bool GridCarregada=false;
 
         public FormBase()
         {
             InitializeComponent();
             tagsDosCampos = new List<tb.CampoTagInfo>();
+    }
+
+        private void InitializeDataGrid()
+        {
+            DataTable dataTable = DAO.CarregarDados();
         }
 
         #region Campos
@@ -212,6 +220,40 @@ namespace BonifacioEntregas
                 case "OK":
                     Grava();
                     break;
+                case "PesqON":
+                    LigaGrid();
+                    break;
+                case "PesqAcionar":
+                    PesqAcionar();
+                    break;
+            }
+        }
+
+        private System.Data.DataTable getDados()
+        {
+            return null;
+        }
+        private void PesqAcionar()
+        {
+            AlterarVisibilidadeControles(true);
+            // rest
+        }
+
+        public void LigaGrid()
+        {
+            AlterarVisibilidadeControles(false);
+            if (!GridCarregada)
+            {
+                System.Data.DataTable Dados = getDados();
+                System.Windows.Forms.DataGrid dataGrid = new System.Windows.Forms.DataGrid();
+                this.Controls.Add(dataGrid);
+                dataGrid.Location = new Point(10, 10);
+                dataGrid.Size = new Size(400, 300);
+                dataGrid.DataSource = Dados;
+                dataGrid.Dock = DockStyle.Fill;
+                dataGrid.Name = "GRID";
+                dataGrid.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom; 
+                GridCarregada = true;
             }
         }
 
@@ -220,6 +262,24 @@ namespace BonifacioEntregas
             reg = DAO.GetEsse();
             ResetarAparenciaControles();
             Mostra();
+        }
+
+        private void AlterarVisibilidadeControles(bool visivel)
+        {
+            foreach (Control control in this.Controls)
+            {
+                switch (control.Name)
+                {
+                    case "cntrole1": 
+                        break;
+                    case "GRID":
+                        control.Visible = !visivel;
+                        break;
+                    default:
+                        control.Visible = visivel;
+                        break;
+                }
+            }
         }
 
         #endregion

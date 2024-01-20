@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using SourceGrid;
+using System.Data;
 
 namespace BonifacioEntregas
 {
@@ -49,5 +51,20 @@ namespace BonifacioEntregas
                 e.Handled = true;
             }
         }
+
+        private void fCadClientes_Activated(object sender, EventArgs e)
+        {
+            InitializeDataGrid();
+            int x = 0;
+        }
+
+        private void InitializeDataGrid()
+        {
+            //DataTable dataTable = base.DAO.CarregarDados();
+
+            //List<dao.Cliente> clienteEspecifico = dataTable.AsEnumerable().ToList<dao.Cliente()>();
+
+        }
+
     }
 }

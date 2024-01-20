@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 
 namespace BonifacioEntregas.dao
 {
-    public class EntregadorDAO: BaseDAO  // public EntregadorDAO() : base()
+    public class EntregadorDAO : BaseDAO  // public EntregadorDAO() : base()
     {
         protected int id { get; set; }
         public string Nome { get; set; }
@@ -14,7 +15,7 @@ namespace BonifacioEntregas.dao
 
         public EntregadorDAO()
         {
-            
+
         }
 
         public void AddEntregador(tb.Entregador entregador)
@@ -66,7 +67,7 @@ namespace BonifacioEntregas.dao
             }
             else
             {
-                parametros.Add(new OleDbParameter("@codi", entregador.id)); 
+                parametros.Add(new OleDbParameter("@codi", entregador.id));
             }
             return parametros;
         }
@@ -143,13 +144,13 @@ namespace BonifacioEntregas.dao
 
         public override object GetUltimo()
         {
-            string query = "SELECT TOP 1 * FROM Mecanicos Where Oper = 3 ORDER BY codi Desc"; 
+            string query = "SELECT TOP 1 * FROM Mecanicos Where Oper = 3 ORDER BY codi Desc";
             return ExecutarConsultaEntregador(query);
         }
 
         public override tb.IDataEntity ParaTraz()
         {
-            string query = $"SELECT TOP 1 * FROM Mecanicos Where Oper = 3 and Nome < '{Nome}' ORDER BY Nome Desc"; 
+            string query = $"SELECT TOP 1 * FROM Mecanicos Where Oper = 3 and Nome < '{Nome}' ORDER BY Nome Desc";
             return ExecutarConsultaEntregador(query);
         }
 
@@ -182,7 +183,7 @@ namespace BonifacioEntregas.dao
                                 }
                                 else
                                 {
-                                    DataValidadeCNH = DateTime.MinValue; 
+                                    DataValidadeCNH = DateTime.MinValue;
                                 }
                                 return (tb.Entregador)GetEsse();
                             }
@@ -198,6 +199,87 @@ namespace BonifacioEntregas.dao
             return null;
         }
 
+        public override System.Data.DataTable CarregarDados()
+        {
+            string query = "SELECT * FROM Mecanicos";
+            using (OleDbConnection connection = new OleDbConnection(this.connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (OleDbCommand command = new OleDbCommand(query, connection))
+                    {
+                        using (OleDbDataReader reader = command.ExecuteReader())
+                        {
+                            DataTable dataTable = new DataTable();
+                            dataTable.Columns.Add("codi", typeof(int));
+                            dataTable.Columns.Add("Nome", typeof(string));
+                            dataTable.Columns.Add("Telefone", typeof(string));
+                            dataTable.Columns.Add("CNH", typeof(string));
+                            while (reader.Read())
+                            {
+                                DataRow row = dataTable.NewRow();
+                                row["codi"] = reader["codi"];
+                                row["Nome"] = reader["Nome"];
+                                row["Telefone"] = reader["Telefone"];
+                                row["CNH"] = reader["CNH"];
+                                dataTable.Rows.Add(row);
+                            }
+                            return dataTable;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // throw;
+                    return null;
+                }
+            }
+
+        }
+
+        //public override System.Data.DataTable CarregarDados()
+        //{
+        //    return null;
+        //    //string query = "SELECT * FROM Clientes";
+        //    //using (OleDbConnection connection = new OleDbConnection(this.connectionString))
+        //    //{
+        //    //    try
+        //    //    {
+        //    //        connection.Open();
+        //    //        using (OleDbCommand command = new OleDbCommand(query, connection))
+        //    //        {
+        //    //            using (OleDbDataReader reader = command.ExecuteReader())
+        //    //            {
+        //    //                DataTable dataTable = new DataTable();
+        //    //                dataTable.Columns.Add("NrCli", typeof(int));
+        //    //                dataTable.Columns.Add("Nome", typeof(string));
+        //    //                dataTable.Columns.Add("Telefone", typeof(string));
+        //    //                dataTable.Columns.Add("email", typeof(string));
+        //    //                dataTable.Columns.Add("Ender", typeof(string));
+
+        //    //                while (reader.Read())
+        //    //                {
+        //    //                    DataRow row = dataTable.NewRow();
+        //    //                    row["NrCli"] = reader["NrCli"];
+        //    //                    row["Nome"] = reader["Nome"];
+        //    //                    row["Telefone"] = reader["Telefone"];
+        //    //                    row["email"] = reader["email"];
+        //    //                    row["Ender"] = reader["Ender"];
+        //    //                    dataTable.Rows.Add(row);
+        //    //                }
+        //    //                return dataTable;
+        //    //            }
+        //    //        }
+        //    //    }
+        //    //    catch (Exception ex)
+        //    //    {
+        //    //        throw;
+        //    //    }
+        //    }
+        //}
     }
 
-}
+    }
+
+

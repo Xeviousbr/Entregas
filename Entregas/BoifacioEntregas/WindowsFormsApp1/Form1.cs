@@ -12,7 +12,6 @@ namespace BonifacioEntregas
 {
     public partial class Form1 : Form
     {
-        private INI MeuIni;
 
         public Form1()
         {
@@ -21,7 +20,7 @@ namespace BonifacioEntregas
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MeuIni = new INI();
+            INI MeuIni = new INI();
             GlobalConfig.CaminhoBase = MeuIni.ReadString("Config", "Base", "");
         }
 
@@ -75,6 +74,11 @@ namespace BonifacioEntregas
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             AbrirOuFocarFormulario<fCadClientes>();
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            AbrirOuFocarFormulario<oprConfig>();
         }
     }
 

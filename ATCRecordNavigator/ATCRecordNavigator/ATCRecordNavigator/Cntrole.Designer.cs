@@ -170,40 +170,39 @@ namespace ATCRecordNavigator
 
         private void btnPesquisarAdicional_Click(object sender, EventArgs e)
         {
-            AcaoRealizada?.Invoke(this, new AcaoEventArgs("Pesquisa"));
+            this.btnPesquisarAdicional.Visible = false;
+            this.txtPesquisar.Visible = false;
+            this.btnParaFrente.Visible = true;
+            this.btnParaTras.Visible = true;
+            this.btnEditar.Visible = true;
+            this.btnApagar.Visible = true;
+            AcaoRealizada?.Invoke(this, new AcaoEventArgs("PesqAcionar"));
         }
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            // Verifica o estado atual do campo de texto para determinar a ação
             bool isSearchVisible = this.txtPesquisar.Visible;
-
-            // Esconde ou mostra os botões padrão
             this.btnParaFrente.Visible = isSearchVisible;
             this.btnParaTras.Visible = isSearchVisible;
             this.btnEditar.Visible = isSearchVisible;
             this.btnApagar.Visible = isSearchVisible;
-
-            // Alterna a visibilidade do campo de texto e do botão de pesquisa adicional
             this.txtPesquisar.Visible = !isSearchVisible;
             this.btnPesquisarAdicional.Visible = !isSearchVisible;
-
             if (this.txtPesquisar.Visible)
             {
-                // Configurações quando o campo de pesquisa está visível
+                this.btnAdicionar.Visible = false;
                 this.txtPesquisar.AutoSize = false;
-                int espacoParaBotao = 100; // Ajuste conforme necessário
+                int espacoParaBotao = 150;
                 this.txtPesquisar.Width = this.toolStrip1.Width - espacoParaBotao;
                 this.txtPesquisar.Font = new Font(this.txtPesquisar.Font.FontFamily, 12);
-
                 this.btnPesquisarAdicional.Alignment = ToolStripItemAlignment.Right;
                 this.btnPesquisarAdicional.Font = new Font(this.btnPesquisarAdicional.Font.FontFamily, 12);
-
                 this.txtPesquisar.Focus();
+                AcaoRealizada?.Invoke(this, new AcaoEventArgs("PesqON"));
             }
             else
             {
-                // Reverter as configurações quando a pesquisa não está visível
+                this.btnAdicionar.Visible = true;
                 this.txtPesquisar.AutoSize = true;
                 this.txtPesquisar.Font = new Font(this.txtPesquisar.Font.FontFamily, 8.25F);
                 this.btnPesquisarAdicional.Alignment = ToolStripItemAlignment.Left;

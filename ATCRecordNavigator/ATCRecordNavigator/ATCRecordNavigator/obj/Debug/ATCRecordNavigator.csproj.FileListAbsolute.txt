@@ -1,4 +1,3 @@
-C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Debug\ATCRecordNavigator.csproj.AssemblyReference.cache
 C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Debug\ATCRecordNavigator.Cntrole.resources
 C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Debug\ATCRecordNavigator.Properties.Resources.resources
 C:\Prog\OrCarro\ATCRecordNavigator\ATCRecordNavigator\ATCRecordNavigator\obj\Debug\ATCRecordNavigator.csproj.GenerateResource.cache
