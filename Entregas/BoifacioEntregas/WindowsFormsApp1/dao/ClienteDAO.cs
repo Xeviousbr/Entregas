@@ -198,7 +198,8 @@ namespace BonifacioEntregas.dao
 
         public override DataTable getDados()
         {
-            string query = $"SELECT TOP {this.Linhas} * FROM Clientes";
+            string query = $"SELECT * FROM Clientes";
+            // string query = $"SELECT TOP {this.Linhas} * FROM Clientes";
             using (OleDbConnection connection = new OleDbConnection(this.connectionString))
             {
                 try

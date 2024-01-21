@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9FEE1810-3350-4EB5-953B-D523578D6012}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BonifacioEntregas</RootNamespace>
-    <AssemblyName>BonifacioEntregas</AssemblyName>
+    <RootNamespace>TeleBonifacio</RootNamespace>
+    <AssemblyName>TeleBonifacio</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -20,7 +20,7 @@ namespace BonifacioEntregas
             base.reg = DAO.GetUltimo() as tb.Cliente;
             base.Mostra();
             base.LerTagsDosCamposDeTexto();
-            base.NrLinhas(20);
+            //base.NrLinhas(100);
         }
 
         private void cntrole1_AcaoRealizada(object sender, AcaoEventArgs e)

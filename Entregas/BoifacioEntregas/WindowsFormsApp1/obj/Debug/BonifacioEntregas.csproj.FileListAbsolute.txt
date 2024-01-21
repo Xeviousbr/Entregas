@@ -1,14 +1,8 @@
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.csproj.AssemblyReference.cache
-C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.Properties.Resources.resources
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.csproj.GenerateResource.cache
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.csproj.CoreCompileInputs.cache
-C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\BonifacioEntregas.exe.config
-C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\BonifacioEntregas.exe
-C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\BonifacioEntregas.pdb
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\ATCRecordNavigator.dll
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\ATCRecordNavigator.pdb
-C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.exe
-C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.pdb
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.Form1.resources
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.FormBase.resources
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.fCadEntregadores.resources
@@ -25,4 +19,9 @@ C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\System.Data
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\WebActivatorEx.dll
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\SourceGrid.xml
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\System.Data.SQLite.xml
-C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.csproj.CopyComplete
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\TeleBonifacio.exe.config
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\TeleBonifacio.exe
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\TeleBonifacio.pdb
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\TeleBonifacio.Properties.Resources.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\TeleBonifacio.exe
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\TeleBonifacio.pdb

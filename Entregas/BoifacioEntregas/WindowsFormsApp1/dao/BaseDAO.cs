@@ -6,7 +6,7 @@ namespace BonifacioEntregas.dao
     public class BaseDAO
     {
         protected string connectionString;
-        private int nrLinhas = 0;
+        //private int nrLinhas = 0;
 
         public bool Adicao { get; set; }
 
