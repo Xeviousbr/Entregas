@@ -177,7 +177,7 @@ namespace ATCRecordNavigator
             this.btnPesquisa.Visible = true;
             this.btnParaFrente.Visible = true;
             this.btnParaTras.Visible = true;
-            this.btnPesquisarAdicional.Visible = false;
+            // this.btnPesquisarAdicional.Visible = false;
             this.txtPesquisar.Visible = false;
         }
 

@@ -36,7 +36,6 @@ namespace ATCRecordNavigator
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cntrole));
             this.txtPesquisar = new System.Windows.Forms.ToolStripTextBox();
-            this.btnPesquisarAdicional = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnPesquisa = new System.Windows.Forms.ToolStripButton();
             this.btnAdicionar = new System.Windows.Forms.ToolStripButton();
@@ -54,17 +53,9 @@ namespace ATCRecordNavigator
             // 
             this.txtPesquisar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(100, 55);
+            this.txtPesquisar.Size = new System.Drawing.Size(100, 23);
             this.txtPesquisar.Visible = false;
             this.txtPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyUp);
-            // 
-            // btnPesquisarAdicional
-            // 
-            this.btnPesquisarAdicional.Name = "btnPesquisarAdicional";
-            this.btnPesquisarAdicional.Size = new System.Drawing.Size(61, 52);
-            this.btnPesquisarAdicional.Text = "Pesquisar";
-            this.btnPesquisarAdicional.Visible = false;
-            this.btnPesquisarAdicional.Click += new System.EventHandler(this.btnPesquisarAdicional_Click);
             // 
             // toolStrip1
             // 
@@ -78,8 +69,7 @@ namespace ATCRecordNavigator
             this.btnApagar,
             this.btnParaTras,
             this.btnParaFrente,
-            this.txtPesquisar,
-            this.btnPesquisarAdicional});
+            this.txtPesquisar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(516, 55);
@@ -176,16 +166,16 @@ namespace ATCRecordNavigator
             MostraEmEstadodeEdicao();
         }
 
-        private void btnPesquisarAdicional_Click(object sender, EventArgs e)
-        {
-            this.btnPesquisarAdicional.Visible = false;
-            this.txtPesquisar.Visible = false;
-            this.btnParaFrente.Visible = true;
-            this.btnParaTras.Visible = true;
-            this.btnEditar.Visible = true;
-            this.btnApagar.Visible = true;
-            AcaoRealizada?.Invoke(this, new AcaoEventArgs("PesqAcionar"));
-        }
+        //private void btnPesquisarAdicional_Click(object sender, EventArgs e)
+        //{
+        //    this.btnPesquisarAdicional.Visible = false;
+        //    this.txtPesquisar.Visible = false;
+        //    this.btnParaFrente.Visible = true;
+        //    this.btnParaTras.Visible = true;
+        //    this.btnEditar.Visible = true;
+        //    this.btnApagar.Visible = true;
+        //    AcaoRealizada?.Invoke(this, new AcaoEventArgs("PesqAcionar"));
+        //}
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
@@ -194,27 +184,22 @@ namespace ATCRecordNavigator
             this.btnParaTras.Visible = isSearchVisible;
             this.btnEditar.Visible = isSearchVisible;
             this.btnApagar.Visible = isSearchVisible;
+            this.btnAdicionar.Visible = isSearchVisible;
             this.txtPesquisar.Visible = !isSearchVisible;
-            this.btnPesquisarAdicional.Visible = !isSearchVisible;
             if (this.txtPesquisar.Visible)
             {
-                this.btnAdicionar.Visible = false;
                 this.txtPesquisar.AutoSize = false;
-                int espacoParaBotao = 150;
-                this.txtPesquisar.Width = this.toolStrip1.Width - espacoParaBotao;
+                int tamanho = this.toolStrip1.Width - 70;
+                this.txtPesquisar.Size = new Size(tamanho, this.txtPesquisar.Height);
                 this.txtPesquisar.Font = new Font(this.txtPesquisar.Font.FontFamily, 12);
-                this.btnPesquisarAdicional.Alignment = ToolStripItemAlignment.Right;
-                this.btnPesquisarAdicional.Font = new Font(this.btnPesquisarAdicional.Font.FontFamily, 12);
                 this.txtPesquisar.Focus();
                 AcaoRealizada?.Invoke(this, new AcaoEventArgs("PesqON"));
             }
             else
             {
-                this.btnAdicionar.Visible = true;
                 this.txtPesquisar.AutoSize = true;
                 this.txtPesquisar.Font = new Font(this.txtPesquisar.Font.FontFamily, 8.25F);
-                this.btnPesquisarAdicional.Alignment = ToolStripItemAlignment.Left;
-                this.btnPesquisarAdicional.Font = new Font(this.btnPesquisarAdicional.Font.FontFamily, 8.25F);
+                this.btnAdicionar.Visible = true;
             }
         }
 
@@ -228,7 +213,6 @@ namespace ATCRecordNavigator
         private ToolStripButton btnEditar;
         private ToolStripButton btnApagar;
         private ToolStripTextBox txtPesquisar;
-        private ToolStripButton btnPesquisarAdicional;
         private System.Windows.Forms.ToolStripButton btnAdicionar;
         private System.Windows.Forms.ToolStripButton btnOk;
         private System.Windows.Forms.ToolStripButton btnCancelar;
