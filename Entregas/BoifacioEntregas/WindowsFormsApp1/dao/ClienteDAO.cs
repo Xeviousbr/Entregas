@@ -196,10 +196,8 @@ namespace BonifacioEntregas.dao
             this.Linhas = v;
         }
 
-        public override DataTable getDados()
+        private DataTable ExecutarConsulta(string query)
         {
-            string query = $"SELECT * FROM Clientes";
-            // string query = $"SELECT TOP {this.Linhas} * FROM Clientes";
             using (OleDbConnection connection = new OleDbConnection(this.connectionString))
             {
                 try
@@ -232,9 +230,22 @@ namespace BonifacioEntregas.dao
                 }
                 catch (Exception ex)
                 {
+                    // Aqui você pode decidir como lidar com a exceção
                     throw;
                 }
             }
+        }
+
+        public override DataTable getDados()
+        {
+            string query = $"SELECT * FROM Clientes";
+            return ExecutarConsulta(query);
+        }
+
+        public override DataTable Fitrar(string pesquisar)
+        {
+            string query = $"SELECT * FROM Clientes Where Nome Like '%{pesquisar}%'";
+            return ExecutarConsulta(query);
         }
 
         public override tb.IDataEntity GetPeloID(string id)
@@ -242,6 +253,7 @@ namespace BonifacioEntregas.dao
             string query = $"SELECT * FROM Clientes Where NrCli = {id} ";
             return ExecutarConsultacliente(query);
         }
+
     }
 
 }

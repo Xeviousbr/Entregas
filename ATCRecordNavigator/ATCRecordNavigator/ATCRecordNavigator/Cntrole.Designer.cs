@@ -33,6 +33,7 @@ namespace ATCRecordNavigator
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cntrole));
             this.txtPesquisar = new System.Windows.Forms.ToolStripTextBox();
             this.btnPesquisarAdicional = new System.Windows.Forms.ToolStripButton();
@@ -45,6 +46,7 @@ namespace ATCRecordNavigator
             this.btnApagar = new System.Windows.Forms.ToolStripButton();
             this.btnParaTras = new System.Windows.Forms.ToolStripButton();
             this.btnParaFrente = new System.Windows.Forms.ToolStripButton();
+            this.pesquisaTimer = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,13 +54,14 @@ namespace ATCRecordNavigator
             // 
             this.txtPesquisar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(100, 23);
+            this.txtPesquisar.Size = new System.Drawing.Size(100, 55);
             this.txtPesquisar.Visible = false;
+            this.txtPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyUp);
             // 
             // btnPesquisarAdicional
             // 
             this.btnPesquisarAdicional.Name = "btnPesquisarAdicional";
-            this.btnPesquisarAdicional.Size = new System.Drawing.Size(61, 19);
+            this.btnPesquisarAdicional.Size = new System.Drawing.Size(61, 52);
             this.btnPesquisarAdicional.Text = "Pesquisar";
             this.btnPesquisarAdicional.Visible = false;
             this.btnPesquisarAdicional.Click += new System.EventHandler(this.btnPesquisarAdicional_Click);
@@ -147,6 +150,11 @@ namespace ATCRecordNavigator
             this.btnParaFrente.Size = new System.Drawing.Size(52, 52);
             this.btnParaFrente.Click += new System.EventHandler(this.btnParaFrente_Click);
             // 
+            // pesquisaTimer
+            // 
+            this.pesquisaTimer.Interval = 500;
+            this.pesquisaTimer.Tick += new System.EventHandler(this.pesquisaTimer_Tick);
+            // 
             // Cntrole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,5 +232,6 @@ namespace ATCRecordNavigator
         private System.Windows.Forms.ToolStripButton btnAdicionar;
         private System.Windows.Forms.ToolStripButton btnOk;
         private System.Windows.Forms.ToolStripButton btnCancelar;
+        private Timer pesquisaTimer;
     }
 }

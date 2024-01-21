@@ -19,7 +19,6 @@ namespace BonifacioEntregas
             base.reg = DAO.GetUltimo() as tb.Entregador;
             base.Mostra();
             base.LerTagsDosCamposDeTexto();
-            //base.NrLinhas(20);
         }
 
         private void cntrole1_Load(object sender, EventArgs e)
@@ -34,7 +33,10 @@ namespace BonifacioEntregas
                 base.Cancela();
             } else
             {
-                base.cntrole1.EmEdicao = true;
+                if (!base.Pesquisando)
+                {
+                    base.cntrole1.EmEdicao = true;
+                }
             }            
         }
 

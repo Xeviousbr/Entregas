@@ -36,6 +36,8 @@ namespace ATCRecordNavigator
             set { emAdicao = value; DecideBotoes(); }
         }
 
+        public string Pesquisa = "";
+
         public Cntrole()
         {
             InitializeComponent();
@@ -191,5 +193,20 @@ namespace ATCRecordNavigator
             this.btnParaFrente.Visible = true;
             this.btnParaTras.Visible = true;
         }
+
+        private void txtPesquisar_KeyUp(object sender, KeyEventArgs e)
+        {
+            pesquisaTimer.Stop();
+            pesquisaTimer.Start();
+        }
+
+        private void pesquisaTimer_Tick(object sender, EventArgs e)
+        {
+            pesquisaTimer.Stop();
+            Pesquisa = this.txtPesquisar.Text;
+            AcaoRealizada?.Invoke(this, new AcaoEventArgs("Pesquisar"));
+        }
+
+
     }
 }

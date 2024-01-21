@@ -36,7 +36,10 @@ namespace BonifacioEntregas
             }
             else
             {
-                base.cntrole1.EmEdicao = true;
+                if (!base.Pesquisando)
+                {
+                    base.cntrole1.EmEdicao = true;
+                }                
             }
         }
 
@@ -55,17 +58,7 @@ namespace BonifacioEntregas
 
         private void fCadClientes_Activated(object sender, EventArgs e)
         {
-            //InitializeDataGrid();
-            //int x = 0;
         }
-
-        //private void InitializeDataGrid()
-        //{
-        //    //DataTable dataTable = base.DAO.CarregarDados();
-
-        //    //List<dao.Cliente> clienteEspecifico = dataTable.AsEnumerable().ToList<dao.Cliente()>();
-
-        //}
 
     }
 }

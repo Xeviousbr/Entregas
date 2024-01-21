@@ -206,9 +206,91 @@ namespace BonifacioEntregas.dao
             this.Linhas = v;
         }
 
-        public override DataTable getDados()
+        //public override DataTable getDados()
+        //{
+        //    string query = "SELECT * FROM Mecanicos Where Oper = 3 ";
+        //    using (OleDbConnection connection = new OleDbConnection(this.connectionString))
+        //    {
+        //        try
+        //        {
+        //            connection.Open();
+        //            using (OleDbCommand command = new OleDbCommand(query, connection))
+        //            {
+        //                using (OleDbDataReader reader = command.ExecuteReader())
+        //                {
+        //                    DataTable dataTable = new DataTable();
+        //                    dataTable.Columns.Add("id", typeof(int));
+        //                    dataTable.Columns.Add("Nome", typeof(string));
+        //                    dataTable.Columns.Add("Telefone", typeof(string));
+        //                    dataTable.Columns.Add("CNH", typeof(string));
+        //                    while (reader.Read())
+        //                    {
+        //                        DataRow row = dataTable.NewRow();
+        //                        row["id"] = reader["codi"];
+        //                        row["Nome"] = reader["Nome"];
+        //                        row["Telefone"] = reader["Telefone"];
+        //                        row["CNH"] = reader["CNH"];
+        //                        dataTable.Rows.Add(row);
+        //                    }
+        //                    return dataTable;
+        //                }
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            // throw;
+        //            return null;
+        //        }
+        //    }
+        //}
+
+        public override tb.IDataEntity GetPeloID(string id)
         {
-            string query = "SELECT * FROM Mecanicos";
+            string query = $"SELECT * FROM Mecanicos Where codi = {id} ";
+            return ExecutarConsultaEntregador(query);
+        }
+
+    //    public override DataTable Fitrar(string pesquisar)
+    //    {
+    //        string query = $"SELECT * FROM Mecanicos Where Oper = 3 and Nome like '%{pesquisar}%' ";
+    //        using (OleDbConnection connection = new OleDbConnection(this.connectionString))
+    //        {
+    //            try
+    //            {
+    //                connection.Open();
+    //                using (OleDbCommand command = new OleDbCommand(query, connection))
+    //                {
+    //                    using (OleDbDataReader reader = command.ExecuteReader())
+    //                    {
+    //                        DataTable dataTable = new DataTable();
+    //                        dataTable.Columns.Add("id", typeof(int));
+    //                        dataTable.Columns.Add("Nome", typeof(string));
+    //                        dataTable.Columns.Add("Telefone", typeof(string));
+    //                        dataTable.Columns.Add("CNH", typeof(string));
+    //                        while (reader.Read())
+    //                        {
+    //                            DataRow row = dataTable.NewRow();
+    //                            row["id"] = reader["codi"];
+    //                            row["Nome"] = reader["Nome"];
+    //                            row["Telefone"] = reader["Telefone"];
+    //                            row["CNH"] = reader["CNH"];
+    //                            dataTable.Rows.Add(row);
+    //                        }
+    //                        return dataTable;
+    //                    }
+    //                }
+    //            }
+    //            catch (Exception ex)
+    //            {
+    //                // throw;
+    //                return null;
+    //            }
+    //        }
+
+    //}
+
+        private DataTable ExecutarConsulta(string query)
+        {
             using (OleDbConnection connection = new OleDbConnection(this.connectionString))
             {
                 try
@@ -238,16 +320,22 @@ namespace BonifacioEntregas.dao
                 }
                 catch (Exception ex)
                 {
-                    // throw;
-                    return null;
+                    // Aqui você pode decidir como lidar com a exceção
+                    throw;
                 }
             }
         }
 
-        public override tb.IDataEntity GetPeloID(string id)
+        public override DataTable getDados()
         {
-            string query = $"SELECT * FROM Mecanicos Where codi = {id} ";
-            return ExecutarConsultaEntregador(query);
+            string query = "SELECT * FROM Mecanicos Where Oper = 3 ";
+            return ExecutarConsulta(query);
+        }
+
+        public override DataTable Fitrar(string pesquisar)
+        {
+            string query = $"SELECT * FROM Mecanicos Where Oper = 3 and Nome like '%{pesquisar}%' ";
+            return ExecutarConsulta(query);
         }
 
     }

@@ -63,5 +63,9 @@ namespace BonifacioEntregas.dao
             return null;
         }
 
+        public virtual DataTable Fitrar(string pesquisar)
+        {
+            return null;
+        }
     }
 }

@@ -20,12 +20,12 @@ namespace BonifacioEntregas
         protected int Direcao = 0;
         protected bool EmAdicao = false;
         protected bool Mostrando = false;
+        protected bool Pesquisando = false;
         protected dao.BaseDAO DAO;
         protected tb.IDataEntity reg; 
         private List<CampoTagInfo> tagsDosCampos;
         private int lastColumnClick = -1;
         private DateTime lastClickTime = DateTime.MinValue;
-        private System.Data.DataTable Dados;
         private System.Windows.Forms.DataGrid dataGrid;
         private bool GridCarregada=false;
 
@@ -50,6 +50,7 @@ namespace BonifacioEntregas
             }
             else
             {
+                Pesquisando = false;
                 Mostrando = true;
                 foreach (Control control in this.Controls)
                 {
@@ -229,8 +230,27 @@ namespace BonifacioEntregas
                 case "PesqAcionar":
                     PesqAcionar();
                     break;
+                case "Pesquisar":
+                    Pesquisar();
+                    break;
             }
         }
+
+        private void Pesquisar()
+        {
+            string Pesquisar = cntrole1.Pesquisa;
+            if (Pesquisar.Length > 1)
+            {
+                System.Data.DataTable Dados = DAO.Fitrar(Pesquisar);
+                dataGrid.DataSource = Dados;
+            }
+        }
+
+        private System.Data.DataTable Fitrar(string pesquisar)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         #region Crud
@@ -387,18 +407,20 @@ namespace BonifacioEntregas
         }
         public void LigaGrid()
         {
+            Pesquisando = true;
             AlterarVisibilidadeControles(false);
             if (!GridCarregada)
             {
                 CriaGrid();
                 GridCarregada = true;
-            }
-        }
+            }            
+    }
 
-        private void CriaGrid()
+    private void CriaGrid()
         {
-            Dados = getDados();
-            System.Windows.Forms.DataGrid dataGrid = new System.Windows.Forms.DataGrid();
+            System.Data.DataTable Dados = getDados();
+            dataGrid = new System.Windows.Forms.DataGrid();
+            // System.Windows.Forms.DataGrid dataGrid = new System.Windows.Forms.DataGrid();
             this.Controls.Add(dataGrid);
             dataGrid.Location = new Point(10, 10);
             dataGrid.Size = new Size(400, 300);
@@ -407,7 +429,7 @@ namespace BonifacioEntregas
             dataGrid.Name = "GRID";
             dataGrid.Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Bottom;
             dataGrid.ReadOnly = true;
-            dataGrid.MouseDown += new MouseEventHandler(dataGrid_MouseDown);
+            // dataGrid.MouseDown += new MouseEventHandler(dataGrid_MouseDown);
             dataGrid.DoubleClick += new EventHandler(dataGrid_DoubleClick);
         }
 
@@ -431,18 +453,18 @@ namespace BonifacioEntregas
             cntrole1.ControlesNormais();
         }
 
-        private void dataGrid_MouseDown(object sender, MouseEventArgs e)
-        {
-            TimeSpan timeSinceLastClick = DateTime.Now - lastClickTime;
-            if (timeSinceLastClick.TotalMilliseconds < 2000)
-            {
-                System.Windows.Forms.DataGrid grid = (System.Windows.Forms.DataGrid)sender;
-                object idValue = Dados.Rows[grid.CurrentRowIndex]["id"];
-                string ID = idValue.ToString();
-                CarregaRegistro(ID);
-            }
-            lastClickTime = DateTime.Now;
-        }
+        //private void dataGrid_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    TimeSpan timeSinceLastClick = DateTime.Now - lastClickTime;
+        //    if (timeSinceLastClick.TotalMilliseconds < 2000)
+        //    {
+        //        System.Windows.Forms.DataGrid grid = (System.Windows.Forms.DataGrid)sender;
+        //        object idValue = grid[grid.CurrentRowIndex, 0];
+        //        string ID = idValue.ToString();
+        //        CarregaRegistro(ID);
+        //    }
+        //    lastClickTime = DateTime.Now;
+        //}
         protected void Cancela()
         {
             reg = DAO.GetEsse();
