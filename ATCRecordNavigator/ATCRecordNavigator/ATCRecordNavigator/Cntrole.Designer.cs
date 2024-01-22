@@ -53,7 +53,7 @@ namespace ATCRecordNavigator
             // 
             this.txtPesquisar.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(100, 23);
+            this.txtPesquisar.Size = new System.Drawing.Size(100, 55);
             this.txtPesquisar.Visible = false;
             this.txtPesquisar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyUp);
             // 
@@ -200,6 +200,7 @@ namespace ATCRecordNavigator
                 this.txtPesquisar.AutoSize = true;
                 this.txtPesquisar.Font = new Font(this.txtPesquisar.Font.FontFamily, 8.25F);
                 this.btnAdicionar.Visible = true;
+                AcaoRealizada?.Invoke(this, new AcaoEventArgs("PesqOFF"));
             }
         }
 

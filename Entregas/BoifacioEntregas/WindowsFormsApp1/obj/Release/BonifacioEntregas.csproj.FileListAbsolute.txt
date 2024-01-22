@@ -25,3 +25,5 @@ C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\Bonifacio
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\TeleBonifacio.Properties.Resources.resources
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\TeleBonifacio.exe
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\TeleBonifacio.pdb
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.csproj.CopyComplete
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Release\BonifacioEntregas.operLancamento.resources

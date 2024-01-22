@@ -26,7 +26,7 @@ namespace BonifacioEntregas
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            // 
+            AbrirOuFocarFormulario<operLancamento>();
         }
 
         private void AbrirOuFocarFormulario<T>() where T : Form, new()

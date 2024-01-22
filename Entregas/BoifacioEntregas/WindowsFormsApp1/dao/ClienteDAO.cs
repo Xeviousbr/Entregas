@@ -236,6 +236,12 @@ namespace BonifacioEntregas.dao
             }
         }
 
+        public DataTable getDadosOrdenados()
+        {
+            string query = "SELECT * FROM Clientes Order By Nome ";
+            return ExecutarConsulta(query);
+        }
+
         public override DataTable getDados()
         {
             string query = $"SELECT * FROM Clientes";

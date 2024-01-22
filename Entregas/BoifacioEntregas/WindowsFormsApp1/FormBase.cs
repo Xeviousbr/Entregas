@@ -231,10 +231,20 @@ namespace BonifacioEntregas
                 case "PesqAcionar":
                     PesqAcionar();
                     break;
+                case "PesqOFF":
+                    PesqOFF();
+                    break;
                 case "Pesquisar":
                     Pesquisar();
                     break;
             }
+        }
+
+        private void PesqOFF()
+        {
+            AlterarVisibilidadeControles(true);
+            dataGrid.Visible = false;            
+            Pesquisando = false;
         }
 
         private void Pesquisar()
@@ -399,7 +409,7 @@ namespace BonifacioEntregas
             string tempoStr = tempoDecorrido.ToString(@"hh\:mm\:ss\.fff");
             INI MeuIni = new INI();
             MeuIni.WriteString("Clientes", "Quantidade", X.Rows.Count.ToString());
-            MeuIni.WriteString("Clientes", "Tempo", tempoStr);
+            MeuIni.WriteString("Clientes", "Tempo Pesquisa no Cadastro", tempoStr);
             return X;
         }
         private void PesqAcionar()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BonifacioEntregas.tb;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
@@ -51,6 +52,11 @@ namespace BonifacioEntregas.dao
                 string x = ex.ToString();
                 // Considerar um melhor tratamento de exceções ou log
             }
+        }
+
+        internal static List<Entregador> ObterMotoBoys()
+        {
+            throw new NotImplementedException();
         }
 
         private List<OleDbParameter> ConstruirParametrosEntregador(EntregadorDAO entregador, bool inserindo)
@@ -206,88 +212,11 @@ namespace BonifacioEntregas.dao
             this.Linhas = v;
         }
 
-        //public override DataTable getDados()
-        //{
-        //    string query = "SELECT * FROM Mecanicos Where Oper = 3 ";
-        //    using (OleDbConnection connection = new OleDbConnection(this.connectionString))
-        //    {
-        //        try
-        //        {
-        //            connection.Open();
-        //            using (OleDbCommand command = new OleDbCommand(query, connection))
-        //            {
-        //                using (OleDbDataReader reader = command.ExecuteReader())
-        //                {
-        //                    DataTable dataTable = new DataTable();
-        //                    dataTable.Columns.Add("id", typeof(int));
-        //                    dataTable.Columns.Add("Nome", typeof(string));
-        //                    dataTable.Columns.Add("Telefone", typeof(string));
-        //                    dataTable.Columns.Add("CNH", typeof(string));
-        //                    while (reader.Read())
-        //                    {
-        //                        DataRow row = dataTable.NewRow();
-        //                        row["id"] = reader["codi"];
-        //                        row["Nome"] = reader["Nome"];
-        //                        row["Telefone"] = reader["Telefone"];
-        //                        row["CNH"] = reader["CNH"];
-        //                        dataTable.Rows.Add(row);
-        //                    }
-        //                    return dataTable;
-        //                }
-        //            }
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            // throw;
-        //            return null;
-        //        }
-        //    }
-        //}
-
         public override tb.IDataEntity GetPeloID(string id)
         {
             string query = $"SELECT * FROM Mecanicos Where codi = {id} ";
             return ExecutarConsultaEntregador(query);
         }
-
-    //    public override DataTable Fitrar(string pesquisar)
-    //    {
-    //        string query = $"SELECT * FROM Mecanicos Where Oper = 3 and Nome like '%{pesquisar}%' ";
-    //        using (OleDbConnection connection = new OleDbConnection(this.connectionString))
-    //        {
-    //            try
-    //            {
-    //                connection.Open();
-    //                using (OleDbCommand command = new OleDbCommand(query, connection))
-    //                {
-    //                    using (OleDbDataReader reader = command.ExecuteReader())
-    //                    {
-    //                        DataTable dataTable = new DataTable();
-    //                        dataTable.Columns.Add("id", typeof(int));
-    //                        dataTable.Columns.Add("Nome", typeof(string));
-    //                        dataTable.Columns.Add("Telefone", typeof(string));
-    //                        dataTable.Columns.Add("CNH", typeof(string));
-    //                        while (reader.Read())
-    //                        {
-    //                            DataRow row = dataTable.NewRow();
-    //                            row["id"] = reader["codi"];
-    //                            row["Nome"] = reader["Nome"];
-    //                            row["Telefone"] = reader["Telefone"];
-    //                            row["CNH"] = reader["CNH"];
-    //                            dataTable.Rows.Add(row);
-    //                        }
-    //                        return dataTable;
-    //                    }
-    //                }
-    //            }
-    //            catch (Exception ex)
-    //            {
-    //                // throw;
-    //                return null;
-    //            }
-    //        }
-
-    //}
 
         private DataTable ExecutarConsulta(string query)
         {
@@ -324,6 +253,12 @@ namespace BonifacioEntregas.dao
                     throw;
                 }
             }
+        }
+
+        public DataTable getDadosOrdenados()
+        {
+            string query = "SELECT * FROM Mecanicos Where Oper = 3 and Nome > '' Order By Nome ";
+            return ExecutarConsulta(query);
         }
 
         public override DataTable getDados()
