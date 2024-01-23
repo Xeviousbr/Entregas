@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.OleDb;
+
+namespace BonifacioEntregas.dao
+{
+    public class EntregasDAO
+    {
+        private string connectionString;
+
+        public EntregasDAO()
+        {
+            this.connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + GlobalConfig.CaminhoBase + ";";
+        }
+
+        public DataTable getDados()
+        {
+            string query = @"SELECT
+                                e.ID as Id, 
+                                e.Data, 
+                                c.Nome AS MotoBoy, 
+                                e.Valor, 
+                                SWITCH(
+                                    e.idForma = 0, 'Anotado',
+                                    e.idForma = 1, 'Cartão',
+                                    e.idForma = 2, 'Dinheiro',
+                                    e.idForma = 3, 'Pix',
+                                    e.idForma = 5, 'Troca',
+                                    TRUE, 'Desconhecido'
+                                ) AS Pagamento,
+                                e.VlNota as Compra, 
+                                c.Nome AS Cliente,
+                                e.Obs 
+                            FROM
+                                ((Entregas e
+                                INNER JOIN Clientes c ON c.NrCli = e.idCliente)
+                                INNER JOIN Mecanicos m ON m.codi = e.idBoy)";
+            DataTable dt = ExecutarConsulta(query);
+            return dt;
+        }
+
+        private DataTable ExecutarConsulta(string query)
+        {
+            DataTable dataTable = new DataTable();
+            using (OleDbConnection connection = new OleDbConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter(query, connection))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Aqui você deveria tratar a exceção adequadamente
+                    // Por exemplo, logar o erro ou mostrar uma mensagem ao usuário
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return dataTable;
+        }
+
+        public void Adiciona(int idBoy, int idForma, float valor, int idcliente, float compra, string Obs)
+        {
+            String sql = @"INSERT INTO Entregas (idCliente, idForma, idBoy, Valor, VlNota, Obs, Data) VALUES (" + idBoy.ToString() + ", " 
+                + idForma.ToString() + ", " 
+                + valor.ToString() + ", " 
+                + idcliente.ToString()+" ,"
+                + compra.ToString()+", '"
+                + Obs+"'" +
+                ",Now)";
+            ExecutarComandoSQL(sql);
+        }
+
+        private void ExecutarComandoSQL(string query)
+        {
+            using (OleDbConnection connection = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + GlobalConfig.CaminhoBase + ";"))
+            {
+                connection.Open();
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+    }
+}

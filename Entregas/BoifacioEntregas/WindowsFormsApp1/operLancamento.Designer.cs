@@ -30,9 +30,10 @@ namespace BonifacioEntregas
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dtpDataValidadeCNH = new System.Windows.Forms.DateTimePicker();
+            this.txObs = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txCompra = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,16 +48,15 @@ namespace BonifacioEntregas
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnNovoCliente = new System.Windows.Forms.Button();
             this.dataGrid1 = new SourceGrid.DataGrid();
-            this.dtpDataValidadeCNH = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dtpDataValidadeCNH);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txObs);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txCompra);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.cmbCliente);
             this.panel1.Controls.Add(this.label3);
@@ -76,12 +76,22 @@ namespace BonifacioEntregas
             this.panel1.Size = new System.Drawing.Size(779, 101);
             this.panel1.TabIndex = 11;
             // 
-            // textBox2
+            // dtpDataValidadeCNH
             // 
-            this.textBox2.Location = new System.Drawing.Point(190, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(395, 20);
-            this.textBox2.TabIndex = 28;
+            this.dtpDataValidadeCNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.dtpDataValidadeCNH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataValidadeCNH.Location = new System.Drawing.Point(603, 68);
+            this.dtpDataValidadeCNH.Name = "dtpDataValidadeCNH";
+            this.dtpDataValidadeCNH.Size = new System.Drawing.Size(83, 23);
+            this.dtpDataValidadeCNH.TabIndex = 29;
+            this.dtpDataValidadeCNH.Tag = "H";
+            // 
+            // txObs
+            // 
+            this.txObs.Location = new System.Drawing.Point(190, 71);
+            this.txObs.Name = "txObs";
+            this.txObs.Size = new System.Drawing.Size(395, 20);
+            this.txObs.TabIndex = 28;
             // 
             // label5
             // 
@@ -93,14 +103,14 @@ namespace BonifacioEntregas
             this.label5.TabIndex = 27;
             this.label5.Text = "Observação";
             // 
-            // textBox1
+            // txCompra
             // 
-            this.textBox1.Location = new System.Drawing.Point(529, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(56, 20);
-            this.textBox1.TabIndex = 26;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
+            this.txCompra.Location = new System.Drawing.Point(529, 38);
+            this.txCompra.Name = "txCompra";
+            this.txCompra.Size = new System.Drawing.Size(56, 20);
+            this.txCompra.TabIndex = 26;
+            this.txCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // label4
             // 
@@ -114,11 +124,13 @@ namespace BonifacioEntregas
             // 
             // cmbCliente
             // 
+            this.cmbCliente.DisplayMember = "Nome";
             this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCliente.Location = new System.Drawing.Point(82, 38);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(266, 21);
             this.cmbCliente.TabIndex = 24;
+            this.cmbCliente.ValueMember = "Id";
             // 
             // label3
             // 
@@ -162,14 +174,23 @@ namespace BonifacioEntregas
             // 
             // cmbMotoBoy
             // 
+            this.cmbMotoBoy.DisplayMember = "Nome";
             this.cmbMotoBoy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMotoBoy.Location = new System.Drawing.Point(82, 13);
             this.cmbMotoBoy.Name = "cmbMotoBoy";
             this.cmbMotoBoy.Size = new System.Drawing.Size(121, 21);
             this.cmbMotoBoy.TabIndex = 12;
+            this.cmbMotoBoy.ValueMember = "Id";
             // 
             // cmbFormaPagamento
             // 
+            this.cmbFormaPagamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFormaPagamento.Items.AddRange(new object[] {
+            "Anotado",
+            "Cartão,",
+            "Dinheiro",
+            "Pix",
+            "Troca"});
             this.cmbFormaPagamento.Location = new System.Drawing.Point(354, 11);
             this.cmbFormaPagamento.Name = "cmbFormaPagamento";
             this.cmbFormaPagamento.Size = new System.Drawing.Size(121, 21);
@@ -193,11 +214,13 @@ namespace BonifacioEntregas
             // 
             // btnAdicionar
             // 
+            this.btnAdicionar.Enabled = false;
             this.btnAdicionar.Location = new System.Drawing.Point(692, 40);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionar.TabIndex = 17;
             this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnFiltrar
             // 
@@ -229,16 +252,6 @@ namespace BonifacioEntregas
             this.dataGrid1.TabStop = true;
             this.dataGrid1.ToolTipText = "";
             // 
-            // dtpDataValidadeCNH
-            // 
-            this.dtpDataValidadeCNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dtpDataValidadeCNH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataValidadeCNH.Location = new System.Drawing.Point(603, 68);
-            this.dtpDataValidadeCNH.Name = "dtpDataValidadeCNH";
-            this.dtpDataValidadeCNH.Size = new System.Drawing.Size(83, 23);
-            this.dtpDataValidadeCNH.TabIndex = 29;
-            this.dtpDataValidadeCNH.Tag = "H";
-            // 
             // operLancamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,6 +259,7 @@ namespace BonifacioEntregas
             this.ClientSize = new System.Drawing.Size(779, 561);
             this.Controls.Add(this.dataGrid1);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "operLancamento";
             this.Text = "Lançamento de Entregas";
             this.Load += new System.EventHandler(this.operLancamento_Load);
@@ -267,9 +281,9 @@ namespace BonifacioEntregas
         private SourceGrid.DataGrid dataGrid1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbMoto;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txObs;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txCompra;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.Label label3;

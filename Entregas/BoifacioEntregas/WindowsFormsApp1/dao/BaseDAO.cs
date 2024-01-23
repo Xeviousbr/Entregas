@@ -67,5 +67,11 @@ namespace BonifacioEntregas.dao
         {
             return null;
         }
+
+        public virtual DataTable getDadosOrdenados()
+        {
+            return null;
+        }
+
     }
 }

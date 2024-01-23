@@ -236,7 +236,7 @@ namespace BonifacioEntregas.dao
             }
         }
 
-        public DataTable getDadosOrdenados()
+        public override DataTable getDadosOrdenados()
         {
             string query = "SELECT * FROM Clientes Order By Nome ";
             return ExecutarConsulta(query);

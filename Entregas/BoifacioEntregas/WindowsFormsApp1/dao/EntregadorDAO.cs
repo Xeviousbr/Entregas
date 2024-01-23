@@ -6,7 +6,7 @@ using System.Data.OleDb;
 
 namespace BonifacioEntregas.dao
 {
-    public class EntregadorDAO : BaseDAO  // public EntregadorDAO() : base()
+    public class EntregadorDAO : BaseDAO
     {
         protected int id { get; set; }
         public string Nome { get; set; }
@@ -255,7 +255,7 @@ namespace BonifacioEntregas.dao
             }
         }
 
-        public DataTable getDadosOrdenados()
+        public override DataTable getDadosOrdenados()
         {
             string query = "SELECT * FROM Mecanicos Where Oper = 3 and Nome > '' Order By Nome ";
             return ExecutarConsulta(query);

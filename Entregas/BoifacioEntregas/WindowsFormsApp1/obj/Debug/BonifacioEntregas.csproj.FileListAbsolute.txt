@@ -26,3 +26,4 @@ C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\TeleBonifac
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\TeleBonifacio.exe
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\TeleBonifacio.pdb
 C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BonifacioEntregas.operLancamento.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\TeleBonifacio.Form4.resources
