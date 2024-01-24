@@ -19,7 +19,7 @@ namespace BonifacioEntregas.dao
             string query = @"SELECT
                                 e.ID as Id, 
                                 e.Data, 
-                                c.Nome AS MotoBoy, 
+                                m.Nome AS MotoBoy, 
                                 e.Valor, 
                                 SWITCH(
                                     e.idForma = 0, 'Anotado',
@@ -35,7 +35,8 @@ namespace BonifacioEntregas.dao
                             FROM
                                 ((Entregas e
                                 INNER JOIN Clientes c ON c.NrCli = e.idCliente)
-                                INNER JOIN Mecanicos m ON m.codi = e.idBoy)";
+                                INNER JOIN Mecanicos m ON m.codi = e.idBoy)
+                            Order By e.ID desc ";
             DataTable dt = ExecutarConsulta(query);
             return dt;
         }
@@ -55,8 +56,6 @@ namespace BonifacioEntregas.dao
                 }
                 catch (Exception ex)
                 {
-                    // Aqui você deveria tratar a exceção adequadamente
-                    // Por exemplo, logar o erro ou mostrar uma mensagem ao usuário
                     Console.WriteLine(ex.Message);
                 }
             }

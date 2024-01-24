@@ -100,6 +100,7 @@
     <Compile Include="tb\CampoTagAttribute.cs" />
     <Compile Include="tb\CampoTagInfo.cs" />
     <Compile Include="tb\Cliente.cs" />
+    <Compile Include="tb\ComboBoxItem.cs" />
     <Compile Include="tb\Entregas.cs" />
     <Compile Include="tb\IDataEntity.cs" />
     <Compile Include="CadEntregadores.cs">
