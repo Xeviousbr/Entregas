@@ -125,12 +125,12 @@ namespace BonifacioEntregas
             // cmbCliente
             // 
             this.cmbCliente.DisplayMember = "Nome";
-            this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCliente.Location = new System.Drawing.Point(82, 38);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(266, 21);
             this.cmbCliente.TabIndex = 24;
             this.cmbCliente.ValueMember = "Id";
+            this.cmbCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCliente_KeyPress);
             // 
             // label3
             // 
@@ -175,12 +175,12 @@ namespace BonifacioEntregas
             // cmbMotoBoy
             // 
             this.cmbMotoBoy.DisplayMember = "Nome";
-            this.cmbMotoBoy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMotoBoy.Location = new System.Drawing.Point(82, 13);
             this.cmbMotoBoy.Name = "cmbMotoBoy";
             this.cmbMotoBoy.Size = new System.Drawing.Size(121, 21);
             this.cmbMotoBoy.TabIndex = 12;
             this.cmbMotoBoy.ValueMember = "Id";
+            this.cmbMotoBoy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMotoBoy_KeyPress);
             // 
             // cmbFormaPagamento
             // 

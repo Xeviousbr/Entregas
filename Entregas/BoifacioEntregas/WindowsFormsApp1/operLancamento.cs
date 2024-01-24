@@ -99,6 +99,24 @@ namespace BonifacioEntregas
         }
 
         #endregion
+
+        private void cmbMotoBoy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                string searchText = cmbMotoBoy.Text.Trim();
+                cmbMotoBoy.SelectedValue = int.Parse(searchText);
+            }
+        }
+
+        private void cmbCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                string searchText = cmbCliente.Text.Trim();
+                cmbCliente.SelectedValue = int.Parse(searchText);
+            }
+        }
     }
 }
 
