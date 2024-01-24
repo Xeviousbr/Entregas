@@ -15,7 +15,7 @@ namespace BonifacioEntregas
         public oprConfig()
         {
             InitializeComponent();
-            textBox1.Text = GlobalConfig.CaminhoBase;
+            textBox1.Text = gen.CaminhoBase;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,8 +29,8 @@ namespace BonifacioEntregas
         private void button3_Click(object sender, EventArgs e)
         {
             INI MeuIni = new INI();
-            GlobalConfig.CaminhoBase = textBox1.Text;
-            MeuIni.WriteString("Config", "Base", GlobalConfig.CaminhoBase);
+            gen.CaminhoBase = textBox1.Text;
+            MeuIni.WriteString("Config", "Base", gen.CaminhoBase);
             this.Close();
         }
 

@@ -21,7 +21,7 @@ namespace BonifacioEntregas
         private void Form1_Load(object sender, EventArgs e)
         {
             INI MeuIni = new INI();
-            GlobalConfig.CaminhoBase = MeuIni.ReadString("Config", "Base", "");
+            gen.CaminhoBase = MeuIni.ReadString("Config", "Base", "");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

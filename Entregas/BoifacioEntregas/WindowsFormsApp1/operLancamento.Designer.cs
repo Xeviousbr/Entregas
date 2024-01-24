@@ -48,11 +48,13 @@ namespace BonifacioEntregas
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnNovoCliente = new System.Windows.Forms.Button();
             this.dataGrid1 = new SourceGrid.DataGrid();
+            this.lbTotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbTotal);
             this.panel1.Controls.Add(this.dtpDataValidadeCNH);
             this.panel1.Controls.Add(this.txObs);
             this.panel1.Controls.Add(this.label5);
@@ -78,6 +80,7 @@ namespace BonifacioEntregas
             // 
             // dtpDataValidadeCNH
             // 
+            this.dtpDataValidadeCNH.Enabled = false;
             this.dtpDataValidadeCNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpDataValidadeCNH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataValidadeCNH.Location = new System.Drawing.Point(603, 68);
@@ -108,9 +111,10 @@ namespace BonifacioEntregas
             this.txCompra.Location = new System.Drawing.Point(529, 38);
             this.txCompra.Name = "txCompra";
             this.txCompra.Size = new System.Drawing.Size(56, 20);
-            this.txCompra.TabIndex = 26;
+            this.txCompra.TabIndex = 15;
             this.txCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
+            this.txCompra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtValor_KeyUp);
             // 
             // label4
             // 
@@ -204,6 +208,7 @@ namespace BonifacioEntregas
             this.txtValor.TabIndex = 14;
             this.txtValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
+            this.txtValor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtValor_KeyUp);
             // 
             // btnLimpar
             // 
@@ -212,6 +217,7 @@ namespace BonifacioEntregas
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 16;
             this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnAdicionar
             // 
@@ -224,6 +230,7 @@ namespace BonifacioEntregas
             // 
             // btnFiltrar
             // 
+            this.btnFiltrar.Enabled = false;
             this.btnFiltrar.Location = new System.Drawing.Point(692, 69);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
@@ -251,6 +258,15 @@ namespace BonifacioEntregas
             this.dataGrid1.TabIndex = 12;
             this.dataGrid1.TabStop = true;
             this.dataGrid1.ToolTipText = "";
+            // 
+            // lbTotal
+            // 
+            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(603, 40);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(83, 23);
+            this.lbTotal.TabIndex = 30;
+            this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // operLancamento
             // 
@@ -290,5 +306,6 @@ namespace BonifacioEntregas
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbMotoBoy;
         private System.Windows.Forms.DateTimePicker dtpDataValidadeCNH;
+        private System.Windows.Forms.Label lbTotal;
     }
 }

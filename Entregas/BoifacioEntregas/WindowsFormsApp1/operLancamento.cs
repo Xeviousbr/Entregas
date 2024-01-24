@@ -1,4 +1,4 @@
-﻿using BonifacioEntregas.dao;
+﻿ using BonifacioEntregas.dao;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -89,6 +89,7 @@ namespace BonifacioEntregas
             string obs = txObs.Text;
             entregasDAO.Adiciona(idBoy, idForma, valor, idCliente, compra, obs);
             CarregaGrid();
+            Limpar();
         }
 
         #region Criticas
@@ -116,6 +117,32 @@ namespace BonifacioEntregas
                 string searchText = cmbCliente.Text.Trim();
                 cmbCliente.SelectedValue = int.Parse(searchText);
             }
+        }
+
+        private void txtValor_KeyUp(object sender, KeyEventArgs e)
+        {
+            float valor = gen.LeValor(txtValor.Text);
+            float compra = gen.LeValor(txCompra.Text);
+            float total = valor + compra;
+            if (total>0)
+            {
+                lbTotal.Text= total.ToString("C");
+            } else
+            {
+                lbTotal.Text = "";
+            }
+        }
+
+        private void Limpar()
+        {
+            cmbMotoBoy.SelectedIndex = -1;
+            txtValor.Text = "";
+            txCompra.Text = "";
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            Limpar();
         }
     }
 }

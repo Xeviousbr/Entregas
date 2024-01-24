@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WindowsFormsApp1")]
-[assembly: AssemblyCopyright("Copyright ©  2024")]
+[assembly: AssemblyProduct("TeleBonifacio")]
+[assembly: AssemblyCopyright("ATC Informatica Ltda")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

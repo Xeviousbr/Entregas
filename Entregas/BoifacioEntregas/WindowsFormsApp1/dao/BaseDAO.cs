@@ -12,7 +12,7 @@ namespace BonifacioEntregas.dao
 
         protected BaseDAO()
         {
-            this.connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + GlobalConfig.CaminhoBase + ";";
+            this.connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + gen.CaminhoBase + ";";
         }
 
         public virtual void Grava(object obj)

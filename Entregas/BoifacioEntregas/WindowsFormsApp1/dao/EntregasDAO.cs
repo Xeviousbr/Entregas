@@ -11,7 +11,7 @@ namespace BonifacioEntregas.dao
 
         public EntregasDAO()
         {
-            this.connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + GlobalConfig.CaminhoBase + ";";
+            this.connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + gen.CaminhoBase + ";";
         }
 
         public DataTable getDados()
