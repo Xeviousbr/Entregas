@@ -12,3 +12,4 @@ namespace BonifacioEntregas.tb
         bool Adicao { get; set; }
     }
 }
+

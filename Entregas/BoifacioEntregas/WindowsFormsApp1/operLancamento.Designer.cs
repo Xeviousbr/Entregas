@@ -202,6 +202,7 @@ namespace BonifacioEntregas
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(56, 20);
             this.txtValor.TabIndex = 14;
+            this.txtValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
             // 
             // btnLimpar
@@ -214,7 +215,6 @@ namespace BonifacioEntregas
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Enabled = false;
             this.btnAdicionar.Location = new System.Drawing.Point(692, 40);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 23);

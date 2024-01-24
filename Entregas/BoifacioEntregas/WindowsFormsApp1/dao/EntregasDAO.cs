@@ -32,7 +32,7 @@ namespace BonifacioEntregas.dao
                                 e.VlNota as Compra, 
                                 c.Nome AS Cliente,
                                 e.Obs 
-                            FROM
+                            FROM 
                                 ((Entregas e
                                 INNER JOIN Clientes c ON c.NrCli = e.idCliente)
                                 INNER JOIN Mecanicos m ON m.codi = e.idBoy)
@@ -62,21 +62,22 @@ namespace BonifacioEntregas.dao
             return dataTable;
         }
 
-        public void Adiciona(int idBoy, int idForma, float valor, int idcliente, float compra, string Obs)
+        public void Adiciona(int idBoy, int idForma, float valor, int idCliente, float compra, string Obs)
         {
-            String sql = @"INSERT INTO Entregas (idCliente, idForma, idBoy, Valor, VlNota, Obs, Data) VALUES (" + idBoy.ToString() + ", " 
+            String sql = @"INSERT INTO Entregas (idCliente, idForma, idBoy, Valor, VlNota, Obs, Data) VALUES ("                 
+                + idCliente.ToString() + ", " 
                 + idForma.ToString() + ", " 
-                + valor.ToString() + ", " 
-                + idcliente.ToString()+" ,"
-                + compra.ToString()+", '"
-                + Obs+"'" +
-                ",Now)";
+                + idBoy.ToString()+ " ,"
+                + valor.ToString()+ ", "
+                + compra.ToString() + ", "
+                + "'" + Obs +"'" +
+                ",Now) ";
             ExecutarComandoSQL(sql);
         }
 
         private void ExecutarComandoSQL(string query)
         {
-            using (OleDbConnection connection = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + GlobalConfig.CaminhoBase + ";"))
+            using (OleDbConnection connection = new OleDbConnection(this.connectionString))
             {
                 connection.Open();
                 using (OleDbCommand command = new OleDbCommand(query, connection))

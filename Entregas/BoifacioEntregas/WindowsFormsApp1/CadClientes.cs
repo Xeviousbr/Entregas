@@ -11,6 +11,7 @@ namespace BonifacioEntregas
     {
 
         private tb.Cliente clienteEspecifico;
+        private bool txtIdDentro = false;
 
         public fCadClientes()
         {
@@ -38,7 +39,10 @@ namespace BonifacioEntregas
             {
                 if (!base.Pesquisando)
                 {
-                    base.cntrole1.EmEdicao = true;
+                    if (!this.txtIdDentro)
+                    {
+                        base.cntrole1.EmEdicao = true;
+                    }                    
                 }                
             }
         }
@@ -60,5 +64,14 @@ namespace BonifacioEntregas
         {
         }
 
+        private void txtId_Enter(object sender, EventArgs e)
+        {
+            this.txtIdDentro = true;
+        }
+
+        private void txtId_Leave(object sender, EventArgs e)
+        {
+            this.txtIdDentro = false;
+        }
     }
 }

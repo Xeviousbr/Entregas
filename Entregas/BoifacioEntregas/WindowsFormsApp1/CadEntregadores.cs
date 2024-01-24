@@ -11,6 +11,8 @@ namespace BonifacioEntregas
     public partial class fCadEntregadores : FormBase
     {
         private tb.Entregador clienteEspecifico;
+        private bool txtIdDentro = false;
+
         public fCadEntregadores()
         {
             InitializeComponent();
@@ -35,7 +37,10 @@ namespace BonifacioEntregas
             {
                 if (!base.Pesquisando)
                 {
-                    base.cntrole1.EmEdicao = true;
+                    if (!this.txtIdDentro)
+                    {
+                        base.cntrole1.EmEdicao = true;
+                    }
                 }
             }            
         }
@@ -86,6 +91,15 @@ namespace BonifacioEntregas
             
         }
 
+        private void txtId_Enter(object sender, EventArgs e)
+        {
+            this.txtIdDentro = true;
+        }
+
+        private void txtId_Leave(object sender, EventArgs e)
+        {
+            this.txtIdDentro = false;
+        }
     }
 
 }

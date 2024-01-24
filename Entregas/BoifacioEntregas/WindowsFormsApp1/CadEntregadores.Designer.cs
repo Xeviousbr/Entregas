@@ -23,6 +23,8 @@
             this.txtCNH = new System.Windows.Forms.TextBox();
             this.lblValidadeCNH = new System.Windows.Forms.Label();
             this.dtpDataValidadeCNH = new System.Windows.Forms.DateTimePicker();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cntrole1
@@ -33,7 +35,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(30, 70);
+            this.lblNome.Location = new System.Drawing.Point(14, 93);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 0;
@@ -42,7 +44,7 @@
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(30, 90);
+            this.txtNome.Location = new System.Drawing.Point(14, 113);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(250, 23);
@@ -52,7 +54,7 @@
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(30, 120);
+            this.lblTelefone.Location = new System.Drawing.Point(14, 143);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(49, 13);
             this.lblTelefone.TabIndex = 2;
@@ -61,7 +63,7 @@
             // txtTelefone
             // 
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.Location = new System.Drawing.Point(30, 140);
+            this.txtTelefone.Location = new System.Drawing.Point(14, 163);
             this.txtTelefone.MaxLength = 20;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(108, 23);
@@ -72,7 +74,7 @@
             // lblCNH
             // 
             this.lblCNH.AutoSize = true;
-            this.lblCNH.Location = new System.Drawing.Point(30, 175);
+            this.lblCNH.Location = new System.Drawing.Point(14, 198);
             this.lblCNH.Name = "lblCNH";
             this.lblCNH.Size = new System.Drawing.Size(30, 13);
             this.lblCNH.TabIndex = 6;
@@ -81,7 +83,7 @@
             // txtCNH
             // 
             this.txtCNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCNH.Location = new System.Drawing.Point(30, 195);
+            this.txtCNH.Location = new System.Drawing.Point(14, 218);
             this.txtCNH.MaxLength = 12;
             this.txtCNH.Name = "txtCNH";
             this.txtCNH.Size = new System.Drawing.Size(108, 23);
@@ -91,7 +93,7 @@
             // lblValidadeCNH
             // 
             this.lblValidadeCNH.AutoSize = true;
-            this.lblValidadeCNH.Location = new System.Drawing.Point(206, 175);
+            this.lblValidadeCNH.Location = new System.Drawing.Point(190, 198);
             this.lblValidadeCNH.Name = "lblValidadeCNH";
             this.lblValidadeCNH.Size = new System.Drawing.Size(74, 13);
             this.lblValidadeCNH.TabIndex = 8;
@@ -101,18 +103,42 @@
             // 
             this.dtpDataValidadeCNH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpDataValidadeCNH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataValidadeCNH.Location = new System.Drawing.Point(206, 195);
+            this.dtpDataValidadeCNH.Location = new System.Drawing.Point(190, 218);
             this.dtpDataValidadeCNH.Name = "dtpDataValidadeCNH";
             this.dtpDataValidadeCNH.Size = new System.Drawing.Size(100, 23);
             this.dtpDataValidadeCNH.TabIndex = 3;
             this.dtpDataValidadeCNH.Tag = "H";
             this.dtpDataValidadeCNH.ValueChanged += new System.EventHandler(this.dtpValidadeCNH_ValueChanged);
             // 
+            // txtId
+            // 
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(43, 60);
+            this.txtId.MaxLength = 20;
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(61, 23);
+            this.txtId.TabIndex = 14;
+            this.txtId.Tag = "";
+            this.txtId.Enter += new System.EventHandler(this.txtId_Enter);
+            this.txtId.Leave += new System.EventHandler(this.txtId_Leave);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Nr:";
+            // 
             // fCadEntregadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 237);
+            this.ClientSize = new System.Drawing.Size(330, 258);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblTelefone);
@@ -123,7 +149,6 @@
             this.Controls.Add(this.dtpDataValidadeCNH);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MaximizeBox = false;
             this.Name = "fCadEntregadores";
             this.Text = "Cadastro de Entregador";
             this.Activated += new System.EventHandler(this.fCadEntregadores_Activated);
@@ -137,9 +162,14 @@
             this.Controls.SetChildIndex(this.lblTelefone, 0);
             this.Controls.SetChildIndex(this.txtNome, 0);
             this.Controls.SetChildIndex(this.lblNome, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.txtId, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label label3;
     }
 }

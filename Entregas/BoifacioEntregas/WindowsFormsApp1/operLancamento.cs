@@ -37,7 +37,7 @@ namespace BonifacioEntregas
         private void ConfigurarGrid()
         {
             dataGrid1.Columns[0].Width = 0;
-            dataGrid1.Columns[1].Width = 70;
+            dataGrid1.Columns[1].Width = 75;
             dataGrid1.Columns[2].Width = 110;
             dataGrid1.Columns[3].Width = 50;
             dataGrid1.Columns[4].Width = 90;
@@ -74,21 +74,21 @@ namespace BonifacioEntregas
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             int idBoy = Convert.ToInt32(cmbMotoBoy.SelectedValue);
-            int idForma = Convert.ToInt32(cmbFormaPagamento.SelectedValue);
+            int idForma = Convert.ToInt32(cmbFormaPagamento.SelectedIndex);
             int idCliente = Convert.ToInt32(cmbCliente.SelectedValue);
             float valor;
             if (!float.TryParse(txtValor.Text, out valor))
             {
-                valor = 0; // ou manipule o erro conforme necessário
+                valor = 0; 
             }
-
             float compra;
             if (!float.TryParse(txCompra.Text, out compra))
             {
-                compra = 0; // ou manipule o erro conforme necessário
+                compra = 0; 
             }
             string obs = txObs.Text;
             entregasDAO.Adiciona(idBoy, idForma, valor, idCliente, compra, obs);
+            CarregaGrid();
         }
 
         #region Criticas
