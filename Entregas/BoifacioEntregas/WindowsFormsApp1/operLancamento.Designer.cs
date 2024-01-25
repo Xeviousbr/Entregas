@@ -30,6 +30,7 @@ namespace BonifacioEntregas
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbTotal = new System.Windows.Forms.Label();
             this.dtpDataValidadeCNH = new System.Windows.Forms.DateTimePicker();
             this.txObs = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@ namespace BonifacioEntregas
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.btnNovoCliente = new System.Windows.Forms.Button();
             this.dataGrid1 = new SourceGrid.DataGrid();
-            this.lbTotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,15 @@ namespace BonifacioEntregas
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(779, 101);
             this.panel1.TabIndex = 11;
+            // 
+            // lbTotal
+            // 
+            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(603, 40);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(83, 23);
+            this.lbTotal.TabIndex = 30;
+            this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtpDataValidadeCNH
             // 
@@ -258,15 +267,7 @@ namespace BonifacioEntregas
             this.dataGrid1.TabIndex = 12;
             this.dataGrid1.TabStop = true;
             this.dataGrid1.ToolTipText = "";
-            // 
-            // lbTotal
-            // 
-            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(603, 40);
-            this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(83, 23);
-            this.lbTotal.TabIndex = 30;
-            this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dataGrid1.Click += new System.EventHandler(this.dataGrid1_Click);
             // 
             // operLancamento
             // 

@@ -11,6 +11,7 @@ namespace BonifacioEntregas
     public partial class operLancamento : Form
     {
         private EntregasDAO entregasDAO;
+        private int iID = 0;
 
         public operLancamento()
         {
@@ -26,11 +27,11 @@ namespace BonifacioEntregas
         }
 
         private void operLancamento_Load(object sender, EventArgs e)
-        {            
-            EntregadorDAO Entregador = new EntregadorDAO();            
+        {
+            EntregadorDAO Entregador = new EntregadorDAO();
             ClienteDAO Cliente = new ClienteDAO();
             CarregarComboBox<tb.Entregador>(cmbMotoBoy, Entregador);
-            CarregarComboBox<tb.Cliente>(cmbCliente, Cliente);            
+            CarregarComboBox<tb.Cliente>(cmbCliente, Cliente);
             CarregaGrid();
             ConfigurarGrid();
         }
@@ -60,8 +61,8 @@ namespace BonifacioEntregas
             List<ComboBoxItem> lista = new List<ComboBoxItem>();
             foreach (DataRow row in dados.Rows)
             {
-                int id = Convert.ToInt32(row["id"]); 
-                string nome = row["Nome"].ToString(); 
+                int id = Convert.ToInt32(row["id"]);
+                string nome = row["Nome"].ToString();
 
                 ComboBoxItem item = new ComboBoxItem(id, nome);
                 lista.Add(item);
@@ -79,15 +80,22 @@ namespace BonifacioEntregas
             float valor;
             if (!float.TryParse(txtValor.Text, out valor))
             {
-                valor = 0; 
+                valor = 0;
             }
             float compra;
             if (!float.TryParse(txCompra.Text, out compra))
             {
-                compra = 0; 
+                compra = 0;
             }
             string obs = txObs.Text;
-            entregasDAO.Adiciona(idBoy, idForma, valor, idCliente, compra, obs);
+            if (btnAdicionar.Text == "Salvar")
+            {
+                entregasDAO.Edita(this.iID, idBoy, idForma, valor, idCliente, compra, obs);
+                btnAdicionar.Text = "Adicionar";
+            } else
+            {
+                entregasDAO.Adiciona(idBoy, idForma, valor, idCliente, compra, obs);
+            }
             CarregaGrid();
             Limpar();
         }
@@ -124,9 +132,9 @@ namespace BonifacioEntregas
             float valor = gen.LeValor(txtValor.Text);
             float compra = gen.LeValor(txCompra.Text);
             float total = valor + compra;
-            if (total>0)
+            if (total > 0)
             {
-                lbTotal.Text= total.ToString("C");
+                lbTotal.Text = total.ToString("C");
             } else
             {
                 lbTotal.Text = "";
@@ -136,6 +144,8 @@ namespace BonifacioEntregas
         private void Limpar()
         {
             cmbMotoBoy.SelectedIndex = -1;
+            cmbCliente.SelectedIndex = -1;
+            cmbFormaPagamento.SelectedIndex = -1;
             txtValor.Text = "";
             txCompra.Text = "";
         }
@@ -144,6 +154,28 @@ namespace BonifacioEntregas
         {
             Limpar();
         }
+
+        private void dataGrid1_Click(object sender, EventArgs e)
+        {
+            SourceGrid.DataGrid grid = (SourceGrid.DataGrid)sender;
+            if (grid != null && grid.Rows.Count > 0)
+            {
+                SourceGrid.Position position = grid.Selection.ActivePosition;
+                if (position != SourceGrid.Position.Empty)
+                {
+                    this.iID = gen.ConvOjbInt(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[0]);
+                    txtValor.Text = gen.ConvOjbStr(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[3]);
+                    txCompra.Text = gen.ConvOjbStr(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[5]);
+                    txObs.Text = gen.ConvOjbStr(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[7]);
+                    cmbMotoBoy.SelectedValue = gen.ConvOjbInt(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[8]);
+                    cmbCliente.SelectedValue = gen.ConvOjbInt(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[9]);
+                    cmbFormaPagamento.SelectedIndex = gen.ConvOjbInt(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[10]);
+                    btnAdicionar.Text = "Salvar";
+                }
+            }
+        }
+    
+
     }
 }
 

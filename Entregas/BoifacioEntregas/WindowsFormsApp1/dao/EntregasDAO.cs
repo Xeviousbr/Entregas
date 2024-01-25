@@ -31,7 +31,10 @@ namespace BonifacioEntregas.dao
                                 ) AS Pagamento,
                                 e.VlNota as Compra, 
                                 c.Nome AS Cliente,
-                                e.Obs 
+                                e.Obs,
+                                m.codi as idBoy,
+                                c.NrCli,
+                                e.idForma 
                             FROM 
                                 ((Entregas e
                                 INNER JOIN Clientes c ON c.NrCli = e.idCliente)
@@ -87,5 +90,18 @@ namespace BonifacioEntregas.dao
             }
         }
 
+        internal void Edita(int iID, int idBoy, int idForma, float valor, int idCliente, float compra, string obs)
+        {
+            String sql = @"UPDATE Entregas SET 
+                idCliente = " + idCliente.ToString() + ", " +
+                            "idForma = " + idForma.ToString() + ", " +
+                            "idBoy = " + idBoy.ToString() + ", " +
+                            "Valor = " + valor.ToString() + ", " +
+                            "VlNota = " + compra.ToString() + ", " +
+                            "Obs = " + gen.fa(obs) + 
+                            "WHERE ID = " + iID.ToString();
+            ExecutarComandoSQL(sql);
+
+        }
     }
 }
