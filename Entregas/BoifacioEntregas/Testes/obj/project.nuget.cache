@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "GMl5Uez88Cyeq4GfpYOhAU/WNE1gLonryQtYG+6GVILu05zIhGRXsqw7XT79L25CFBBUA7Q22ufFa/eV8zyFgw==",
+  "success": true,
+  "projectFilePath": "C:\\Prog\\OrCarro\\Entregas\\BoifacioEntregas\\Testes\\Testes.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dayse\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
+    "C:\\Users\\Dayse\\.nuget\\packages\\microsoft.net.test.sdk\\16.5.0\\microsoft.net.test.sdk.16.5.0.nupkg.sha512",
+    "C:\\Users\\Dayse\\.nuget\\packages\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
+    "C:\\Users\\Dayse\\.nuget\\packages\\nunit3testadapter\\4.5.0\\nunit3testadapter.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
