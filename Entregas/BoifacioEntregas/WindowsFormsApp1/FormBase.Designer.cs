@@ -46,6 +46,7 @@ namespace BonifacioEntregas
             this.cntrole1.Size = new System.Drawing.Size(800, 54);
             this.cntrole1.TabIndex = 0;
             this.cntrole1.Ultimo = false;
+            this.cntrole1.Vazio = false;
             // 
             // FormBase
             // 
@@ -53,6 +54,7 @@ namespace BonifacioEntregas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.cntrole1);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "FormBase";
             this.Text = "FormBase";

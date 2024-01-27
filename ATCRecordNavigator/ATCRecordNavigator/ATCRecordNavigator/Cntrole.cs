@@ -36,7 +36,40 @@ namespace ATCRecordNavigator
             set { emAdicao = value; DecideBotoes(); }
         }
 
+        private bool vazio;
+        public bool Vazio
+        {
+            get { return vazio; }
+            set { 
+                if (!TemDados)
+                {
+                    vazio = value;
+                    if (vazio)
+                    {
+                        TaVazio();
+                    }
+                }   
+            }
+        }
+
+        public bool TemDados = false;
+
         public string Pesquisa = "";
+        public bool EOF;
+
+        private void TaVazio()
+        {
+            vazio = true;
+            emAdicao = true;
+            btnOk.Visible = true;
+            btnCancelar.Visible = true;
+            btnParaFrente.Enabled = false;
+            btnParaTras.Enabled = false;
+            btnApagar.Visible = false;
+            btnPesquisa.Enabled = false;
+            btnAdicionar.Enabled = false;
+            this.btnEditar.Visible = false;
+        }
 
         public Cntrole()
         {
@@ -200,7 +233,6 @@ namespace ATCRecordNavigator
 
         public void ModoNormal()
         {
-            // CHAMADO PELA GRAVAÇÃO E CANCELAMENTO
             this.btnOk.Visible = false;
             this.btnCancelar.Visible = false;
             this.btnEditar.Visible = true;
@@ -213,7 +245,7 @@ namespace ATCRecordNavigator
             this.btnParaFrente.Visible = true;
             this.btnParaFrente.Enabled = true;
             this.btnParaTras.Visible = true;
-            this.btnParaTras.Enabled = true;
+            this.btnParaTras.Enabled = true;            
         }
 
         #endregion

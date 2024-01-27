@@ -11,7 +11,6 @@ namespace BonifacioEntregas
     {
 
         private tb.Cliente clienteEspecifico;
-        private bool txtIdDentro = false;
 
         public fCadClientes()
         {
@@ -21,7 +20,6 @@ namespace BonifacioEntregas
             base.reg = DAO.GetUltimo() as tb.Cliente;
             base.Mostra();
             base.LerTagsDosCamposDeTexto();
-            //base.NrLinhas(100);
         }
 
         private void cntrole1_AcaoRealizada(object sender, AcaoEventArgs e)
@@ -39,10 +37,7 @@ namespace BonifacioEntregas
             {
                 if (!base.Pesquisando)
                 {
-                    if (!this.txtIdDentro)
-                    {
-                        base.cntrole1.EmEdicao = true;
-                    }                    
+                    base.cntrole1.EmEdicao = true;
                 }                
             }
         }
@@ -64,14 +59,12 @@ namespace BonifacioEntregas
         {
         }
 
-        private void txtId_Enter(object sender, EventArgs e)
+        private void txtNrOutro_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.txtIdDentro = true;
-        }
-
-        private void txtId_Leave(object sender, EventArgs e)
-        {
-            this.txtIdDentro = false;
+            if (!char.IsDigit(e.KeyChar) )
+            {
+                e.Handled = true;
+            }
         }
     }
 }

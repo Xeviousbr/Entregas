@@ -37,10 +37,8 @@ namespace BonifacioEntregas
             this.txtemail = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtEnder = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNrOutro = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cntrole1
@@ -52,7 +50,7 @@ namespace BonifacioEntregas
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(12, 96);
+            this.lblNome.Location = new System.Drawing.Point(12, 62);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 4;
@@ -61,7 +59,7 @@ namespace BonifacioEntregas
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(12, 116);
+            this.txtNome.Location = new System.Drawing.Point(12, 82);
             this.txtNome.MaxLength = 100;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(298, 23);
@@ -71,7 +69,7 @@ namespace BonifacioEntregas
             // lblTelefone
             // 
             this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(12, 146);
+            this.lblTelefone.Location = new System.Drawing.Point(12, 112);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(49, 13);
             this.lblTelefone.TabIndex = 6;
@@ -80,7 +78,7 @@ namespace BonifacioEntregas
             // txtTelefone
             // 
             this.txtTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefone.Location = new System.Drawing.Point(12, 166);
+            this.txtTelefone.Location = new System.Drawing.Point(12, 132);
             this.txtTelefone.MaxLength = 20;
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(108, 23);
@@ -91,7 +89,7 @@ namespace BonifacioEntregas
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 272);
+            this.label1.Location = new System.Drawing.Point(9, 238);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 8;
@@ -100,7 +98,7 @@ namespace BonifacioEntregas
             // txtemail
             // 
             this.txtemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtemail.Location = new System.Drawing.Point(12, 300);
+            this.txtemail.Location = new System.Drawing.Point(12, 266);
             this.txtemail.MaxLength = 100;
             this.txtemail.Name = "txtemail";
             this.txtemail.Size = new System.Drawing.Size(298, 23);
@@ -110,7 +108,7 @@ namespace BonifacioEntregas
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 203);
+            this.label2.Location = new System.Drawing.Point(9, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 10;
@@ -119,63 +117,40 @@ namespace BonifacioEntregas
             // txtEnder
             // 
             this.txtEnder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEnder.Location = new System.Drawing.Point(12, 231);
+            this.txtEnder.Location = new System.Drawing.Point(12, 197);
             this.txtEnder.MaxLength = 40;
             this.txtEnder.Name = "txtEnder";
             this.txtEnder.Size = new System.Drawing.Size(298, 23);
             this.txtEnder.TabIndex = 2;
             this.txtEnder.Tag = "O";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Nr:";
-            // 
-            // txtId
-            // 
-            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtId.Location = new System.Drawing.Point(43, 60);
-            this.txtId.MaxLength = 20;
-            this.txtId.Name = "txtId";
-            this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(61, 23);
-            this.txtId.TabIndex = 12;
-            this.txtId.Tag = "";
-            this.txtId.Enter += new System.EventHandler(this.txtId_Enter);
-            this.txtId.Leave += new System.EventHandler(this.txtId_Leave);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(172, 70);
+            this.label4.Location = new System.Drawing.Point(239, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 13;
             this.label4.Text = "Outro número";
             // 
-            // textBox1
+            // txtNrOutro
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(249, 60);
-            this.textBox1.MaxLength = 20;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(61, 23);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.Tag = "";
+            this.txtNrOutro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNrOutro.Location = new System.Drawing.Point(242, 132);
+            this.txtNrOutro.MaxLength = 20;
+            this.txtNrOutro.Name = "txtNrOutro";
+            this.txtNrOutro.Size = new System.Drawing.Size(68, 23);
+            this.txtNrOutro.TabIndex = 2;
+            this.txtNrOutro.Tag = "";
+            this.txtNrOutro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNrOutro_KeyPress);
             // 
             // fCadClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(329, 363);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(329, 304);
+            this.Controls.Add(this.txtNrOutro);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtEnder);
             this.Controls.Add(this.label1);
@@ -184,7 +159,6 @@ namespace BonifacioEntregas
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.txtTelefone);
-            this.KeyPreview = true;
             this.Name = "fCadClientes";
             this.Text = "Clientes";
             this.Activated += new System.EventHandler(this.fCadClientes_Activated);
@@ -197,10 +171,8 @@ namespace BonifacioEntregas
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.txtEnder, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.txtId, 0);
             this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.txtNrOutro, 0);
             this.Controls.SetChildIndex(this.cntrole1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -217,9 +189,7 @@ namespace BonifacioEntregas
         private System.Windows.Forms.TextBox txtemail;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtEnder;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNrOutro;
     }
 }

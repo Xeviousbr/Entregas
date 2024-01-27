@@ -1,0 +1,10 @@
+C:\Prog\OrCarro\AuxSql\AuxSql\obj\Debug\AuxSql.csproj.AssemblyReference.cache
+C:\Prog\OrCarro\AuxSql\AuxSql\obj\Debug\AuxSql.Properties.Resources.resources
+C:\Prog\OrCarro\AuxSql\AuxSql\obj\Debug\AuxSql.csproj.GenerateResource.cache
+C:\Prog\OrCarro\AuxSql\AuxSql\obj\Debug\AuxSql.csproj.CoreCompileInputs.cache
+C:\Prog\OrCarro\AuxSql\AuxSql\bin\Debug\AuxSql.exe.config
+C:\Prog\OrCarro\AuxSql\AuxSql\bin\Debug\AuxSql.exe
+C:\Prog\OrCarro\AuxSql\AuxSql\bin\Debug\AuxSql.pdb
+C:\Prog\OrCarro\AuxSql\AuxSql\obj\Debug\AuxSql.exe
+C:\Prog\OrCarro\AuxSql\AuxSql\obj\Debug\AuxSql.pdb
+C:\Prog\OrCarro\AuxSql\AuxSql\obj\Debug\AuxSql.Form1.resources

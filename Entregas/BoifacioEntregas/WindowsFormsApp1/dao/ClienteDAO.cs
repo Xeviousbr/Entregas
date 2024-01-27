@@ -8,7 +8,7 @@ namespace BonifacioEntregas.dao
 {
     public class ClienteDAO : BaseDAO
     {
-        private int Linhas;
+        // private int Linhas;
 
         protected int id { get; set; }
         public string Nome { get; set; }
@@ -17,10 +17,31 @@ namespace BonifacioEntregas.dao
         public string email { get; set; }
         public string Ender { get;  set; }
 
+        public string NrOutro { get; set; }
+
         public void Addcliente(tb.Cliente cliente)
         {
             // Código para adicionar um novo cliente ao banco de dados
         }
+
+        //public override void Grava(object obj)
+        //{
+        //    ClienteDAO cliente = (ClienteDAO)obj;
+        //    string query;
+        //    List<OleDbParameter> parameters;
+        //    int result = 0;
+        //    if (cliente.Adicao)
+        //    {
+        //        query = "INSERT INTO Clientes (NrCli, Nome, Telefone, email, Ender, NrOutro) VALUES (?, ?, ?, ?, ?, ?)";
+        //        parameters = ConstruirParametroscliente(cliente, false);
+        //        result = ExecutarComandoSQL(query, parameters);
+        //    }
+        //    else
+        //    {
+        //        query = $"UPDATE Clientes SET Nome = '{cliente.Nome}', Telefone = '{cliente.Telefone}', email = '{cliente.email}', Ender = '{cliente.Ender}', NrOutro = '{cliente.NrOutro}' WHERE NrCli = {cliente.id}";
+        //        result = ExecutarComandoSQL(query, null);
+        //    }
+        //}
 
         public override void Grava(object obj)
         {
@@ -30,18 +51,18 @@ namespace BonifacioEntregas.dao
             int result = 0;
             if (cliente.Adicao)
             {
-                query = "INSERT INTO Clientes (NrCli, Nome, Telefone, email, Ender) VALUES (?, ?, ?, ?, ?)";
+                query = "INSERT INTO Clientes (NrCli, Nome, Telefone, email, Ender, NrOutro) VALUES (?, ?, ?, ?, ?, ?)";
                 parameters = ConstruirParametroscliente(cliente, true);
             }
             else
             {
-                query = "UPDATE Clientes SET Nome = ?, Telefone = ?, email = ?, Ender  =? WHERE NrCli = ?";
+                query = "UPDATE Clientes SET Nome = ?, Telefone = ?, email = ?, Ender  =?, NrOutro=? WHERE NrCli = ?";
                 parameters = ConstruirParametroscliente(cliente, false);
             }
 
             try
             {
-                result = ExecutarComandoSQL(query, parameters);
+                gen.ExecutarComandoSQL(query, parameters);
             }
             catch (Exception ex)
             {
@@ -52,13 +73,15 @@ namespace BonifacioEntregas.dao
 
         private List<OleDbParameter> ConstruirParametroscliente(ClienteDAO cliente, bool inserindo)
         {
+            int iNrOutro = 0;
+            int.TryParse(cliente.NrOutro, out iNrOutro);
             var parametros = new List<OleDbParameter>
             {
                 new OleDbParameter("@Nome", cliente.Nome),
                 new OleDbParameter("@Telefone", cliente.Telefone),
                 new OleDbParameter("@email", cliente.email),
                 new OleDbParameter("@Ender", cliente.Ender),
-                
+                new OleDbParameter("@NrOutro", iNrOutro) 
             };
             if (inserindo)
             {
@@ -73,8 +96,8 @@ namespace BonifacioEntregas.dao
 
         private int VeUltReg()
         {
-            string query = $"SELECT Max(NrCli) as NrCli FROM Clientes";
-            using (OleDbConnection connection = new OleDbConnection(this.connectionString))
+            string query = "SELECT Max(NrCli) as NrCli FROM Clientes";
+            using (OleDbConnection connection = new OleDbConnection(gen.connectionString))
             {
                 try
                 {
@@ -98,34 +121,47 @@ namespace BonifacioEntregas.dao
             }
         }
 
-        public int ExecutarComandoSQL(string query, List<OleDbParameter> parameters)
-        {
-            using (OleDbConnection connection = new OleDbConnection(connectionString))
-            {
-                using (OleDbCommand command = new OleDbCommand(query, connection))
-                {
-                    if (parameters != null)
-                    {
-                        foreach (var param in parameters)
-                        {
-                            command.Parameters.Add(param);
-                        }
-                    }
-                    connection.Open();
-                    return command.ExecuteNonQuery();
-                }
-            }
-        }
+        //public int ExecutarComandoSQL(string query, List<OleDbParameter> parameters)
+        //{
+        //    using (OleDbConnection connection = new OleDbConnection(gen.connectionString))
+        //    {
+        //        using (OleDbCommand command = new OleDbCommand(query, connection))
+        //        {
+        //            if (parameters != null)
+        //            {
+        //                foreach (var param in parameters)
+        //                {
+        //                    command.Parameters.Add(param);
+        //                }
+        //            }
+        //            connection.Open();
+        //            return command.ExecuteNonQuery();
+        //        }
+        //    }
+        //}
 
         public override tb.IDataEntity Apagar(int direcao, tb.IDataEntity entidade)
         {
-            ExecutarComandoSQL("DELETE FROM Clientes WHERE NrCli = " + id.ToString(), null);
+            gen.ExecutarComandoSQL("DELETE FROM Clientes WHERE NrCli = " + id.ToString(), null);
             tb.Cliente proximocliente = direcao > -1 ? ParaFrente() as tb.Cliente : ParaTraz() as tb.Cliente;
             if (proximocliente == null || proximocliente.Id == 0)
             {
                 proximocliente = direcao > -1 ? ParaTraz() as tb.Cliente : ParaFrente() as tb.Cliente;
             }
             return proximocliente ?? new tb.Cliente();
+        }
+
+        internal int RetIdNrAlter(string searchText)
+        {
+            string query = "SELECT * FROM Clientes Where NrOutro = " + searchText;
+            tb.Cliente reg =ExecutarConsultacliente(query);
+            if (reg==null)
+            {
+                return 0;
+            } else
+            {
+                return reg.Id;
+            }            
         }
 
         public override tb.IDataEntity GetEsse()
@@ -136,9 +172,9 @@ namespace BonifacioEntregas.dao
                 Nome = Nome,
                 Telefone = Telefone,
                 email = email,
-                Ender=Ender
+                Ender=Ender,
+                NrOutro= NrOutro
             };
-
         }
 
         public override object GetUltimo()
@@ -161,7 +197,7 @@ namespace BonifacioEntregas.dao
 
         private tb.Cliente ExecutarConsultacliente(string query)
         {
-            using (OleDbConnection connection = new OleDbConnection(this.connectionString))
+            using (OleDbConnection connection = new OleDbConnection(gen.connectionString))
             {
                 try
                 {
@@ -177,6 +213,7 @@ namespace BonifacioEntregas.dao
                                 Telefone = reader["Telefone"].ToString();
                                 email = reader["email"].ToString();
                                 Ender = reader["Ender"].ToString();
+                                NrOutro = reader["NrOutro"].ToString();
                                 return (tb.Cliente)GetEsse();
                             }
                         }
@@ -191,14 +228,9 @@ namespace BonifacioEntregas.dao
             return null;
         }
 
-        public override void SetarLinhas(int v)
-        {
-            this.Linhas = v;
-        }
-
         private DataTable ExecutarConsulta(string query)
         {
-            using (OleDbConnection connection = new OleDbConnection(this.connectionString))
+            using (OleDbConnection connection = new OleDbConnection(gen.connectionString))
             {
                 try
                 {
@@ -213,7 +245,7 @@ namespace BonifacioEntregas.dao
                             dataTable.Columns.Add("Telefone", typeof(string));
                             dataTable.Columns.Add("email", typeof(string));
                             dataTable.Columns.Add("Ender", typeof(string));
-
+                            dataTable.Columns.Add("NrOutro", typeof(string)); 
                             while (reader.Read())
                             {
                                 DataRow row = dataTable.NewRow();
@@ -222,6 +254,7 @@ namespace BonifacioEntregas.dao
                                 row["Telefone"] = reader["Telefone"];
                                 row["email"] = reader["email"];
                                 row["Ender"] = reader["Ender"];
+                                row["NrOutro"] = reader["NrOutro"];
                                 dataTable.Rows.Add(row);
                             }
                             return dataTable;

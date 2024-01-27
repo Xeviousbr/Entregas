@@ -3,10 +3,9 @@ using System.Data;
 
 namespace BonifacioEntregas.dao
 {
-    public class BaseDAO
+    public abstract class BaseDAO
     {
         protected string connectionString;
-        //private int nrLinhas = 0;
 
         public bool Adicao { get; set; }
 

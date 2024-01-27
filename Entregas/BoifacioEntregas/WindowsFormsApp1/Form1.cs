@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TeleBonifacio;
 
 namespace BonifacioEntregas
 {
@@ -22,6 +23,7 @@ namespace BonifacioEntregas
         {
             INI MeuIni = new INI();
             gen.CaminhoBase = MeuIni.ReadString("Config", "Base", "");
+            gen.connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + gen.CaminhoBase + ";";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -79,6 +81,11 @@ namespace BonifacioEntregas
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             AbrirOuFocarFormulario<oprConfig>();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            AbrirOuFocarFormulario<CadVendedores>();
         }
     }
 

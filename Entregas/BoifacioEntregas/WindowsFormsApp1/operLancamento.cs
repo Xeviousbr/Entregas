@@ -32,7 +32,7 @@ namespace BonifacioEntregas
             ClienteDAO Cliente = new ClienteDAO();
             CarregarComboBox<tb.Entregador>(cmbMotoBoy, Entregador);
             CarregarComboBox<tb.Cliente>(cmbCliente, Cliente);
-            CarregaGrid();
+            CarregaGrid(null);
             ConfigurarGrid();
         }
         private void ConfigurarGrid()
@@ -41,16 +41,21 @@ namespace BonifacioEntregas
             dataGrid1.Columns[1].Width = 75;
             dataGrid1.Columns[2].Width = 110;
             dataGrid1.Columns[3].Width = 50;
-            dataGrid1.Columns[4].Width = 90;
-            dataGrid1.Columns[5].Width = 70;
-            dataGrid1.Columns[6].Width = 310;
+            dataGrid1.Columns[4].Width = 50;    // Desconto
+            dataGrid1.Columns[5].Width = 90;
+            dataGrid1.Columns[6].Width = 70;
+            dataGrid1.Columns[7].Width = 290;   // Cliente
+            dataGrid1.Columns[8].Width = 90;    // Obs
+            dataGrid1.Columns[9].Width = 0;
+            dataGrid1.Columns[10].Width = 0;
+            dataGrid1.Columns[11].Width = 0;
             dataGrid1.Invalidate();
         }
 
-        private void CarregaGrid()
+        private void CarregaGrid(DateTime? DT)
         {
-            entregasDAO = new EntregasDAO();
-            DataTable dados = entregasDAO.getDados();
+            entregasDAO = new EntregasDAO();            
+            DataTable dados = entregasDAO.getDados(DT);
             DevAge.ComponentModel.BoundDataView boundDataView = new DevAge.ComponentModel.BoundDataView(dados.DefaultView);
             dataGrid1.DataSource = boundDataView;
         }
@@ -88,23 +93,36 @@ namespace BonifacioEntregas
                 compra = 0;
             }
             string obs = txObs.Text;
+            float desc;            
+            if (!float.TryParse(txDesc.Text, out desc))
+            {
+                desc = 0;
+            }                        
             if (btnAdicionar.Text == "Salvar")
             {
-                entregasDAO.Edita(this.iID, idBoy, idForma, valor, idCliente, compra, obs);
+                entregasDAO.Edita(this.iID, idBoy, idForma, valor, idCliente, compra, obs, desc);
                 btnAdicionar.Text = "Adicionar";
             } else
             {
-                entregasDAO.Adiciona(idBoy, idForma, valor, idCliente, compra, obs);
+                entregasDAO.Adiciona(idBoy, idForma, valor, idCliente, compra, obs, desc);
             }
-            CarregaGrid();
-            Limpar();
+            CarregaGrid(null);
+//             Limpar();
         }
 
         #region Criticas
-
         private void VeSeHab()
         {
-            // btnAdicionar
+            bool OK = true;
+            if (cmbFormaPagamento.SelectedIndex == -1)
+            {
+                OK = false;
+            }
+            if (txtValor.Text == "")
+            {
+                OK = false;
+            }
+            btnAdicionar.Enabled = OK;
         }
 
         #endregion
@@ -122,8 +140,13 @@ namespace BonifacioEntregas
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
+                dao.ClienteDAO cCli = new dao.ClienteDAO();
                 string searchText = cmbCliente.Text.Trim();
-                cmbCliente.SelectedValue = int.Parse(searchText);
+                int idCli = cCli.RetIdNrAlter(searchText);
+                if (idCli>0)
+                {
+                    cmbCliente.SelectedValue = idCli;
+                }                
             }
         }
 
@@ -131,7 +154,8 @@ namespace BonifacioEntregas
         {
             float valor = gen.LeValor(txtValor.Text);
             float compra = gen.LeValor(txCompra.Text);
-            float total = valor + compra;
+            float desc = gen.LeValor(txDesc.Text);
+            float total = valor + compra - desc;
             if (total > 0)
             {
                 lbTotal.Text = total.ToString("C");
@@ -139,6 +163,7 @@ namespace BonifacioEntregas
             {
                 lbTotal.Text = "";
             }
+            VeSeHab();
         }
 
         private void Limpar()
@@ -148,6 +173,7 @@ namespace BonifacioEntregas
             cmbFormaPagamento.SelectedIndex = -1;
             txtValor.Text = "";
             txCompra.Text = "";
+            txDesc.Text = "";
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -165,17 +191,34 @@ namespace BonifacioEntregas
                 {
                     this.iID = gen.ConvOjbInt(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[0]);
                     txtValor.Text = gen.ConvOjbStr(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[3]);
-                    txCompra.Text = gen.ConvOjbStr(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[5]);
-                    txObs.Text = gen.ConvOjbStr(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[7]);
-                    cmbMotoBoy.SelectedValue = gen.ConvOjbInt(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[8]);
-                    cmbCliente.SelectedValue = gen.ConvOjbInt(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[9]);
-                    cmbFormaPagamento.SelectedIndex = gen.ConvOjbInt(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[10]);
+
+                    txDesc.Text = gen.ConvOjbStr(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[4]);
+
+                    txCompra.Text = gen.ConvOjbStr(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[6]);                    
+                    txObs.Text = gen.ConvOjbStr(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[8]);
+                    cmbMotoBoy.SelectedValue = gen.ConvOjbInt(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[9]);
+                    cmbCliente.SelectedValue = gen.ConvOjbInt(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[10]);
+                    cmbFormaPagamento.SelectedIndex = gen.ConvOjbInt(((DataRowView)grid.SelectedDataRows[0]).Row.ItemArray[11]);
                     btnAdicionar.Text = "Salvar";
                 }
             }
         }
-    
 
+        private void cmbFormaPagamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VeSeHab();
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            DateTime DT = dtpData.Value;
+            CarregaGrid(DT);
+        }
+
+        private void operLancamento_Resize(object sender, EventArgs e)
+        {
+            dataGrid1.Width = this.Width;
+        }
     }
 }
 

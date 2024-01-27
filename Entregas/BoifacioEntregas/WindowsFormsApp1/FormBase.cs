@@ -1,16 +1,11 @@
 ﻿using BonifacioEntregas.tb;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SourceGrid;
-using System.Diagnostics;
 
 namespace BonifacioEntregas
 {
@@ -28,6 +23,7 @@ namespace BonifacioEntregas
         private DateTime lastClickTime = DateTime.MinValue;
         private System.Windows.Forms.DataGrid dataGrid;
         private bool GridCarregada = false;
+        private bool EOF = false;
 
         public FormBase()
         {
@@ -46,25 +42,34 @@ namespace BonifacioEntregas
         {
             if (reg == null)
             {
+                cntrole1.Vazio = true;
                 return false;
             }
             else
             {
-                Pesquisando = false;
-                Mostrando = true;
-                foreach (Control control in this.Controls)
+                if (reg.Id==0)
                 {
-                    if (control is TextBox textBox)
+                    cntrole1.Vazio = true;
+                    return false;
+                } else
+                {
+                    cntrole1.TemDados = true;
+                    Pesquisando = false;
+                    Mostrando = true;
+                    foreach (Control control in this.Controls)
                     {
-                        ProcessarTextBox(textBox);
+                        if (control is TextBox textBox)
+                        {
+                            ProcessarTextBox(textBox);
+                        }
+                        else if (control is DateTimePicker dateTimePicker)
+                        {
+                            ProcessarDateTimePicker(dateTimePicker);
+                        }
                     }
-                    else if (control is DateTimePicker dateTimePicker)
-                    {
-                        ProcessarDateTimePicker(dateTimePicker);
-                    }
+                    Mostrando = false;
+                    return true;
                 }
-                Mostrando = false;
-                return true;
             }
         }
 
@@ -272,9 +277,14 @@ namespace BonifacioEntregas
             if (criticas.Count == 0)
             {
                 DAO.Adicao = EmAdicao;
+                if (cntrole1.Vazio)
+                {
+                    DAO.Adicao = true;
+                }
                 DAO.Grava(DAO);
                 EmAdicao = false;
                 cntrole1.ModoNormal();
+                cntrole1.Vazio = false;
             }
             else
             {
@@ -401,16 +411,7 @@ namespace BonifacioEntregas
 
         private System.Data.DataTable getDados()
         {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            System.Data.DataTable X = DAO.getDados();
-            stopwatch.Stop();
-            TimeSpan tempoDecorrido = stopwatch.Elapsed;
-            string tempoStr = tempoDecorrido.ToString(@"hh\:mm\:ss\.fff");
-            INI MeuIni = new INI();
-            MeuIni.WriteString("Clientes", "Quantidade", X.Rows.Count.ToString());
-            MeuIni.WriteString("Clientes", "Tempo Pesquisa no Cadastro", tempoStr);
-            return X;
+            return DAO.getDados();
         }
         private void PesqAcionar()
         {

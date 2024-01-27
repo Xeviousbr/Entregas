@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -11,32 +12,26 @@ namespace BonifacioEntregas
     {
         public static string CaminhoBase { get; set; }
 
+        public static string connectionString { get; set; }        
+
         public static float LeValor(string valorTexto)
         {
-            // Remova todos os caracteres que não são dígitos, pontos ou vírgulas
             string valorLimpo = new string(valorTexto.Where(c => char.IsDigit(c) || c == ',' || c == '.').ToArray());
-
-            // Verifique se o valor tem um ponto decimal ou vírgula decimal
             char decimalSeparator = CultureInfo.CurrentCulture.NumberFormat.CurrencyDecimalSeparator[0];
             if (valorLimpo.Contains('.') && valorLimpo.Contains(','))
             {
-                // Se houver tanto ponto quanto vírgula, use o separador decimal atual
                 valorLimpo = valorLimpo.Replace(".", decimalSeparator.ToString());
             }
             else if (valorLimpo.Contains('.') || valorLimpo.Contains(','))
             {
-                // Se houver apenas ponto ou apenas vírgula, substitua pelo separador decimal atual
                 valorLimpo = valorLimpo.Replace(',', decimalSeparator).Replace('.', decimalSeparator);
             }
-
-            // Converta o valor limpo para um valor float
             if (float.TryParse(valorLimpo, out float valorFloat))
             {
                 return valorFloat;
             }
             else
             {
-                // Se a conversão falhar, retorne 0 ou outro valor padrão
                 return 0.0f;
             }
         }
@@ -95,5 +90,34 @@ namespace BonifacioEntregas
             return "'" + str + "'";
         }
 
+        public static string sv(float vlr)
+        {
+            string str = vlr.ToString();
+            return str.Replace(",", ".");
+        }
+
+        #region DB
+
+
+        public static void ExecutarComandoSQL(string query, List<OleDbParameter> parameters=null)
+        {
+            using (OleDbConnection connection = new OleDbConnection(gen.connectionString))
+            {
+                using (OleDbCommand command = new OleDbCommand(query, connection))
+                {
+                    if (parameters != null)
+                    {
+                        foreach (var param in parameters)
+                        {
+                            command.Parameters.Add(param);
+                        }
+                    }
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        #endregion
     }
 }

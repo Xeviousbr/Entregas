@@ -12,5 +12,7 @@
         public string email { get; set; }
 
         public string Ender { get; set; }
+
+        public string NrOutro { get; set; }
     }
 }

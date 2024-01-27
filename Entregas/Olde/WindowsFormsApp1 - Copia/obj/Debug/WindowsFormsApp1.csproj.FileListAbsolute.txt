@@ -1,0 +1,13 @@
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\ATCRecordNavigator.dll
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\ATCRecordNavigator.pdb
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\BoifacioEntregas.exe.config
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\BoifacioEntregas.exe
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\bin\Debug\BoifacioEntregas.pdb
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BoifacioEntregas.exe
+C:\Prog\OrCarro\Entregas\BoifacioEntregas\WindowsFormsApp1\obj\Debug\BoifacioEntregas.pdb
