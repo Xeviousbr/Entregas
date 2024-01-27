@@ -85,6 +85,7 @@
     <Compile Include="dao\ClienteDAO.cs" />
     <Compile Include="dao\EntregadorDAO.cs" />
     <Compile Include="dao\EntregasDAO.cs" />
+    <Compile Include="gen.cs" />
     <Compile Include="operConfig.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,7 +122,6 @@
     <Compile Include="FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="gen.cs" />
     <Compile Include="INI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

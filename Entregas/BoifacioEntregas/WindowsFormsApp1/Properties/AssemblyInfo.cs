@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // As informações gerais sobre um assembly são controladas por
 // conjunto de atributos. Altere estes valores de atributo para modificar as informações
 // associadas a um assembly.
-[assembly: AssemblyTitle("WindowsFormsApp1")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Tele Bonifacio")]
+[assembly: AssemblyDescription("Gerenciamento de Teleentrega")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TeleBonifacio")]
-[assembly: AssemblyCopyright("ATC Informatica Ltda")]
+[assembly: AssemblyCompany("ATC Informatica")]
+[assembly: AssemblyProduct("Tele Bonifacio")]
+[assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
